@@ -1,0 +1,47 @@
+"use strict";
+cc._RF.push(module, '30c8f4EPm5A57Zpgsys2kgq', 'Game');
+// scripts/Game.js
+
+"use strict";
+
+// Learn cc.Class:
+//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
+// Learn Attribute:
+//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+cc.Class({
+  "extends": cc.Component,
+  properties: {// foo: {
+    //     // ATTRIBUTES:
+    //     default: null,        // The default value will be used only when the component attaching
+    //                           // to a node for the first time
+    //     type: cc.SpriteFrame, // optional, default is typeof default
+    //     serializable: true,   // optional, default is true
+    // },
+    // bar: {
+    //     get () {
+    //         return this._bar;
+    //     },
+    //     set (value) {
+    //         this._bar = value;
+    //     }
+    // },
+  },
+  // LIFE-CYCLE CALLBACKS:
+  onLoad: function onLoad() {
+    var p = cc.director.getPhysicsManager(); //开启物理系统
+
+    p.enabled = true;
+    p.debugDrawFlags = true;
+    p.gravity = cc.v2(0, 0);
+    var manager = cc.director.getCollisionManager();
+    manager.enabled = true; //开启碰撞检测
+
+    manager.enabledDebugDraw = true; //显示碰撞检测区域
+  },
+  start: function start() {} // update (dt) {},
+
+});
+
+cc._RF.pop();

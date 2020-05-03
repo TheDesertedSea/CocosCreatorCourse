@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "摇杆背景",
+    "texture": "32439dd4-2833-46f3-b34c-de90c7eaedae",
+    "atlas": "",
+    "rect": [
+      8,
+      7,
+      244,
+      244
+    ],
+    "offset": [
+      1.5,
+      -1
+    ],
+    "originalSize": [
+      257,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
