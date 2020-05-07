@@ -11,10 +11,13 @@ cc.Class({
     properties: {
         speed:100,
         weapons:[cc.Prefab],  //存储武器预制体（武器栏）
+        health:100,
+        healthBar:cc.Node,
     },
 
     onLoad(){
-        this.weaponNum=0;
+        this.weaponNums=1;
+        this.currentWeapon=0;
         this.moveForward=false;
         this.moveBackward=false;
         this.moveRight=false;
@@ -90,9 +93,9 @@ cc.Class({
         var weapon=this.node.getChildByName("weapon");
         weapon.parent=null;
         weapon.destroy();
-        cc.log(this.weaponNum);
-        this.weaponNum=(this.weaponNum+1)%2;  //取2的模以防数组越界
-        weapon=cc.instantiate(this.weapons[this.weaponNum]);
+        cc.log(this.currentWeapon);
+        this.currentWeapon=(this.currentWeapon+1)%this.weaponNums;  //取模以防数组越界
+        weapon=cc.instantiate(this.weapons[this.currentWeapon]);
         weapon.parent=this.node;
     },
     update (dt) {   //每秒给刚体组件设置线性速度
@@ -120,5 +123,6 @@ cc.Class({
             this.lv.x=0;
         }
         this.node.getComponent(cc.RigidBody).linearVelocity=this.lv;
+        this.healthBar.scaleX=this.health/100;
     },
 });

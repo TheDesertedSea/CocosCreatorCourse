@@ -18,19 +18,18 @@ cc.Class({
             type:cc.node,   //绑定虚拟摇杆结点以获取摇杆信息
             default:null,
         },
-        type:0,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
-        this.Rocker=this.node.parent.getChildByName("Joystick");
-        this.RockerScript=this.Rocker.getComponent("Joystick");  //获取“Joystick”脚本为RockerScript
+        var UI=this.node.parent.getChildByName("UI");
+        var Rocker=UI.getChildByName("Joystick");
+        this.RockerScript=Rocker.getComponent("Joystick");  //获取“Joystick”脚本为RockerScript
     },
     fire:function(){  //开火
-        if(this.type==0)  //type==0为远程武器。发射子弹
-        {//cc.log("fire!");
+//cc.log("fire!");
         var scene = cc.director.getScene();
         var bullet=cc.instantiate(this.bullet);  //实例化预制体
         bullet.parent=this.node;
@@ -40,11 +39,7 @@ cc.Class({
         bullet.setPosition(position.x,position.y);  //设置子弹的生成位置
         bullet.angle=this.node.angle;  //设置子弹的角度
         bullet.getComponent("Bullet").setDir(this.dirX,this.dirY);
-    }
-    else{//近战攻击待实现
-        
-    }
-        
+  
     },
 
     start () {
