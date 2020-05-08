@@ -25,6 +25,8 @@ cc.Class({
     onLoad () {
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
         var UI=this.node.parent.getChildByName("UI");
+        if(UI==null)
+        return;
         var Rocker=UI.getChildByName("Joystick");
         this.RockerScript=Rocker.getComponent("Joystick");  //获取“Joystick”脚本为RockerScript
     },

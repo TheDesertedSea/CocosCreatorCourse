@@ -3,7 +3,8 @@
     "default",
     "player",
     "block",
-    "bullet"
+    "bullet",
+    "enemy"
   ],
   "collision-matrix": [
     [
@@ -13,9 +14,18 @@
       false,
       false,
       true,
-      false
+      false,
+      true
     ],
     [
+      false,
+      true,
+      false,
+      true,
+      true
+    ],
+    [
+      false,
       false,
       true,
       false,
@@ -23,9 +33,10 @@
     ],
     [
       false,
-      false,
       true,
-      false
+      true,
+      true,
+      true
     ]
   ],
   "excluded-modules": [
@@ -54,6 +65,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }

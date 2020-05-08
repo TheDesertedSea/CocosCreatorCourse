@@ -10,18 +10,19 @@ cc.Class({
 
     properties: {
         speed:100,
-        weapons:[cc.Prefab],  //存储武器预制体（武器栏）
+        weaponPack:cc.Node,//武器栏
         health:100,
         healthBar:cc.Node,
     },
 
     onLoad(){
-        this.weaponNums=1;
-        this.currentWeapon=0;
+        this.weaponNums=2;
         this.moveForward=false;
         this.moveBackward=false;
         this.moveRight=false;
         this.moveLeft=false;
+        this.onHit=false;
+        this.hitTime=0;
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp,this);
     },
@@ -85,18 +86,42 @@ cc.Class({
     {
        // cc.log("attack");   //调用武器的开火函数
         var weapon=this.node.getChildByName("weapon");
+
         weapon.getComponent("Weapon").fire();
     },
 
     changeWeapon:function()  //切换武器
     {
+        if(this.weaponNums==1)
+        {
+            return;
+        }
         var weapon=this.node.getChildByName("weapon");
+
         weapon.parent=null;
-        weapon.destroy();
-        cc.log(this.currentWeapon);
-        this.currentWeapon=(this.currentWeapon+1)%this.weaponNums;  //取模以防数组越界
-        weapon=cc.instantiate(this.weapons[this.currentWeapon]);
-        weapon.parent=this.node;
+        weapon.getComponent("Weapon").enabled=false;
+        var weapon2=this.weaponPack.getChildByName("weapon");
+        weapon2.parent=this.node;
+        weapon2.position.x=1.729;
+        weapon2.position.y=-3.373;
+        weapon2.getComponent("Weapon").enabled=true;
+        weapon.parent=this.weaponPack;
+        weapon.position.x=4.024;
+        weapon.position.y=-2.013;
+
+    },
+    onBeginContact:function(info,self,other){
+        cc.log("CONTACT!");
+        cc.log(other.node.group);
+        if(other.node.group=="enemy"&&this.onHit==false)
+        {
+            cc.log("ENEMY ATTACK!");
+            this.getDamage(other.node.getComponent("enemy").damage);
+        }
+    },
+    getDamage:function(damage){
+        this.health-=damage;
+        this.onHit=true;
     },
     update (dt) {   //每秒给刚体组件设置线性速度
         this.lv=this.node.getComponent(cc.RigidBody).linearVelocity;
@@ -124,5 +149,19 @@ cc.Class({
         }
         this.node.getComponent(cc.RigidBody).linearVelocity=this.lv;
         this.healthBar.scaleX=this.health/100;
+        if(this.onHit)
+        {
+            if(this.hitTime>2)
+            {
+                this.onHit=false;
+                this.hitTime=0;
+            }
+            else
+            {
+                this.hitTime+=dt;
+            }
+
+
+        }
     },
 });

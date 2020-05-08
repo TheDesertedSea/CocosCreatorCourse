@@ -11,6 +11,7 @@ cc.Class({
     properties: {
         speed:250,  
         lifeTime:3,
+        damage:20,
     },
 
     // LIFE-CYCLE CALLBACKS
