@@ -23,6 +23,8 @@ cc.Class({
         this.moveLeft=false;
         this.onHit=false;
         this.hitTime=0;
+        this.itemAround=null;
+        this.bUseItem=false;
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp,this);
     },
@@ -85,9 +87,18 @@ cc.Class({
     attack:function()
     {
        // cc.log("attack");   //调用武器的开火函数
+       if(this.bUseItem)
+       {
+           cc.log("has item!");
+            this.itemAround.getComponent("LittleHealthPotion").use();
+            cc.log(this.health);
+            bUseItem=false;
+       }
+       else{
         var weapon=this.node.getChildByName("weapon");
-
         weapon.getComponent("Weapon").fire();
+       }
+        
     },
 
     changeWeapon:function()  //切换武器

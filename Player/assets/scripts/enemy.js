@@ -106,6 +106,6 @@ cc.Class({
         //夹角转换成欧拉角
         let degree = angle / Math.PI * 180;
         //物体朝向
-        this.node.rotation = degree - 90;
+        this.node.angle = degree - 90;
     },
 });
