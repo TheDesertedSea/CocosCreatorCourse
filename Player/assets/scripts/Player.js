@@ -92,7 +92,7 @@ cc.Class({
            cc.log("has item!");
             this.itemAround.getComponent("LittleHealthPotion").use();
             cc.log(this.health);
-            bUseItem=false;
+            this.bUseItem=false;
        }
        else{
         var weapon=this.node.getChildByName("weapon");

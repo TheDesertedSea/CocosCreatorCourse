@@ -37,5 +37,10 @@ cc.Class({
             this.player.getComponent("Player").itemAround=this.node;
             this.player.getComponent("Player").bUseItem=true;
         }
+        if(this.node.getPosition().sub(this.player.getPosition()).mag()>=50)
+        {
+            this.player.getComponent("Player").itemAround=null;
+            this.player.getComponent("Player").bUseItem=false;
+        }
     },
 });
