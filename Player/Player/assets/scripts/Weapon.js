@@ -18,6 +18,7 @@ cc.Class({
             type:cc.node,   //绑定虚拟摇杆结点以获取摇杆信息
             default:null,
         },
+        damage:20,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -34,6 +35,7 @@ cc.Class({
 //cc.log("fire!");
         var scene = cc.director.getScene();
         var bullet=cc.instantiate(this.bullet);  //实例化预制体
+        bullet.getComponent("Bullet").damage=this.damage;
         bullet.parent=this.node;
         var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
         //cc.log(position.x,position.y);

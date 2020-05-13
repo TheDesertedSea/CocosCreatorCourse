@@ -13,6 +13,7 @@ cc.Class({
         weaponPack:cc.Node,//武器栏
         health:100,
         healthBar:cc.Node,
+        stateUI:cc.Node,
     },
 
     onLoad(){
@@ -86,12 +87,23 @@ cc.Class({
 
     attack:function()
     {
+        cc.log(this.bUseItem);
        // cc.log("attack");   //调用武器的开火函数
        if(this.bUseItem)
        {
+           cc.log(this.itemAround.name);
            cc.log("has item!");
+           if(this.bUseItem&&this.itemAround.name=="littleHealthPotion")
+           {
+               cc.log("here");
             this.itemAround.getComponent("LittleHealthPotion").use();
-            cc.log(this.health);
+           }
+           else if(this.bUseItem&&this.itemAround.name=="damagePotion")
+           {
+               cc.log("here");
+            this.itemAround.getComponent("DamagePotion").use();
+           }
+            //cc.log(this.health);
             this.bUseItem=false;
        }
        else{
@@ -160,6 +172,13 @@ cc.Class({
         }
         this.node.getComponent(cc.RigidBody).linearVelocity=this.lv;
         this.healthBar.scaleX=this.health/100;
+        //cc.log(this.stateUI.getChildByName("ATK").string);
+        //var stateUI=cc.find("Canvas/Player/UI/State/ATK");
+        var ATK=this.stateUI.getChildByName("ATK");
+        var label=ATK.getComponent(cc.Label);
+
+        label.string="ATK:"+this.node.getChildByName("weapon").getComponent("Weapon").damage.toString();
+        //cc.log(this.node.getChildByName("weapon").getComponent("Weapon").damage);
         if(this.onHit)
         {
             if(this.hitTime>2)
