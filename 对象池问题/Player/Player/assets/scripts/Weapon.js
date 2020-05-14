@@ -9,25 +9,21 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        bullet:cc.Prefab,//发射的子弹预制体
-        
+        bullet:
+        {
+            default:null,  //发射的子弹预制体
+            type: cc.Prefab,
+        },
         Rocker:{
             type:cc.node,   //绑定虚拟摇杆结点以获取摇杆信息
             default:null,
         },
         damage:20,
-        
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.bulletPool=new cc.NodePool('Bullet');
-        let initCount=5;
-        for (let i = 0; i < initCount; ++i) {
-            let bulletInst = cc.instantiate(this.bullet); // 创建节点
-            this.bulletPool.put(bulletInst); // 通过 put 接口放入对象池
-        }
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
         var UI=this.node.parent.getChildByName("UI");
         if(UI==null)
@@ -37,28 +33,8 @@ cc.Class({
     },
     fire:function(){  //开火
 //cc.log("fire!");
-        let bullet = null;
-        cc.log(this.bulletPool.size());
-        if (this.bulletPool.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
-        bullet = this.bulletPool.get();
-    
-        //cc.log(bullet.getComponent(cc.RigidBody).linearVelocity.x);
-        //bullet.active=true;
-        //cc.log("yes");
-        } else { // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
-        bullet = cc.instantiate(this.bullet);
-        }
-        
-        /*if(bullet.getComponent(cc.Sprite))
-        {
-            cc.log("yes");
-            if(bullet.getPostion())
-            {
-                cc.log("has position");
-            }
-        }*/
-
         var scene = cc.director.getScene();
+        var bullet=cc.instantiate(this.bullet);  //实例化预制体
         bullet.getComponent("Bullet").damage=this.damage;
         bullet.parent=this.node;
         var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
@@ -67,14 +43,9 @@ cc.Class({
         bullet.setPosition(position.x,position.y);  //设置子弹的生成位置
         bullet.angle=this.node.angle;  //设置子弹的角度
         bullet.getComponent("Bullet").setDir(this.dirX,this.dirY);
-        bullet.getComponent("Bullet").bulletInit();
   
     },
-    BulletDestroy(bullet){
-       // cc.log("here");
-        this.bulletPool.put(bullet);
-        //cc.log(this.bulletPool.size());
-    },
+
     start () {
 
     },
