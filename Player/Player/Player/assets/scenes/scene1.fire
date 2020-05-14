@@ -2767,8 +2767,7 @@
     "player": {
       "__id__": 14
     },
-    "potionAdd": 25,
-    "type": "LHP",
+    "healthAdd": 75,
     "_id": "b71aaQOopDmJMIbD957JrA"
   },
   {
@@ -2926,7 +2925,7 @@
     "_id": "f0V6YG3hlPVaw25Nicsqaw"
   },
   {
-    "__type__": "2af1c8i1LVKmJrGmVnN4mda",
+    "__type__": "e10d9GD91tLQ5jKicGwKbIY",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2936,9 +2935,8 @@
     "player": {
       "__id__": 14
     },
-    "potionAdd": 5,
-    "type": "DP",
-    "_id": "1ea/VXrj9K3atNSZQkhxer"
+    "damageAdd": 5,
+    "_id": "0d9/nY8mlAeI6B0Y1sfD2U"
   },
   {
     "__type__": "cc.Canvas",

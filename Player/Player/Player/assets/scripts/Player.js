@@ -93,7 +93,16 @@ cc.Class({
        {
            cc.log(this.itemAround.name);
            cc.log("has item!");
-            this.itemAround.getComponent("Potion").use();
+           if(this.bUseItem&&this.itemAround.name=="littleHealthPotion")
+           {
+               cc.log("here");
+            this.itemAround.getComponent("LittleHealthPotion").use();
+           }
+           else if(this.bUseItem&&this.itemAround.name=="damagePotion")
+           {
+               cc.log("here");
+            this.itemAround.getComponent("DamagePotion").use();
+           }
             //cc.log(this.health);
             this.bUseItem=false;
        }
