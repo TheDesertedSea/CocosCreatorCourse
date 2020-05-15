@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "30a9ef79-0090-4840-b611-c7bf7197a0b0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "复古像素地牢洞穴场景素材-Tiny Platform Que_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "23a797d4-6093-42b3-b956-1f90e0f9551f",
+      "rawTextureUuid": "30a9ef79-0090-4840-b611-c7bf7197a0b0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 512,
+      "height": 512,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
