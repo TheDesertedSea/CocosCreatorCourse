@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "iOS横扫僵尸游戏源码-子弹 ump(bullet_ump)_爱给网_aigei_com",
+    "_name": "bullet_normal",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -124,6 +124,7 @@
     "_enabled": true,
     "speed": 250,
     "lifeTime": 3,
+    "damage": 20,
     "_id": ""
   },
   {
@@ -185,7 +186,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "9f0y1QfpNHfqEbTNQzB45k",
+    "fileId": "6ajX9cLx1NH4TY6OAkokCc",
     "sync": false
   }
 ]

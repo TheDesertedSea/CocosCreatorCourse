@@ -17,6 +17,8 @@ cc.Class({
     },
 
     onLoad(){
+        this.damageAddTime=0;
+        this.damageAdd=0;
         this.weaponNums=2;
         this.moveForward=false;
         this.moveBackward=false;
@@ -55,7 +57,7 @@ cc.Class({
                 this.moveForward=false;
                 break;
             case cc.macro.KEY.space:  
-                this.attack();
+                this.act();
         }
     },
 
@@ -85,7 +87,7 @@ cc.Class({
     },
     */
 
-    attack:function()
+    act:function()
     {
         cc.log(this.bUseItem);
        // cc.log("attack");   //调用武器的开火函数
@@ -119,7 +121,9 @@ cc.Class({
         weapon.parent=null;
         weapon.getComponent("Weapon").enabled=false;
         var weapon2=this.weaponPack.getChildByName("weapon");
+
         weapon2.parent=this.node;
+        weapon2.getComponent("Weapon").weaponInit();
         weapon2.position.x=1.729;
         weapon2.position.y=-3.373;
         weapon2.getComponent("Weapon").enabled=true;
@@ -142,6 +146,10 @@ cc.Class({
         this.onHit=true;
     },
     update (dt) {   //每秒给刚体组件设置线性速度
+        if(this.health<1)
+        {
+            cc.director.loadScene("Start_UI");
+        }
         this.lv=this.node.getComponent(cc.RigidBody).linearVelocity;
         if(this.moveForward)
         {
@@ -172,7 +180,7 @@ cc.Class({
         var ATK=this.stateUI.getChildByName("ATK");
         var label=ATK.getComponent(cc.Label);
 
-        label.string="ATK:"+this.node.getChildByName("weapon").getComponent("Weapon").damage.toString();
+        label.string="ATK:"+(this.node.getChildByName("weapon").getComponent("Weapon").damage+this.damageAdd).toString();
         //cc.log(this.node.getChildByName("weapon").getComponent("Weapon").damage);
         if(this.onHit)
         {
@@ -188,5 +196,13 @@ cc.Class({
 
 
         }
+        if(this.damageAddTime>0)
+        {
+            this.damageAddTime-=dt;
+        }
+        else{
+            
+        this.damageAdd=0;
+    }
     },
 });

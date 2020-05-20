@@ -11,7 +11,8 @@ cc.Class({
     properties: {
         speed:250,  
         lifeTime:3,
-        damage:20,
+        extraDamage:0,
+        extraDamageDuration:0,
     },
 
     // LIFE-CYCLE CALLBACKS
@@ -32,6 +33,7 @@ cc.Class({
     },
 
     onBeginContact:function(other,self){  //碰撞到物体消失
+
         this.node.destroy();
     },
     update (dt) {

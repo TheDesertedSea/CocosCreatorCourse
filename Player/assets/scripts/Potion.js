@@ -11,6 +11,7 @@ cc.Class({
     properties: {
         player:cc.Node,
         potionAdd:25,
+        time:5,
         type:"DFAULT",
         
     },
@@ -31,7 +32,9 @@ cc.Class({
         }
         if(this.type=="DP")
         {
-            this.player.getChildByName("weapon").getComponent("Weapon").damage+=this.potionAdd;
+            var PlayerScript=this.player.getComponent("Player")
+            PlayerScript.damageAdd+=this.potionAdd;
+            PlayerScript.damageAddTime=this.time;
             //cc.log(this.player.getChildByName("weapon").getComponent("Weapon").damage);
         }
         this.node.destroy();

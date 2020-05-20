@@ -22,6 +22,9 @@ cc.Class({
         speed:50,
         damage:5,
         health:100,
+        extraDamgeTime:0,
+        extraDamge:0,
+        lastGetExtraDamgeDuration:0,
     },
 
     onLoad () {
@@ -43,6 +46,9 @@ cc.Class({
         {
             
             this.getDamage(other.node.getComponent("Bullet").damage);
+            this.extraDamage=other.node.getComponent("Bullet").extraDamage;
+            this.extraDamageDuration=other.node.getComponent("Bullet").extraDamageDuration;
+            lastGetExtraDamgeDuration=1;
         }
     },
     start() {
@@ -56,12 +62,30 @@ cc.Class({
             this.node.destroy();
         }
     },
-
     update (dt) {
+        
+
         if (!this.player){
             return;
         }
 
+
+        if(this.extraDamageDuration>0&&this.lastGetExtraDamgeDuration>=1)
+        {
+            this.health-=this.extraDamage;
+            
+            this.lastGetExtraDamgeDuration=0;
+            cc.log("1");
+            cc.log(this.health);
+            cc.log(this.lastGetExtraDamgeDuration);
+            cc.log(this.extraDamageDuration);
+        }
+        
+        if(this.lastGetExtraDamgeDuration<1)
+        {
+            this.lastGetExtraDamgeDuration+=dt;
+        }
+        this.extraDamageDuration-=dt;
         let dx = this.player.x - this.node.x;
         let dy = this.player.y - this.node.y;
         this.sp = cc.v2(dx, dy);
@@ -93,6 +117,8 @@ cc.Class({
         }
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+
+        
     },
 
     LookAtObj(target) {

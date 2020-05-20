@@ -19,11 +19,17 @@ cc.Class({
             default:null,
         },
         damage:20,
+        attackDuration:0.5,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        this.weaponInit();
+    },
+    weaponInit()
+    {
+        this.fireTime=0;
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
         var UI=this.node.parent.getChildByName("UI");
         if(UI==null)
@@ -33,17 +39,22 @@ cc.Class({
     },
     fire:function(){  //开火
 //cc.log("fire!");
-        var scene = cc.director.getScene();
-        var bullet=cc.instantiate(this.bullet);  //实例化预制体
-        bullet.getComponent("Bullet").damage=this.damage;
-        bullet.parent=this.node;
-        var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
-        //cc.log(position.x,position.y);
-        bullet.parent=scene;
-        bullet.setPosition(position.x,position.y);  //设置子弹的生成位置
-        bullet.angle=this.node.angle;  //设置子弹的角度
-        bullet.getComponent("Bullet").setDir(this.dirX,this.dirY);
-  
+        if(this.fireTime<=0)
+        {
+            var scene = cc.director.getScene();
+            var bullet=cc.instantiate(this.bullet);  //实例化预制体
+            bullet.getComponent("Bullet").damage=this.damage+this.node.parent.getComponent("Player").damageAdd;
+            bullet.parent=this.node;
+            var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
+            //cc.log(position.x,position.y);
+            bullet.parent=scene;
+            bullet.setPosition(position.x,position.y);  //设置子弹的生成位置
+            bullet.angle=this.node.angle;  //设置子弹的角度
+            bullet.getComponent("Bullet").setDir(this.dirX,this.dirY);
+            this.fireTime=this.attackDuration;
+        }
+        
+        
     },
 
     start () {
@@ -51,7 +62,7 @@ cc.Class({
     },
 
     update (dt) {
-
+        
         if(this.RockerScript.dir.mag()<0.5){
             return;
         }
@@ -62,6 +73,8 @@ cc.Class({
         this.node.angle = degree;
         this.dirX=this.RockerScript.dir.x;   //存储获得到的摇杆角度信息
         this.dirY=this.RockerScript.dir.y;
+        if(this.fireTime>0)
+        this.fireTime-=dt;
     },
 });
 
