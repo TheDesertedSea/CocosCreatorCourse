@@ -1,9 +1,0 @@
-{
-  "engine": "cocos-creator-js",
-  "packages": "packages",
-  "name": "Player",
-  "uuid": "0ce07eb9-1be5-463d-b369-362a1bb0b8aa",
-  "version": "2.3.3",
-  "id": "3ad7c486-bbb2-421c-94b3-7fb68e6bfb4f",
-  "isNew": false
-}
