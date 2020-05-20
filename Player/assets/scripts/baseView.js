@@ -5,6 +5,7 @@ cc.Class({
       mySprite:cc.SpriteFrame,
       myStart_Button:cc.Sprite,
       myStart_Label:cc.Label,
+      Setting_Menu:cc.Prefab,
     },
 
 
@@ -13,24 +14,36 @@ cc.Class({
 //      cc.log(spr)
 //      var spr = this.node.getComponent()
 //      cc.log(spr)
-      
+      var spr = this.node.getChildByname('aaa')
     },
 
     start () {
-      
     },
     
     onClickButton: function(target, data){
 //      cc.log(data)
       if (data == 'START'){
-        cc.log('myFunction!')
+//        cc.log('myFunction!')
 //        this.Start_Button.spriteFrame = this.mySprite
 //      cc.log(this.myButton)
       this.myStart_Label.enabled = false
       this.myStart_Button.spriteFrame = this.mySprite
-      cc.director.loadScene("Play");
+      cc.director.loadScene("Play")
       }
+//      if (data == 'setting'){
+//        if(this.Setting_Menu == null){
+//          this.Setting_Menu = cc.instanca
+//        }
+//      }
     },
-
+     onClickSetting:function (target, data) {
+      if (data == 'setting'){
+        var node = cc.instantiate(this.Setting_Menu);
+        this.node.addChild(node);
+        this.Setting_Menu.active = true
+      }
+      if (data == 'setting'){}
+        
+    },
     // update (dt) {},
 });

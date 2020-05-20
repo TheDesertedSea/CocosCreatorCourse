@@ -7,13 +7,20 @@ cc.Class({
                     type:cc.AudioClip, // use 'type:' to declare Texture2D object directly
                     default: null,     // object's default value is null
                 },
+        bgm:{
+            type:cc.AudioClip, 
+            default: null, 
+        },
+        
     },
     
     
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+     onLoad () {
+        cc.audioEngine.play(this.bgm, true, 1)
+    },
 
     start () {
 

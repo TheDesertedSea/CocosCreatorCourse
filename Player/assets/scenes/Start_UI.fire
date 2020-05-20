@@ -17,7 +17,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -81,10 +81,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 26
+        "__id__": 27
       },
       {
-        "__id__": 27
+        "__id__": 28
       }
     ],
     "_prefab": null,
@@ -174,7 +174,7 @@
       "array": [
         0,
         0,
-        271.15255921070735,
+        454.9610332193812,
         0,
         0,
         0,
@@ -248,13 +248,13 @@
         "__id__": 15
       },
       {
-        "__id__": 23
+        "__id__": 24
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 25
+        "__id__": 26
       }
     ],
     "_prefab": null,
@@ -969,6 +969,9 @@
     "clickEvents": [
       {
         "__id__": 20
+      },
+      {
+        "__id__": 23
       }
     ],
     "_N$interactable": true,
@@ -1121,7 +1124,18 @@
     "ButtonSound": {
       "__uuid__": "a2e6ea45-7529-430b-9f84-7691e039086b"
     },
+    "bgm": null,
     "_id": "22q/Bku35G6IgLGMl+98mx"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 5
+    },
+    "component": "",
+    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "handler": "onClickSetting",
+    "customEventData": "setting"
   },
   {
     "__type__": "cc.Node",
@@ -1134,7 +1148,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 24
+        "__id__": 25
       }
     ],
     "_prefab": null,
@@ -1190,7 +1204,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 23
+      "__id__": 24
     },
     "_enabled": true,
     "_materials": [
@@ -1233,6 +1247,9 @@
     },
     "myStart_Label": {
       "__id__": 9
+    },
+    "Setting_Menu": {
+      "__uuid__": "f230958f-fff1-448c-a829-b3b9c5f55fb9"
     },
     "_id": "9b5ZSjottCp52d9j6oN58p"
   },

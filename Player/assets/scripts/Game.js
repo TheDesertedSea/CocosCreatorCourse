@@ -17,11 +17,11 @@ cc.Class({
     onLoad () {
         let p=cc.director.getPhysicsManager();  //开启物理系统
         p.enabled=true;
-        p.debugDrawFlags=true;
+//        p.debugDrawFlags=true;
         p.gravity=cc.v2(0,0);
         var manager=cc.director.getCollisionManager();
         manager.enabled=true;   //开启碰撞检测
-        manager.enabledDebugDraw=true; //显示碰撞检测区域
+//        manager.enabledDebugDraw=true; //显示碰撞检测区域
     },
 
     start () {
