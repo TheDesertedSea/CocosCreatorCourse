@@ -123,6 +123,7 @@ cc.Class({
         var weapon2=this.weaponPack.getChildByName("weapon");
 
         weapon2.parent=this.node;
+        weapon2.zIndex=cc.macro.MIN_ZINDEX;
         weapon2.getComponent("Weapon").weaponInit();
         weapon2.position.x=1.729;
         weapon2.position.y=-3.373;
