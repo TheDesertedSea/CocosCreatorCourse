@@ -34,7 +34,18 @@ cc.Class({
         if (data == 'backtomenu'){
           cc.director.loadScene("Start_UI");
       }
-    }
+    },
+    onOverExit:function(){
+      cc.game.end();
+    },
+    onWinBack:function (target, data) {
+      if (data == 'backtomenu'){
+        cc.director.loadScene("Start_UI");
+      }
+    },
+    onWinExit:function(){
+      cc.game.end();
+    },
     // update (dt) {},
     
 });

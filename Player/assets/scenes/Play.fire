@@ -201,7 +201,7 @@
       "array": [
         0,
         0,
-        224.4160337766088,
+        424.5960174991893,
         0,
         0,
         0,
@@ -2804,7 +2804,7 @@
       "array": [
         0,
         0,
-        224.4160337766088,
+        424.5960174991893,
         0,
         0,
         0,
@@ -3370,7 +3370,7 @@
       "ctor": "Float64Array",
       "array": [
         370,
-        -110,
+        -200,
         0,
         0,
         0,
@@ -3712,7 +3712,7 @@
     "_left": 0,
     "_right": 40,
     "_top": 0,
-    "_bottom": 130,
+    "_bottom": 40,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -4676,7 +4676,7 @@
     },
     "_enabled": true,
     "Setting_Menu": {
-      "__uuid__": "f230958f-fff1-448c-a829-b3b9c5f55fb9"
+      "__uuid__": "01884bd9-79b0-45df-a2a0-40c65f004982"
     },
     "_id": "00E5jo6p9GkpBXS9exq39b"
   },
@@ -5626,7 +5626,7 @@
     "_clip": {
       "__uuid__": "5e915a9e-7406-4ee6-8eb2-17de72eebeda"
     },
-    "_volume": 0.2,
+    "_volume": 0.05,
     "_mute": false,
     "_loop": true,
     "playOnLoad": true,

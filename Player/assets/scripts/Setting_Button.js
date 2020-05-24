@@ -26,6 +26,15 @@ cc.Class({
     onClose:function(){
         this.hide()
     },
+    onExit:function(){
+        cc.game.end();
+    },
+    onBackToMenu:function(){
+        cc.director.loadScene("Start_UI")
+    },
+    onRestart:function(){
+        
+    },
     onOK:function () {
         if(this.okCallFunc != null){
             this.okCallFunc()
