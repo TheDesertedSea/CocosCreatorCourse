@@ -29,6 +29,12 @@ cc.Class({
         this.node.addChild(node);
         this.Setting_Menu.active = true
       }
-    // update (dt) {},
+    },
+      onOverBack:function (target, data) {
+        if (data == 'backtomenu'){
+          cc.director.loadScene("Start_UI")
+      }
     }
+    // update (dt) {},
+    
 });
