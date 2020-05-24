@@ -20,12 +20,15 @@ cc.Class({
         },
         damage:20,
         attackDuration:0.5,
+        player:cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         this.weaponInit();
+        
+        
     },
     weaponInit()
     {
@@ -36,6 +39,7 @@ cc.Class({
         return;
         var Rocker=UI.getChildByName("Joystick");
         this.RockerScript=Rocker.getComponent("Joystick");  //获取“Joystick”脚本为RockerScript
+
     },
     fire:function(){  //开火
 //cc.log("fire!");
@@ -75,6 +79,8 @@ cc.Class({
         this.dirY=this.RockerScript.dir.y;
         if(this.fireTime>0)
         this.fireTime-=dt;
+
+        
     },
 });
 

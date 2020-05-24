@@ -19,7 +19,7 @@ cc.Class({
     onLoad(){
         this.damageAddTime=0;
         this.damageAdd=0;
-        this.weaponNums=2;
+        this.weaponNums=1;
         this.moveForward=false;
         this.moveBackward=false;
         this.moveRight=false;
@@ -28,6 +28,8 @@ cc.Class({
         this.hitTime=0;
         this.itemAround=null;
         this.bUseItem=false;
+        this.weaponAround=null;
+        this.bGetWeapon=false;
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp,this);
     },
@@ -91,6 +93,7 @@ cc.Class({
     {
         cc.log(this.bUseItem);
        // cc.log("attack");   //调用武器的开火函数
+       cc.log(this.bGetWeapon);
        if(this.bUseItem)
        {
            cc.log(this.itemAround.name);
@@ -102,6 +105,61 @@ cc.Class({
             this.itemAround.getComponent("Potion").use();
             //cc.log(this.health);
             this.bUseItem=false;
+       }
+       else if(this.bGetWeapon)
+       {
+           
+           if(this.weaponNums==1)
+           {
+            this.weaponNums+=1;
+            var weapon=this.node.getChildByName("weapon");
+            
+
+            weapon.parent=null;
+            weapon.getComponent("Weapon").enabled=false;
+            weapon.parent=this.weaponPack;
+            weapon.position.x=4.024;
+            weapon.position.y=-2.013;
+            weapon.angle=90;
+
+            this.weaponAround.parent=this.node;
+            //this.weaponAround.group="player";
+            this.weaponAround.getComponent("Weapon").enabled=true;
+            this.weaponAround.getComponent("Weapon").weaponInit();
+            cc.log(this.weaponAround.parent.name);
+            this.weaponAround.x=1.729;
+            this.weaponAround.y=-8.192;
+            cc.log(this.weaponAround.position.x);
+            cc.log(this.weaponAround.position.y);
+
+
+
+            this.weaponAround.zIndex=1;  //zIndex为叠放次序
+            this.weaponAround.getComponent("WeaponGetDetector").enabled=false;
+            this.bGetWeapon=false;
+           }
+           else{
+               //cc.log("yes");
+            var weapon=this.node.getChildByName("weapon");
+
+            weapon.parent=this.node.parent;
+            weapon.getComponent("Weapon").enabled=false;
+            weapon.x=this.weaponAround.x;
+            weapon.y=this.weaponAround.y;
+            weapon.angle=-90;
+            weapon.getComponent("WeaponGetDetector").enabled=true;
+            weapon.group="block";
+
+            this.weaponAround.parent=this.node;
+            //this.weaponAround.group="player";
+            this.weaponAround.getComponent("Weapon").weaponInit();
+            this.weaponAround.x=1.729;
+            this.weaponAround.y=-8.192;
+            this.weaponAround.getComponent("Weapon").enabled=true;
+            this.weaponAround.zIndex=1;  //zIndex为叠放次序
+            this.weaponAround.getComponent("WeaponGetDetector").enabled=false;
+
+           }
        }
        else{
         var weapon=this.node.getChildByName("weapon");
@@ -123,14 +181,17 @@ cc.Class({
         var weapon2=this.weaponPack.getChildByName("weapon");
 
         weapon2.parent=this.node;
-        weapon2.zIndex=cc.macro.MIN_ZINDEX;
+        weapon2.getComponent("Weapon").enabled=true;
         weapon2.getComponent("Weapon").weaponInit();
         weapon2.position.x=1.729;
-        weapon2.position.y=-3.373;
-        weapon2.getComponent("Weapon").enabled=true;
+        weapon2.position.y=-8.192;
+        
+        weapon2.zIndex=1; //zIndex为叠放次序
+        cc.log(cc.macro.MIN_ZINDEX);
         weapon.parent=this.weaponPack;
         weapon.position.x=4.024;
         weapon.position.y=-2.013;
+        weapon.angle=-90;
 
     },
     onBeginContact:function(info,self,other){
@@ -147,6 +208,7 @@ cc.Class({
         this.onHit=true;
     },
     update (dt) {   //每秒给刚体组件设置线性速度
+        cc.log(this.bGetWeapon);
         if(this.health<1)
         {
             cc.director.loadScene("Start_UI");
