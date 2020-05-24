@@ -4743,12 +4743,12 @@
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 0
+      "y": -9
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 25,
-      "height": 45
+      "width": 32,
+      "height": 32
     },
     "_id": "22d2n+jyJFfaMnjsal3rgQ"
   },
