@@ -23,9 +23,9 @@ cc.Class({
     },
 
     update (dt) {
-        cc.log(this.node.x);
-        cc.log(this.node.y);
-        cc.log(this.node.parent.name);
+        //cc.log(this.node.x);
+        //cc.log(this.node.y);
+        //cc.log(this.node.parent.name);
         //cc.log("detector alive");
         //cc.log(this.node.getPosition().sub(this.player.getPosition()).mag());
         if(this.node.getPosition().sub(this.player.getPosition()).mag()<50)
