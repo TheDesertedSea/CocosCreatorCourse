@@ -1,2 +1,4 @@
 素材网站，可以在上面找一些游戏素材资源
 http://www.aigei.com/game2d/scene/tiled/pn5/
+素材分割网站
+http://www.zuohaotu.com/cut-image.aspx
