@@ -243,9 +243,9 @@ cc.Class({
         else{
             this.lv.x=0;
         }
-        if(this.health<1)
+        if(this.health<=0)
         {
-            cc.director.loadScene("Start_UI");
+            cc.director.loadScene("GameOver");
         }
 
         if(this.moveForward)
@@ -295,5 +295,6 @@ cc.Class({
             
         this.damageAdd=0;
     }
+    
     },
 });
