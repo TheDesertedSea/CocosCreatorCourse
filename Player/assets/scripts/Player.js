@@ -19,7 +19,7 @@ cc.Class({
     onLoad(){
         this.damageAddTime=0;
         this.damageAdd=0;
-        this.weaponNums=2;
+        this.weaponNums=1;
         this.moveForward=false;
         this.moveBackward=false;
         this.moveRight=false;
@@ -28,6 +28,17 @@ cc.Class({
         this.hitTime=0;
         this.itemAround=null;
         this.bUseItem=false;
+        this.weaponAround=null;
+        this.bGetWeapon=false;
+        this.animation=this.node.getChildByName("body").getComponent(cc.Animation);
+        this.animationState="player_forward";
+        this.lastAnimationState="player_forward";
+        this.animation.play(this.animationState);
+        if(this.animation)
+        {
+            cc.log("has animation");
+        }
+
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onKeyDown,this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onKeyUp,this);
     },
@@ -38,27 +49,35 @@ cc.Class({
     },
     onKeyDown:function(event)  
     {
+        this.lastAnimationState=this.animationState;
         switch(event.keyCode)  
         {  //w向前，s向后，a向左，d向右，space攻击
             case cc.macro.KEY.a:
                 this.moveLeft=true;
-                this.moveRight=false;
+                this.moveRight=false;      
+
+                this.animationState="player_left";        
                 break;
             case cc.macro.KEY.d:
                 this.moveRight=true;
                 this.moveLeft=false;
+                this.animationState="player_right";
                 break;
             case cc.macro.KEY.w:
                 this.moveForward=true;
                 this.moveBackward=false;
+                this.animationState="player_backward";
                 break;
             case cc.macro.KEY.s:
                 this.moveBackward=true;
                 this.moveForward=false;
+                this.animationState="player_forward";
                 break;
             case cc.macro.KEY.space:  
                 this.act();
         }
+        if(this.animationState!=this.lastAnimationState)
+        this.animation.play(this.animationState);
     },
 
     onKeyUp:function(event)
@@ -89,8 +108,10 @@ cc.Class({
 
     act:function()
     {
+        
         cc.log(this.bUseItem);
        // cc.log("attack");   //调用武器的开火函数
+       cc.log(this.bGetWeapon);
        if(this.bUseItem)
        {
            cc.log(this.itemAround.name);
@@ -102,6 +123,63 @@ cc.Class({
             this.itemAround.getComponent("Potion").use();
             //cc.log(this.health);
             this.bUseItem=false;
+       }
+       else if(this.bGetWeapon)
+       {
+           
+           if(this.weaponNums==1)
+           {
+            this.weaponNums+=1;
+            var weapon=this.node.getChildByName("weapon");
+            
+
+            weapon.parent=null;
+            weapon.getComponent("Weapon").enabled=false;
+            weapon.parent=this.weaponPack;
+            
+
+            this.weaponAround.parent=this.node;
+            //this.weaponAround.group="player";
+            this.weaponAround.getComponent("Weapon").enabled=true;
+            this.weaponAround.getComponent("Weapon").weaponInit();
+            cc.log(this.weaponAround.parent.name);
+            this.weaponAround.x=weapon.x;
+            this.weaponAround.y=weapon.y;
+            this.weaponAround.angle=weapon.angle;
+            cc.log(this.weaponAround.position.x);
+            cc.log(this.weaponAround.position.y);
+
+            weapon.position.x=4.024;
+            weapon.position.y=-2.013;
+            weapon.angle=-90;
+
+            this.weaponAround.zIndex=1;  //zIndex为叠放次序
+            this.weaponAround.getComponent("WeaponGetDetector").enabled=false;
+            this.bGetWeapon=false;
+           }
+           else{
+               //cc.log("yes");
+            var weapon=this.node.getChildByName("weapon");
+
+            weapon.parent=this.node.parent;
+            weapon.getComponent("Weapon").enabled=false;
+            
+
+            this.weaponAround.parent=this.node;
+            //this.weaponAround.group="player";
+            this.weaponAround.getComponent("Weapon").weaponInit();
+            this.weaponAround.x=weapon.x;
+            this.weaponAround.y=weapon.y;
+            this.weaponAround.angle=weapon.angle;
+            this.weaponAround.getComponent("Weapon").enabled=true;
+            this.weaponAround.zIndex=1;  //zIndex为叠放次序
+            this.weaponAround.getComponent("WeaponGetDetector").enabled=false;
+
+            weapon.x=this.weaponAround.x;
+            weapon.y=this.weaponAround.y;
+            weapon.angle=-90;
+            weapon.getComponent("WeaponGetDetector").enabled=true;
+           }
        }
        else{
         var weapon=this.node.getChildByName("weapon");
@@ -123,13 +201,18 @@ cc.Class({
         var weapon2=this.weaponPack.getChildByName("weapon");
 
         weapon2.parent=this.node;
-        weapon2.getComponent("Weapon").weaponInit();
-        weapon2.position.x=1.729;
-        weapon2.position.y=-3.373;
         weapon2.getComponent("Weapon").enabled=true;
+        weapon2.getComponent("Weapon").weaponInit();
+        weapon2.position.x=weapon.x;
+        weapon2.position.y=weapon.y;
+        weapon2.angle=weapon.angle;
+        
+        weapon2.zIndex=1; //zIndex为叠放次序
+        cc.log(cc.macro.MIN_ZINDEX);
         weapon.parent=this.weaponPack;
         weapon.position.x=4.024;
         weapon.position.y=-2.013;
+        weapon.angle=-90;
 
     },
     onBeginContact:function(info,self,other){
@@ -146,22 +229,9 @@ cc.Class({
         this.onHit=true;
     },
     update (dt) {   //每秒给刚体组件设置线性速度
-        if(this.health<1)
-        {
-            cc.director.loadScene("Start_UI");
-        }
+        //cc.log(this.bGetWeapon);
+        
         this.lv=this.node.getComponent(cc.RigidBody).linearVelocity;
-        if(this.moveForward)
-        {
-            this.lv.y=this.speed;
-        }
-        else if(this.moveBackward)
-        {
-            this.lv.y=-this.speed;
-        }
-        else{
-            this.lv.y=0;
-        }
         if(this.moveRight)
         {
             this.lv.x=this.speed;
@@ -173,6 +243,27 @@ cc.Class({
         else{
             this.lv.x=0;
         }
+        if(this.health<1)
+        {
+            cc.director.loadScene("Start_UI");
+        }
+
+        if(this.moveForward)
+        {
+            this.lv.y=this.speed;
+
+        }
+        else if(this.moveBackward)
+        {
+            this.lv.y=-this.speed;
+
+        }
+        else{
+            this.lv.y=0;
+        }
+        
+        
+
         this.node.getComponent(cc.RigidBody).linearVelocity=this.lv;
         this.healthBar.scaleX=this.health/100;
         //cc.log(this.stateUI.getChildByName("ATK").string);
