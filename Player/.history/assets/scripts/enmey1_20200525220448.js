@@ -65,7 +65,7 @@ cc.Class({
     EnemyMove (){
         if (this.player) {
             let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
-            console.log(distance);
+            // console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
@@ -125,7 +125,7 @@ cc.Class({
                 }
             } else {
                 //still
-                state = '';
+                state = 'enemy_up';
             }
         } else {
             //attack 

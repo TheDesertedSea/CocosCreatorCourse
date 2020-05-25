@@ -30,7 +30,6 @@ cc.Class({
         if (this.state == state) return;
 
         this.state = state;
-        console.log(state);
         this.enemyAni.play(state);
     },
 
@@ -68,8 +67,9 @@ cc.Class({
             console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
-                if (distance <= 45) {
+                if (distance <= 50) {
                     this.Attack();
+                    this.farAway();
                 } else {
                     this.LookAtObj(this.player);
                     this.Run();
@@ -135,6 +135,8 @@ cc.Class({
         if (state) {
             this.setState(state);
         }
+    
+
         // this.setState(state);
 
         // //得到一个由敌人指向玩家的向量
@@ -148,22 +150,7 @@ cc.Class({
         // this.node.angle = 90 - degree;
     },
 
-    Attack() {
-        let dx = this.player.x - this.node.x;
-        let dy = this.player.y - this.node.y;
-        this.sp = cc.v2(dx, dy);
-        this.sp.normalizeSelf();
-
-        // this.node.x += this.sp.x * this.speed;
-        // this.node.y += this.sp.y * this.speed;
-
-        this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
-
-        this.lv.x = 0 - this.sp.x * this.speed;
-        this.lv.y = 0 - this.sp.y * this.speed;
-
-        this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
-    },
+    Attack() {},
 
     Run() {
         let dx = this.player.x - this.node.x;
@@ -186,6 +173,20 @@ cc.Class({
         //     this.lv.x = 0;
         //     this.lv.y = 0;
         // }
+
+        this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+    },
+
+    farAway() {
+        let dx = this.player.x - this.node.x;
+        let dy = this.player.y - this.node.y;
+        this.sp = cc.v2(dx, dy);
+        this.sp.normalizeSelf();
+
+        this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
+
+        this.lv.x = 0 - this.sp.x * this.speed;
+        this.lv.y = 0 - this.sp.y * this.speed;
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
     },

@@ -30,7 +30,6 @@ cc.Class({
         if (this.state == state) return;
 
         this.state = state;
-        console.log(state);
         this.enemyAni.play(state);
     },
 

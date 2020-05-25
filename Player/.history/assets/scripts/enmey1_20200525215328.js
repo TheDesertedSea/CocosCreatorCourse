@@ -30,7 +30,6 @@ cc.Class({
         if (this.state == state) return;
 
         this.state = state;
-        console.log(state);
         this.enemyAni.play(state);
     },
 
@@ -68,7 +67,7 @@ cc.Class({
             console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
-                if (distance <= 45) {
+                if (distance <= 20) {
                     this.Attack();
                 } else {
                     this.LookAtObj(this.player);

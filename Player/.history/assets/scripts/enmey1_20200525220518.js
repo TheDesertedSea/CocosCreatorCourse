@@ -125,7 +125,7 @@ cc.Class({
                 }
             } else {
                 //still
-                state = '';
+                state = 'enemy_up';
             }
         } else {
             //attack 
