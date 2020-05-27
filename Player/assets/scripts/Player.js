@@ -14,6 +14,10 @@ cc.Class({
         health: 100,
         healthBar: cc.Node,
         stateUI: cc.Node,
+        fireSound: {
+            type:cc.AudioClip, // use 'type:' to declare Texture2D object directly
+            default: null,     // object's default value is null
+        },
     },
 
     onLoad() {
@@ -34,6 +38,7 @@ cc.Class({
         this.animationState = "player_forward";
         this.lastAnimationState = "player_forward";
         this.animation.play(this.animationState);
+
         if (this.animation) {
             cc.log("has animation");
         }
@@ -52,7 +57,6 @@ cc.Class({
             case cc.macro.KEY.a:
                 this.moveLeft = true;
                 this.moveRight = false;
-
                 this.animationState = "player_left";
                 break;
             case cc.macro.KEY.d:
@@ -100,7 +104,10 @@ cc.Class({
          cc.tween(weapon).to(0.2,{rotation:90}).to(0.4,{rotation:30}).start();
      },
      */
-
+     start()
+     {
+        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");
+     },
     act: function () {
 
         cc.log(this.bUseItem);
@@ -175,12 +182,12 @@ cc.Class({
             }
         }
         else {
+            cc.audioEngine.play(this.fireSound,true,0.25);
             var weapon = this.node.getChildByName("weapon");
             weapon.getComponent("Weapon").fire();
         }
 
     },
-
     changeWeapon: function ()  //切换武器
     {
         if (this.weaponNums == 1) {
