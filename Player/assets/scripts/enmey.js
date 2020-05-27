@@ -21,7 +21,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
+    onLoad() {
         this.state = '';
         this.enemyAni = this.node.getComponent(cc.Animation);
     },
@@ -34,38 +34,38 @@ cc.Class({
         this.enemyAni.play(state);
     },
 
-    start () {
+    start() {
     },
 
-    update (dt) {
+    update(dt) {
         //如果对话框存在，敌人不移动
-        if(window.dialog && window.dialog.active) return;
+        if (window.dialog && window.dialog.active) return;
 
         // this.LookAtObj(this.player);
         this.EnemyMove();
     },
 
     onBeginContact(info, self, other) {
-        if(other.node.group == "bullet") {
+        if (other.node.group == "bullet") {
             this.getDamage(other.node.getComponent("Bullet").damage);
-            this.extraDamage=other.node.getComponent("Bullet").extraDamage;
-            this.extraDamageDuration=other.node.getComponent("Bullet").extraDamageDuration;
-            lastGetExtraDamgeDuration=1;
+            this.extraDamage = other.node.getComponent("Bullet").extraDamage;
+            this.extraDamageDuration = other.node.getComponent("Bullet").extraDamageDuration;
+            lastGetExtraDamgeDuration = 1;
         }
     },
 
     getDamage(damage) {
         this.health -= damage;
 
-        if(this.health <= 0) {
+        if (this.health <= 0) {
             this.node.destroy();
         }
     },
 
-    EnemyMove (){
+    EnemyMove() {
         if (this.player) {
-            let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
-            console.log(distance);
+            let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
+            //console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
@@ -189,4 +189,6 @@ cc.Class({
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
     },
+
+
 });

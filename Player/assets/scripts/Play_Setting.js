@@ -17,6 +17,7 @@ cc.Class({
         
          onClickSetting:function (target, data) {
             if (data == 'setting'){
+                cc.director.pause();
                 var node = cc.instantiate(this.Setting_Menu);
                 this.node.addChild(node);
                 this.Setting_Menu.active = true
