@@ -2258,8 +2258,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 0,
-      "b": 66,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -2317,7 +2317,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+      "__uuid__": "2c1b4bd7-5431-489b-873a-cfdb8d015001"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -4776,9 +4776,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 255,
-      "b": 46,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -4836,7 +4836,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+      "__uuid__": "064d39db-a18f-4b12-b345-e476e7eb17c6"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -4964,8 +4964,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        580.101,
-        151.282,
+        194.138,
+        -39.402,
         0,
         0,
         0,
@@ -5109,8 +5109,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1341.958,
-        -99.969,
+        65.186,
+        147.388,
         0,
         0,
         0,
@@ -5132,7 +5132,7 @@
     "_is3DNode": false,
     "_groupIndex": 1,
     "groupIndex": 1,
-    "_id": "f0uCSCCqtJ1JmF8lJL6V90"
+    "_id": "ddVmbfy5BEE6c0XRQNIOZc"
   },
   {
     "__type__": "cc.Sprite",
@@ -5164,7 +5164,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "02LVRDvRtKrbN2GF1i7Eac"
+    "_id": "acSVHfFrZHrIsXQFWFBPm1"
   },
   {
     "__type__": "ac6c561KtpGZIXo2O0XRIQY",
@@ -5183,7 +5183,7 @@
     "player": {
       "__id__": 59
     },
-    "_id": "5fGvzE5mVAyq0Q3WeaLO8x"
+    "_id": "927cB35hFEwZuji30N86jY"
   },
   {
     "__type__": "8e512D3ZJ1NpabhVE9LWdEV",
@@ -5196,7 +5196,7 @@
     "player": {
       "__id__": 59
     },
-    "_id": "73bgPG8fBHcpblJ7D7xY5f"
+    "_id": "3a0tmrleZK+r8ivsYy+zda"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -5382,7 +5382,7 @@
       "__id__": 59
     },
     "damage": 1,
-    "health": 5,
+    "health": 100,
     "_id": "22cIEs8t5CXp1IRbtm0qnN"
   },
   {

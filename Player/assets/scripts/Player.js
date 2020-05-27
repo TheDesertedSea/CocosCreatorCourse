@@ -154,19 +154,22 @@ cc.Class({
                 weapon.parent = this.node.parent;
                 weapon.getComponent("Weapon").enabled = false;
 
+                let px=weapon.x;
+                let py=weapon.y;
 
+                weapon.x = this.weaponAround.x;
+                weapon.y = this.weaponAround.y;
                 this.weaponAround.parent = this.node;
                 //this.weaponAround.group="player";
                 this.weaponAround.getComponent("Weapon").weaponInit();
-                this.weaponAround.x = weapon.x;
-                this.weaponAround.y = weapon.y;
+                this.weaponAround.x = px;
+                this.weaponAround.y = py;
                 this.weaponAround.angle = weapon.angle;
                 this.weaponAround.getComponent("Weapon").enabled = true;
                 this.weaponAround.zIndex = 1;  //zIndex为叠放次序
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
 
-                weapon.x = this.weaponAround.x;
-                weapon.y = this.weaponAround.y;
+             
                 weapon.angle = -90;
                 weapon.getComponent("WeaponGetDetector").enabled = true;
             }
