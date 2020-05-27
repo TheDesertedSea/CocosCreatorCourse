@@ -5069,7 +5069,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_posion",
+    "_name": "gun_fast",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -5093,9 +5093,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 26,
-      "g": 255,
-      "b": 0,
+      "r": 5,
+      "g": 0,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -5178,11 +5178,11 @@
     },
     "_enabled": false,
     "bullet": {
-      "__uuid__": "0022d7e1-b65a-4cf1-b8ae-e51623b70b11"
+      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
     "Rocker": null,
-    "damage": 10,
-    "attackDuration": 0.2,
+    "damage": 5,
+    "attackDuration": 0.1,
     "player": {
       "__id__": 59
     },

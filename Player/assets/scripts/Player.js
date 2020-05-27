@@ -182,7 +182,7 @@ cc.Class({
             }
         }
         else {
-            cc.audioEngine.play(this.fireSound,true,0.25);
+            cc.audioEngine.play(this.fireSound,true,0.1);
             var weapon = this.node.getChildByName("weapon");
             weapon.getComponent("Weapon").fire();
         }
