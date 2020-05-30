@@ -40,6 +40,7 @@ cc.Class({
         this.lastAnimationState = "player_forward";
         this.animation.play(this.animationState);
         this.audioId=0;
+        
         if (this.animation) {
             cc.log("has animation");
         }
@@ -48,6 +49,10 @@ cc.Class({
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
 
+    start(){
+        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
+        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");
+    },
     onDestroy() {
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
@@ -105,10 +110,7 @@ cc.Class({
          cc.tween(weapon).to(0.2,{rotation:90}).to(0.4,{rotation:30}).start();
      },
      */
-     start()
-     {
-        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");
-     },
+
     act: function () {
 
         //cc.log(this.bUseItem);
@@ -123,6 +125,7 @@ cc.Class({
             this.itemAround.getComponent("Potion").use();
             //cc.log(this.health);
             this.bUseItem = false;
+            this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
         }
         else if (this.bGetWeapon) {
 
@@ -181,6 +184,7 @@ cc.Class({
                 weapon.angle = -90;
                 weapon.getComponent("WeaponGetDetector").enabled = true;
             }
+            this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
         }
         else {
             if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)
@@ -216,7 +220,7 @@ cc.Class({
         weapon.position.x = 4.024;
         weapon.position.y = -2.013;
         weapon.angle = -90;
-
+        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
     },
     onBeginContact: function (info, self, other) {
         cc.log("CONTACT!");
@@ -268,7 +272,7 @@ cc.Class({
         var ATK = this.stateUI.getChildByName("ATK");
         var label = ATK.getComponent(cc.Label);
 
-        label.string = "ATK:" + (this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
+        label.string = "ATK:" + this.ATK;
         //cc.log(this.node.getChildByName("weapon").getComponent("Weapon").damage);
         if (this.onHit) {
             if (this.hitTime > 2) {

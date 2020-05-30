@@ -16,7 +16,9 @@ cc.Class({
             type: cc.Node
         },
         damage: 1,
-        health: 5
+        health: 5,
+        scoreLabel:cc.Node,
+        score:10,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -59,6 +61,7 @@ cc.Class({
 
         if (this.health <= 0) {
             this.node.destroy();
+            this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
         }
     },
 
