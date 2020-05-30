@@ -21,6 +21,7 @@ cc.Class({
     },
 
     onLoad() {
+
         this.damageAddTime = 0;
         this.damageAdd = 0;
         this.weaponNums = 1;
@@ -38,7 +39,7 @@ cc.Class({
         this.animationState = "player_forward";
         this.lastAnimationState = "player_forward";
         this.animation.play(this.animationState);
-
+        this.audioId=0;
         if (this.animation) {
             cc.log("has animation");
         }
@@ -110,15 +111,15 @@ cc.Class({
      },
     act: function () {
 
-        cc.log(this.bUseItem);
+        //cc.log(this.bUseItem);
         // cc.log("attack");   //调用武器的开火函数
-        cc.log(this.bGetWeapon);
+        //cc.log(this.bGetWeapon);
         if (this.bUseItem) {
-            cc.log(this.itemAround.name);
-            cc.log("has item!");
-            if (this.itemAround) {
-                cc.log("yes");
-            }
+            //cc.log(this.itemAround.name);
+            //cc.log("has item!");
+            //if (this.itemAround) {
+            //    cc.log("yes");
+            //}
             this.itemAround.getComponent("Potion").use();
             //cc.log(this.health);
             this.bUseItem = false;
@@ -182,7 +183,10 @@ cc.Class({
             }
         }
         else {
-            cc.audioEngine.play(this.fireSound,true,0.1);
+            if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)
+            {
+                this.audioId=cc.audioEngine.play(this.fireSound,false,0.1);
+            }
             var weapon = this.node.getChildByName("weapon");
             weapon.getComponent("Weapon").fire();
         }
