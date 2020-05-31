@@ -62,14 +62,11 @@ cc.Class({
         let dx = sp.x - this.player.x;
         let dy = sp.y - this.player.y;
         let dir = cc.v2(dx, dy);
-        console.log('weapon'+sp.x, sp.y);
-        console.log('player'+this.player.x, this.player.y);
         // console.log(dx);
         // console.log(dy);
         let _angle = dir.signAngle(cc.v2(1, 0));
         let degree = _angle / Math.PI * 180;
         this.node.angle = 90 - degree;
-        console.log(this.node.angle);
         // console.log('rotate');
     },
 });

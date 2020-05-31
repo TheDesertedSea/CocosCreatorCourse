@@ -69,7 +69,6 @@ cc.Class({
         let _angle = dir.signAngle(cc.v2(1, 0));
         let degree = _angle / Math.PI * 180;
         this.node.angle = 90 - degree;
-        console.log(this.node.angle);
         // console.log('rotate');
     },
 });
