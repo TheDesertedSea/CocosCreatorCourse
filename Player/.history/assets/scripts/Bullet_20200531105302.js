@@ -9,7 +9,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        speed:250,
+        speed:250,  
         lifeTime:3,
         extraDamage:0,
         extraDamageDuration:0,
