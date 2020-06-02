@@ -1,59 +1,55 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        speed: 100,
+        speed: 100,  //速度
         weaponPack: cc.Node,//武器栏
-        health: 100,
-        healthBar: cc.Node,
-        stateUI: cc.Node,
-        fireSound: {
-            type:cc.AudioClip, // use 'type:' to declare Texture2D object directly
-            default: null,     // object's default value is null
+        health: 100,  //生命值
+        healthBar: cc.Node,  //血条显示条
+        stateUI: cc.Node,  //状态显示栏
+        fireSound: {   //开火音乐
+            type:cc.AudioClip, 
+            default: null,    
         },
     },
 
     onLoad() {
 
-        this.damageAddTime = 0;
-        this.damageAdd = 0;
-        this.weaponNums = 1;
-        this.moveForward = false;
-        this.moveBackward = false;
-        this.moveRight = false;
-        this.moveLeft = false;
-        this.onHit = false;
-        this.hitTime = 0;
-        this.itemAround = null;
-        this.bUseItem = false;
-        this.weaponAround = null;
-        this.bGetWeapon = false;
-        this.animation = this.node.getChildByName("body").getComponent(cc.Animation);
-        this.animationState = "player_forward";
-        this.lastAnimationState = "player_forward";
-        this.animation.play(this.animationState);
-        this.audioId=0;
+        this.damageAddTime = 0;   //伤害增加效果时间
+        this.damageAdd = 0;  //伤害增加效果值
+        this.weaponNums = 1;  //所持武器数目
+        this.moveForward = false;   //向前移动状态
+        this.moveBackward = false;  //向后移动状态
+        this.moveRight = false;  //向右移动状态
+        this.moveLeft = false;  //向左移动状态
+        this.onHit = false;   //是否被攻击
+        this.hitTime = 0;   //上次被攻击距今时间间隔
+        this.itemAround = null;   //在附近的物品节点
+        this.bUseItem = false;  //是否能够使用物品（是否有物品在附近）
+        this.weaponAround = null;  //在附近的武器
+        this.bGetWeapon = false;   //是否有能够拣取的武器
+        this.animation = this.node.getChildByName("body").getComponent(cc.Animation);  //人物身体动画
+        this.animationState = "player_forward";   //目前播放状态（播放的是朝哪个方向的动画）
+        this.lastAnimationState = "player_forward";   //上一次动画播放状态
+        this.animation.play(this.animationState);   //初始播放动画（向前）
+        this.audioId=0;   //上次播放的音频的id号
         
-        if (this.animation) {
+        /*if (this.animation) {  
             cc.log("has animation");
-        }
+        }*/
 
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        //绑定按键事件触发函数
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);  
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);   
     },
 
     start(){
-        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
-        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");
+        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值
+        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");  //目前使用中的武器脚本组件
     },
     onDestroy() {
+        //取消绑定按键事件触发函数
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
