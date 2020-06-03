@@ -6,7 +6,7 @@ cc.Class({
         speed: 100,  //速度
         weaponPack: cc.Node,//武器栏
         health: 100,  //生命值
-        healthBar: cc.Node,  //血条显示条
+        healthBar: cc.Node,  //血条显示条，但绑定的是血条体即healthBarBody.node
         stateUI: cc.Node,  //状态显示栏
         fireSound: {   //开火音乐
             type:cc.AudioClip, 
@@ -132,45 +132,55 @@ cc.Class({
                 this.weaponNums += 1;  //武器数加1
                 
 
-                //将目前所使用武器放至备用武器栏，并使武器使用中脚本失效
+                //修改目前所使用武器节点关系，并使使用武器脚本(this.weaponScript)失效
                 this.weapon.parent = null;   
-                this.weapon.getComponent("Weapon").enabled = false;
+                this.weaponScript.enabled = false;
                 this.weapon.parent = this.weaponPack;
 
-                this.weaponAround.parent = this.node;
+                //修改附近武器的节点关系及脚本开启
+                this.weaponAround.parent = this.node;  
                 //this.weaponAround.group="player";
-                this.weaponAround.getComponent("Weapon").enabled = true;
-                this.weaponAround.getComponent("Weapon").weaponInit();
-                cc.log(this.weaponAround.parent.name);
-                this.weaponAround.x = this.weapon.x;
+                this.weaponAround.getComponent("Weapon").enabled = true;  //开启使用武器脚本组件
+                this.weaponAround.getComponent("Weapon").weaponInit();   //武器初始化
+                //cc.log(this.weaponAround.parent.name);   
+
+                //复制使用中武器的位置信息
+                this.weaponAround.x = this.weapon.x;   
                 this.weaponAround.y = this.weapon.y;
                 this.weaponAround.angle = this.weapon.angle;
-                cc.log(this.weaponAround.position.x);
-                cc.log(this.weaponAround.position.y);
+                //cc.log(this.weaponAround.position.x);
+                //cc.log(this.weaponAround.position.y);
 
-                this.weapon.position.x = 4.024;
+                //将使用中物器的位置信息修改为武器栏中位置
+                this.weapon.position.x = 4.024;  //这是武器在武器栏中时，武器相对于其父节点武器栏的坐标信息
                 this.weapon.position.y = -2.013;
                 this.weapon.angle = -90;
                 //this.weapon.zIndex=0;
 
                 //this.weaponAround.zIndex = 1;  //zIndex为叠放次序
-                this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
-                this.bGetWeapon = false;
-                this.weapon=this.weaponAround;
-                this.weaponScript=this.weapon.getComponent("Weapon");
+                
+                this.weaponAround.getComponent("WeaponGetDetector").enabled = false;//关闭捡取到的武器的武器探测脚本组件("WeaponGetDetector.js")
+                this.bGetWeapon = false;  //可捡取武器标志重置
+                this.weapon=this.weaponAround;//保存新的使用中武器节点
+                this.weaponScript=this.weapon.getComponent("Weapon");  //保存新的使用中武器节点脚本组件
             }
             else {
                 //cc.log("yes");
                 
-
+                //卸下使用中武器，放到Canvas下，并使使用武器脚本(this.weaponScript)失效
                 this.weapon.parent = this.node.parent;
-                this.weapon.getComponent("Weapon").enabled = false;
+                this.weaponScript.enabled = false;
 
+                //保存目前武器节点坐标
                 let px=this.weapon.x;
                 let py=this.weapon.y;
 
+                //使用中武器位置换为周边武器位置
                 this.weapon.x = this.weaponAround.x;
                 this.weapon.y = this.weaponAround.y;
+                this.weapon.angle = -90;
+
+                //修改周边武器节点关系即坐标以及脚本组件的开与关
                 this.weaponAround.parent = this.node;
                 //this.weaponAround.group="player";
                 this.weaponAround.getComponent("Weapon").weaponInit();
@@ -182,34 +192,40 @@ cc.Class({
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
 
                 //this.weapon.zIndex=0;
-                this.weapon.angle = -90;
-                this.weapon.getComponent("WeaponGetDetector").enabled = true;
+                
+                this.weapon.getComponent("WeaponGetDetector").enabled = true;//开启武器检测脚本组件
+                
+                //保存新武器节点信息
                 this.weapon=this.weaponAround;
                 this.weaponScript=this.weapon.getComponent("Weapon");
             }
-            this.ATK=(this.weaponScript.damage + this.damageAdd).toString();
+            this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
         }
         else {
-            if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)
+            if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
             {
-                this.audioId=cc.audioEngine.play(this.fireSound,false,0.1);
+                this.audioId=cc.audioEngine.play(this.fireSound,false,0.1);  //否则新播放音效
             }
             
-            this.weaponScript.fire();
+            this.weaponScript.fire();   //调用武器开火函数
         }
 
     },
     changeWeapon: function ()  //切换武器
     {
+        //只有一把武器无效
         if (this.weaponNums == 1) {
             return;
         }
         
-
+        //修改目前所使用武器节点关系，并使使用武器脚本(this.weaponScript)失效
         this.weapon.parent = null;
-        this.weapon.getComponent("Weapon").enabled = false;
+        this.weaponScript.enabled = false;
+
+        //获得武器栏中武器节点
         var weapon2 = this.weaponPack.getChildByName("weapon");
 
+        //修改武器栏中武器位置信息为目前所使用武器位置信息
         weapon2.parent = this.node;
         weapon2.getComponent("Weapon").enabled = true;
         weapon2.getComponent("Weapon").weaponInit();
@@ -220,11 +236,16 @@ cc.Class({
         //weapon2.zIndex = 1; //zIndex为叠放次序
         //cc.log(cc.macro.MIN_ZINDEX);
         //this.weapon.zIndex=0;
+
+        //修改目前所使用武器位置信息为武器栏中武器位置信息
         this.weapon.parent = this.weaponPack;
         this.weapon.position.x = 4.024;
         this.weapon.position.y = -2.013;
         this.weapon.angle = -90;
-        this.ATK=(this.weaponScript.damage + this.damageAdd).toString();
+
+        this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
+
+        //保存新的使用中武器节点
         this.weapon=weapon2;
         this.weaponScript=this.weapon.getComponent("Weapon");
     },
