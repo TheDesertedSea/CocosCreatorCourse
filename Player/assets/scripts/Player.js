@@ -243,11 +243,12 @@ cc.Class({
         this.weapon.position.y = -2.013;
         this.weapon.angle = -90;
 
-        this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
+        
 
         //保存新的使用中武器节点
         this.weapon=weapon2;
         this.weaponScript=this.weapon.getComponent("Weapon");
+        this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
     },
     onBeginContact: function (info, self, other) {
         //cc.log("CONTACT!");
