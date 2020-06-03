@@ -204,7 +204,7 @@ cc.Class({
         else {
             if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
             {
-                this.audioId=cc.audioEngine.play(this.fireSound,false,0.1);  //否则新播放音效
+                this.audioId=cc.audioEngine.play(this.fireSound,false,1);  //否则新播放音效
             }
             
             this.weaponScript.fire();   //调用武器开火函数

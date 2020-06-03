@@ -21,6 +21,7 @@ cc.Class({
         damage:20,
         attackDuration:0.5,
         player:cc.Node,
+        
     },
 
     // LIFE-CYCLE CALLBACKS:
