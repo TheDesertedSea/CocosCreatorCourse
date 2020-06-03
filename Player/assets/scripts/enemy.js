@@ -15,7 +15,7 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-        damage: 1,
+        damage: 5,
         health: 5,
         scoreLabel:cc.Node,
         score:10,

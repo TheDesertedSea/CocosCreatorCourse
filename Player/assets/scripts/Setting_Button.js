@@ -8,10 +8,14 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        cc.log(this.node.parent.name);
+        this.node.parent=cc.find("Canvas");
+    },
 
     start () {
-
+        //this.node.zIndex=2;
+        
     },
     
     show:function(){

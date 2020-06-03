@@ -15,7 +15,7 @@ cc.Class({
     },
 
     onLoad() {
-
+        
         this.damageAddTime = 0;   //伤害增加效果时间
         this.damageAdd = 0;  //伤害增加效果值
         this.weaponNums = 1;  //所持武器数目
@@ -45,8 +45,11 @@ cc.Class({
     },
 
     start(){
-        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值
-        this.weaponScript=this.node.getChildByName("weapon").getComponent("Weapon");  //目前使用中的武器脚本组件
+        cc.log(this.node.zIndex);
+        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值，此值用于UI显示
+        this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
+        this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
+        
     },
     onDestroy() {
         //取消绑定按键事件触发函数
@@ -54,7 +57,7 @@ cc.Class({
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
     onKeyDown: function (event) {
-        this.lastAnimationState = this.animationState;
+        this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
         switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
             case cc.macro.KEY.a:
                 this.moveLeft = true;
@@ -79,7 +82,7 @@ cc.Class({
             case cc.macro.KEY.space:
                 this.act();
         }
-        if (this.animationState != this.lastAnimationState)
+        if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
             this.animation.play(this.animationState);
     },
 
@@ -107,88 +110,92 @@ cc.Class({
      },
      */
 
-    act: function () {
+    act: function () {   //攻击、使用物品、捡取物品行为
 
         //cc.log(this.bUseItem);
         // cc.log("attack");   //调用武器的开火函数
         //cc.log(this.bGetWeapon);
-        if (this.bUseItem) {
+        if (this.bUseItem) {   //如果可以使用物品
             //cc.log(this.itemAround.name);
             //cc.log("has item!");
             //if (this.itemAround) {
             //    cc.log("yes");
             //}
-            this.itemAround.getComponent("Potion").use();
+            this.itemAround.getComponent("Potion").use();   //调用周围物品节点所绑定脚本的使用函数
             //cc.log(this.health);
-            this.bUseItem = false;
-            this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
+            this.bUseItem = false;  //设置物品为不能使用
+            this.ATK=(this.weaponScript.damage + this.damageAdd).toString();   //更新ATK显示
         }
-        else if (this.bGetWeapon) {
+        else if (this.bGetWeapon) {   //如果可以捡取武器
 
-            if (this.weaponNums == 1) {
-                this.weaponNums += 1;
-                var weapon = this.node.getChildByName("weapon");
+            if (this.weaponNums == 1) {   //若持有武器数为1，则将新武器加入所持武器，并处于使用状态
+                this.weaponNums += 1;  //武器数加1
+                
 
-
-                weapon.parent = null;
-                weapon.getComponent("Weapon").enabled = false;
-                weapon.parent = this.weaponPack;
-
+                //将目前所使用武器放至备用武器栏，并使武器使用中脚本失效
+                this.weapon.parent = null;   
+                this.weapon.getComponent("Weapon").enabled = false;
+                this.weapon.parent = this.weaponPack;
 
                 this.weaponAround.parent = this.node;
                 //this.weaponAround.group="player";
                 this.weaponAround.getComponent("Weapon").enabled = true;
                 this.weaponAround.getComponent("Weapon").weaponInit();
                 cc.log(this.weaponAround.parent.name);
-                this.weaponAround.x = weapon.x;
-                this.weaponAround.y = weapon.y;
-                this.weaponAround.angle = weapon.angle;
+                this.weaponAround.x = this.weapon.x;
+                this.weaponAround.y = this.weapon.y;
+                this.weaponAround.angle = this.weapon.angle;
                 cc.log(this.weaponAround.position.x);
                 cc.log(this.weaponAround.position.y);
 
-                weapon.position.x = 4.024;
-                weapon.position.y = -2.013;
-                weapon.angle = -90;
+                this.weapon.position.x = 4.024;
+                this.weapon.position.y = -2.013;
+                this.weapon.angle = -90;
+                //this.weapon.zIndex=0;
 
-                this.weaponAround.zIndex = 1;  //zIndex为叠放次序
+                //this.weaponAround.zIndex = 1;  //zIndex为叠放次序
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
                 this.bGetWeapon = false;
+                this.weapon=this.weaponAround;
+                this.weaponScript=this.weapon.getComponent("Weapon");
             }
             else {
                 //cc.log("yes");
-                var weapon = this.node.getChildByName("weapon");
+                
 
-                weapon.parent = this.node.parent;
-                weapon.getComponent("Weapon").enabled = false;
+                this.weapon.parent = this.node.parent;
+                this.weapon.getComponent("Weapon").enabled = false;
 
-                let px=weapon.x;
-                let py=weapon.y;
+                let px=this.weapon.x;
+                let py=this.weapon.y;
 
-                weapon.x = this.weaponAround.x;
-                weapon.y = this.weaponAround.y;
+                this.weapon.x = this.weaponAround.x;
+                this.weapon.y = this.weaponAround.y;
                 this.weaponAround.parent = this.node;
                 //this.weaponAround.group="player";
                 this.weaponAround.getComponent("Weapon").weaponInit();
                 this.weaponAround.x = px;
                 this.weaponAround.y = py;
-                this.weaponAround.angle = weapon.angle;
+                this.weaponAround.angle = this.weapon.angle;
                 this.weaponAround.getComponent("Weapon").enabled = true;
-                this.weaponAround.zIndex = 1;  //zIndex为叠放次序
+                //this.weaponAround.zIndex = 1;  //zIndex为叠放次序
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
 
-             
-                weapon.angle = -90;
-                weapon.getComponent("WeaponGetDetector").enabled = true;
+                //this.weapon.zIndex=0;
+                this.weapon.angle = -90;
+                this.weapon.getComponent("WeaponGetDetector").enabled = true;
+                this.weapon=this.weaponAround;
+                this.weaponScript=this.weapon.getComponent("Weapon");
             }
-            this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
+            this.ATK=(this.weaponScript.damage + this.damageAdd).toString();
         }
         else {
             if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)
             {
                 this.audioId=cc.audioEngine.play(this.fireSound,false,0.1);
             }
-            var weapon = this.node.getChildByName("weapon");
-            weapon.getComponent("Weapon").fire();
+            
+            this.weaponScript.fire();
         }
 
     },
@@ -197,30 +204,33 @@ cc.Class({
         if (this.weaponNums == 1) {
             return;
         }
-        var weapon = this.node.getChildByName("weapon");
+        
 
-        weapon.parent = null;
-        weapon.getComponent("Weapon").enabled = false;
+        this.weapon.parent = null;
+        this.weapon.getComponent("Weapon").enabled = false;
         var weapon2 = this.weaponPack.getChildByName("weapon");
 
         weapon2.parent = this.node;
         weapon2.getComponent("Weapon").enabled = true;
         weapon2.getComponent("Weapon").weaponInit();
-        weapon2.position.x = weapon.x;
-        weapon2.position.y = weapon.y;
-        weapon2.angle = weapon.angle;
+        weapon2.position.x = this.weapon.x;
+        weapon2.position.y = this.weapon.y;
+        weapon2.angle = this.weapon.angle;
 
-        weapon2.zIndex = 1; //zIndex为叠放次序
-        cc.log(cc.macro.MIN_ZINDEX);
-        weapon.parent = this.weaponPack;
-        weapon.position.x = 4.024;
-        weapon.position.y = -2.013;
-        weapon.angle = -90;
-        this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();
+        //weapon2.zIndex = 1; //zIndex为叠放次序
+        //cc.log(cc.macro.MIN_ZINDEX);
+        //this.weapon.zIndex=0;
+        this.weapon.parent = this.weaponPack;
+        this.weapon.position.x = 4.024;
+        this.weapon.position.y = -2.013;
+        this.weapon.angle = -90;
+        this.ATK=(this.weaponScript.damage + this.damageAdd).toString();
+        this.weapon=weapon2;
+        this.weaponScript=this.weapon.getComponent("Weapon");
     },
     onBeginContact: function (info, self, other) {
-        cc.log("CONTACT!");
-        cc.log(other.node.group);
+        //cc.log("CONTACT!");
+        //cc.log(other.node.group);
         if (other.node.group == "enemy" && this.onHit == false) {
             cc.log("ENEMY ATTACK!");
             this.getDamage(other.node.getComponent("enemy").damage);
