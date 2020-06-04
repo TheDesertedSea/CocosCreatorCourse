@@ -10,7 +10,7 @@ cc.Class({
 
     onLoad () {
         cc.log(this.node.parent.name);
-        this.node.parent=cc.find("Canvas");
+//        this.node.parent=cc.find("Canvas");
     },
 
     start () {

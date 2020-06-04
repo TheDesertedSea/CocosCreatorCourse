@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        424.5960174991893,
+        423.4864224505905,
         0,
         0,
         0,
@@ -972,7 +972,9 @@
     },
     "_enabled": true,
     "alignMode": 0,
-    "_target": null,
+    "_target": {
+      "__id__": 16
+    },
     "_alignFlags": 45,
     "_left": 8,
     "_right": 8,
@@ -1315,7 +1317,7 @@
       "__id__": 9
     },
     "Setting_Menu": {
-      "__uuid__": "f230958f-fff1-448c-a829-b3b9c5f55fb9"
+      "__uuid__": "1c6d4f52-8185-4d6e-9075-a5f09b164bc6"
     },
     "_id": "9b5ZSjottCp52d9j6oN58p"
   },

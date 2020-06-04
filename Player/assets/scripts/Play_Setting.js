@@ -20,8 +20,7 @@ cc.Class({
                 cc.director.pause();
                 var node = cc.instantiate(this.Setting_Menu);
                 this.node.addChild(node);
-                this.Setting_Menu.active = true
-                
+                this.Setting_Menu.active = false;
             }
         // update (dt) {},
         },
