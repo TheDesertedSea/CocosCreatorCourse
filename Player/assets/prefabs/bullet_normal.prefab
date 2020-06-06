@@ -124,7 +124,8 @@
     "_enabled": true,
     "speed": 250,
     "lifeTime": 3,
-    "damage": 20,
+    "extraDamage": 0,
+    "extraDamageTimes": 0,
     "_id": ""
   },
   {
@@ -184,7 +185,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
     "fileId": "6ajX9cLx1NH4TY6OAkokCc",
     "sync": false

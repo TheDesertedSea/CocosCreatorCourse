@@ -29,15 +29,15 @@ cc.Class({
 
         //以下变量用于毒性伤害
         this.extraDamage =0;
-        this.extraDamageDuration=0;
-        lastGetExtraDamgeDuration =0;
+        this.extraDamageTimes=0;
+        this.lastGetExtraDamgeDuration =0;
     },
 
     setState(state) {
         if (this.state == state) return;
 
         this.state = state;
-        console.log(state);
+        //console.log(state);
         this.enemyAni.play(state);
     },
 
@@ -46,7 +46,7 @@ cc.Class({
 
     update(dt) {
 
-        //cc.log(this.health);
+        cc.log(this.health);
         //如果对话框存在，敌人不移动
         if (window.dialog && window.dialog.active) return;
 
@@ -54,18 +54,19 @@ cc.Class({
         this.EnemyMove();
         
         //受到毒性伤害
-        if(this.extraDamageDuration>0)
+        if(this.extraDamageTimes>0)
         {
             if(this.lastGetExtraDamgeDuration<0)
             {
                 this.health-=this.extraDamage;
-                this.lastGetExtraDamgeDuration=1;
+                this.lastGetExtraDamgeDuration=1.0;
+                this.extraDamageTimes-=1;
             }
             else
             {
                 this.lastGetExtraDamgeDuration-=dt;
             }
-            this.extraDamageDuration-=dt;
+            
             //检测是否死亡
             if (this.health <= 0) {
                 this.node.destroy();
@@ -86,10 +87,12 @@ cc.Class({
             }
 
             //附加毒性伤害
-            this.extraDamage = other.node.getComponent("Bullet").extraDamage;
-            this.extraDamageDuration = other.node.getComponent("Bullet").extraDamageDuration;
-            this.lastGetExtraDamgeDuration = 1;
-            this.health-=this.extraDamage;
+            this.extraDamage=other.node.getComponent("Bullet").extraDamage;
+            cc.log(other.node.getComponent("Bullet").extraDamage);
+            //cc.log("extradamge"+this.extraDamage);
+            this.extraDamageTimes = other.node.getComponent("Bullet").extraDamageTimes;
+            this.lastGetExtraDamgeDuration = 1.0;
+            
         }
     },
 
@@ -107,11 +110,11 @@ cc.Class({
                     this.Run();
                 }
             } else {
-                console.log('out range');
+                //console.log('out range');
                 //stand
             }
         } else {
-            console.log('not find');
+            //console.log('not find');
         }
     },
 

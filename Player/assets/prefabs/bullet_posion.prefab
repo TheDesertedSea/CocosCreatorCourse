@@ -124,9 +124,8 @@
     "_enabled": true,
     "speed": 250,
     "lifeTime": 3,
-    "damage": 10,
-    "extraDamage": 3,
-    "extraDamageDuration": 5,
+    "extraDamage": 5,
+    "extraDamageTimes": 3,
     "_id": ""
   },
   {

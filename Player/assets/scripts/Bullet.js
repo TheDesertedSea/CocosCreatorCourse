@@ -12,7 +12,7 @@ cc.Class({
         speed:250,
         lifeTime:3,
         extraDamage:0,
-        extraDamageDuration:0,
+        extraDamageTimes:0,
     },
 
     // LIFE-CYCLE CALLBACKS

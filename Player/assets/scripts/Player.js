@@ -46,7 +46,7 @@ cc.Class({
     },
 
     start(){
-        cc.log(this.node.zIndex);
+        //cc.log(this.node.zIndex);
         this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值，此值用于UI显示
         
         
@@ -270,8 +270,8 @@ cc.Class({
         this.onHit = true;
         if (this.health <= 0) {
             cc.director.loadScene("GameOver",function(){
-                cc.find("Canvas/baseView/Score/Score").getComponent(cc.Label).string="Score："+
-                "\n"+(cc.find("Score").getComponent("Score").score+0).toString();
+                cc.find("Canvas/baseView/Score/Score_Label").getComponent(cc.Label).string="Score："
+                +(cc.find("Score").getComponent("Score").score+0).toString();
             });
         }
     },
