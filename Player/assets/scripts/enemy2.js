@@ -24,6 +24,11 @@ cc.Class({
     onLoad () {
         this.state = '';
         this.enemyAni = this.node.getComponent(cc.Animation);
+
+        //以下变量用于毒性伤害
+        this.extraDamage =0;
+        this.extraDamageDuration=0;
+        lastGetExtraDamgeDuration =0;
     },
 
     setState(state) {
@@ -43,23 +48,47 @@ cc.Class({
 
         this.LookAtObj(this.player);
         this.EnemyMove();
+        
+        //受到毒性伤害
+        if(this.extraDamageDuration>0)
+        {
+            if(this.lastGetExtraDamgeDuration<0)
+            {
+                this.health-=this.extraDamage;
+                this.lastGetExtraDamgeDuration=1;
+            }
+            else
+            {
+                this.lastGetExtraDamgeDuration-=dt;
+            }
+            this.extraDamageDuration-=dt;
+            //检测是否死亡
+            if (this.health <= 0) {
+                this.node.destroy();
+                this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
+            }
+        }
     },
 
     onBeginContact(info, self, other) {
         if(other.node.group == "bullet") {
-            this.getDamage(other.node.getComponent("Bullet").damage);
+            //受到一次性伤害
+            this.health -=other.node.getComponent("Bullet").damage;
+            if (this.health <= 0) {
+                this.node.destroy();
+                this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
+            }
+
+            //附加毒性伤害
             this.extraDamage=other.node.getComponent("Bullet").extraDamage;
             this.extraDamageDuration=other.node.getComponent("Bullet").extraDamageDuration;
-            lastGetExtraDamgeDuration=1;
+            this.lastGetExtraDamgeDuration=1;
         }
     },
 
     getDamage(damage) {
         this.health -= damage;
 
-        if(this.health <= 0) {
-            this.node.destroy();
-        }
     },
 
     EnemyMove (){

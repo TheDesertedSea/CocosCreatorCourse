@@ -12,6 +12,7 @@ cc.Class({
             type:cc.AudioClip, 
             default: null,    
         },
+        
     },
 
     onLoad() {
@@ -34,7 +35,7 @@ cc.Class({
         this.lastAnimationState = "player_forward";   //上一次动画播放状态
         this.animation.play(this.animationState);   //初始播放动画（向前）
         this.audioId=0;   //上次播放的音频的id号
-        
+          //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");
         }*/
@@ -47,8 +48,11 @@ cc.Class({
     start(){
         cc.log(this.node.zIndex);
         this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值，此值用于UI显示
+        
+        
         this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
         this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
+
         
     },
     onDestroy() {
@@ -125,6 +129,7 @@ cc.Class({
             //cc.log(this.health);
             this.bUseItem = false;  //设置物品为不能使用
             this.ATK=(this.weaponScript.damage + this.damageAdd).toString();   //更新ATK显示
+            
         }
         else if (this.bGetWeapon) {   //如果可以捡取武器
 
@@ -200,6 +205,7 @@ cc.Class({
                 this.weaponScript=this.weapon.getComponent("Weapon");
             }
             this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
+            
         }
         else {
             if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
@@ -249,6 +255,7 @@ cc.Class({
         this.weapon=weapon2;
         this.weaponScript=this.weapon.getComponent("Weapon");
         this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
+        
     },
     onBeginContact: function (info, self, other) {
         //cc.log("CONTACT!");
@@ -261,6 +268,12 @@ cc.Class({
     getDamage: function (damage) {
         this.health -= damage;
         this.onHit = true;
+        if (this.health <= 0) {
+            cc.director.loadScene("GameOver",function(){
+                cc.find("Canvas/baseView/Score/Score").getComponent(cc.Label).string="Score："+
+                "\n"+(cc.find("Score").getComponent("Score").score+0).toString();
+            });
+        }
     },
     update(dt) {   //每秒给刚体组件设置线性速度
         //cc.log(this.bGetWeapon);
@@ -275,9 +288,7 @@ cc.Class({
         else {
             this.lv.x = 0;
         }
-        if (this.health <= 0) {
-            cc.director.loadScene("GameOver");
-        }
+        
 
         if (this.moveForward) {
             this.lv.y = this.speed;

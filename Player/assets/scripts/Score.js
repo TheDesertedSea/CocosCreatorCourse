@@ -26,22 +26,22 @@ cc.Class({
         // },
     },
 
-
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         this.score=0;
-        this.label=this.node.getComponent(cc.Label);
     },
 
     start () {
-        this.scoreNodeScript=cc.find("Score").getComponent("Score"); 
+        cc.game.addPersistRootNode(this.node);
     },
-    addScore(score)
-    {
-        this.score+=score;
-        this.scoreNodeScript.score=this.score;
-        this.label.string="Score:"+this.score.toString();
+
+    showLoseScore(){
+        cc.find("Canvas/baseView/Score/Score").getComponent(cc.Label).string="Score："+"\n"+(this.score+0).toString();
+        cc.game.removePersistRootNode(this.node);
     },
+    showWinScore(){
+        game.removePersistRootNode(this.node);
+    }
     // update (dt) {},
 });

@@ -21,6 +21,8 @@ cc.Class({
         damage:20,
         attackDuration:0.5,
         player:cc.Node,
+        extraDamage:0,
+        extraDamageDuration:3.0,
         
     },
 
