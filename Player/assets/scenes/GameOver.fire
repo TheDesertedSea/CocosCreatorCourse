@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        424.5960174991893,
+        368.06079660838645,
         0,
         0,
         0,
@@ -1045,7 +1045,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "BackToMenu",
+    "_name": "BackToMenu_Label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 16
@@ -1516,7 +1516,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "BackToMenu",
+    "_name": "Exit_Label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 27
@@ -1912,7 +1912,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "BackToMenu",
+    "_name": "Score_Label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 36
@@ -1935,7 +1935,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144.49,
+      "width": 589.02,
       "height": 189
     },
     "_anchorPoint": {
@@ -1986,8 +1986,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Score：",
-    "_N$string": "Score：",
+    "_string": "                    Score：                    ",
+    "_N$string": "                    Score：                    ",
     "_fontSize": 40,
     "_lineHeight": 150,
     "_enableWrapText": true,

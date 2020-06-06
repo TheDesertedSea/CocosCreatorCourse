@@ -10,7 +10,6 @@ cc.Class({
 
 
     onLoad () {
-      var spr = this.node.getChildByname('aaa');
     },
 
     start () {
