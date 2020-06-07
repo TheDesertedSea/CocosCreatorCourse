@@ -94,6 +94,11 @@ cc.Class({
             this.lastGetExtraDamgeDuration = 1.0;
             
         }
+
+        if (other.node.group == "player" && other.node.onHit == false) {
+            //cc.log("ENEMY ATTACK!");
+            other.getComponent("Player").getDamage(this.damage);
+        }
     },
 
 

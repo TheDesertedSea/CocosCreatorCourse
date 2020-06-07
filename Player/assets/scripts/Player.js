@@ -49,7 +49,7 @@ cc.Class({
         //cc.log(this.node.zIndex);
         this.ATK=(this.node.getChildByName("weapon").getComponent("Weapon").damage + this.damageAdd).toString();  //ATK值，此值用于UI显示
         
-        
+        this.node.zIndex=1;
         this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
         this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
 
@@ -257,14 +257,11 @@ cc.Class({
         this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
         
     },
-    onBeginContact: function (info, self, other) {
+    /*onBeginContact: function (info, self, other) {
         //cc.log("CONTACT!");
         //cc.log(other.node.group);
-        if (other.node.group == "enemy" && this.onHit == false) {
-            cc.log("ENEMY ATTACK!");
-            this.getDamage(other.node.getComponent("enemy").damage);
-        }
-    },
+        
+    },*/
     getDamage: function (damage) {
         this.health -= damage;
         this.onHit = true;
