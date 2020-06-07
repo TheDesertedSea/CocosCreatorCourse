@@ -29,8 +29,11 @@ cc.Class({
     fire() {
         let bullet = cc.instantiate(this.Bullet);
         bullet.rotation = this.node.rotation;
+
+        //由于父节点改为Canvas
         bullet.setParent(cc.find("Canvas"));
         let pos = this.firePoint.convertToWorldSpaceAR(cc.v2(0, 0));
+        //所以坐标得加个偏移量（因为Canvs的世界坐标为（480，320））
         bullet.x = pos.x-480;
         bullet.y = pos.y-320;
     },
