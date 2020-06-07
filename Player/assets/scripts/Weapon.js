@@ -26,9 +26,14 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        
         this.weaponInit();
         
         
+    },
+    strat(){
+        
+        this.node.zIndex=0.5;//设置显示顺序
     },
     weaponInit()
     {
@@ -51,8 +56,8 @@ cc.Class({
             bullet.parent=this.node;
             var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
             //cc.log(position.x,position.y);
-            bullet.parent=scene;
-            bullet.setPosition(position.x,position.y);  //设置子弹的生成位置
+            bullet.parent=cc.find("Canvas");
+            bullet.setPosition(position.x-480,position.y-320);  //设置子弹的生成位置
             bullet.angle=this.node.angle;  //设置子弹的角度
             bullet.getComponent("Bullet").setDir(this.dirX,this.dirY);
             this.fireTime=this.attackDuration;

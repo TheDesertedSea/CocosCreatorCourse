@@ -16,7 +16,9 @@ cc.Class({
             type: cc.Node
         },
         damage: 1,
-        health: 4
+        health: 4,
+        scoreLabel:cc.Node,
+        score:10,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -85,11 +87,8 @@ cc.Class({
             this.extraDamageTimes=other.node.getComponent("Bullet").extraDamageTimes;
             this.lastGetExtraDamgeDuration=1.0;
         }
-
-        if (other.node.group == "player" && other.node.onHit == false) {
-            //cc.log("ENEMY ATTACK!");
-            other.getComponent("Player").getDamage(this.damage);
-        }
+        
+        
     },
 
     getDamage(damage) {

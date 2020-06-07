@@ -311,7 +311,7 @@ cc.Class({
         label.string = "ATK:" + this.ATK;
         //cc.log(this.node.getChildByName("weapon").getComponent("Weapon").damage);
         if (this.onHit) {
-            if (this.hitTime > 2) {
+            if (this.hitTime > 0.5) {
                 this.onHit = false;
                 this.hitTime = 0;
             }

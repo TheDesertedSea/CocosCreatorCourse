@@ -16,9 +16,12 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        
+    },
 
     start () {
+        this.node.zIndex=0.5;//设置显示顺序
         this.firePoint = this.node.getChildByName('firePoint');
         this.schedule(this.fire, 2);
     },
@@ -26,10 +29,10 @@ cc.Class({
     fire() {
         let bullet = cc.instantiate(this.Bullet);
         bullet.rotation = this.node.rotation;
-        bullet.setParent(cc.director.getScene());
+        bullet.setParent(cc.find("Canvas"));
         let pos = this.firePoint.convertToWorldSpaceAR(cc.v2(0, 0));
-        bullet.x = pos.x;
-        bullet.y = pos.y;
+        bullet.x = pos.x-480;
+        bullet.y = pos.y-320;
     },
 
     update (dt) {
@@ -57,4 +60,5 @@ cc.Class({
         // console.log(this.node.angle);
         // console.log('rotate');
     },
+   
 });

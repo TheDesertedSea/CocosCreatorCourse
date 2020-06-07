@@ -13,6 +13,7 @@ cc.Class({
         },
 
         start () {
+            this.node.zIndex=1;//设置显示顺序
         },
         
          onClickSetting:function (target, data) {
