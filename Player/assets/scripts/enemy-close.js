@@ -19,6 +19,7 @@ cc.Class({
         health: 5,
         scoreLabel:cc.Node,
         score:10,
+        door:cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -69,6 +70,8 @@ cc.Class({
             
             //检测是否死亡
             if (this.health <= 0) {
+                //开门检测减1
+                this.door.getComponent("door_open").enemy_num -= 1;
                 this.node.destroy();
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
             }
@@ -82,6 +85,8 @@ cc.Class({
             //受到一次性伤害
             this.health -=other.node.getComponent("Bullet").damage;
             if (this.health <= 0) {
+                //开门检测减1
+                this.door.getComponent("door_open").enemy_num -= 1;
                 this.node.destroy();
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
             }

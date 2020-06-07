@@ -328,7 +328,18 @@ cc.Class({
 
             this.damageAdd = 0;
         }
-
-
     },
+
+    // 角色与墙壁的碰撞回调
+    onCollisionEnter(other, self) {
+        console.log(other.node.getComponent("door_open").enemy_num)
+        if (other.node.group == 'door_out' && other.node.getComponent("door_open").enemy_num <= 0) {
+            //实现墙壁渐隐的效果
+            other.node.runAction(cc.fadeOut(0.5));
+            //0.2秒之后销毁墙壁
+            setTimeout(function () {
+                other.node.destroy();
+            }.bind(other), 200);
+        }
+    }
 });
