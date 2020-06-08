@@ -114,7 +114,7 @@ cc.Class({
                     this.Run();
                 }
             } else {
-                console.log('out range');
+                //console.log('out range');
                 //stand
             }
         } else {

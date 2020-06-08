@@ -93,7 +93,7 @@ cc.Class({
 
             //附加毒性伤害
             this.extraDamage=other.node.getComponent("Bullet").extraDamage;
-            cc.log(other.node.getComponent("Bullet").extraDamage);
+            //cc.log(other.node.getComponent("Bullet").extraDamage);
             //cc.log("extradamge"+this.extraDamage);
             this.extraDamageTimes = other.node.getComponent("Bullet").extraDamageTimes;
             this.lastGetExtraDamgeDuration = 1.0;

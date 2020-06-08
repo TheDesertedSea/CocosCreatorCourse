@@ -56,7 +56,7 @@ cc.Class({
         }
         if(this.node.getPosition().sub(this.player.getPosition()).mag()>=50&&this.playerAround)
         {
-            cc.log("No");
+            //cc.log("No");
             this.player.getComponent("Player").itemAround=null;
             this.player.getComponent("Player").bUseItem=false;
             this.playerAround=false;

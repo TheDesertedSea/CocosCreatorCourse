@@ -21,7 +21,7 @@ cc.Class({
     },
 
     start () {
-        this.node.zIndex=0.5;//设置显示顺序
+        //this.node.zIndex=0.5;//设置显示顺序
         this.firePoint = this.node.getChildByName('firePoint');
         this.schedule(this.fire, 2);
     },

@@ -17,11 +17,11 @@ export default class NewClass extends cc.Component {
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        cc.log(this.node.parent.name);
+        //cc.log(this.node.parent.name);
     }
 
     start () {
-        this.node.zIndex=0.5;//设置显示顺序
+        //this.node.zIndex=0.5;//设置显示顺序
         let r = cc.misc.degreesToRadians(this.node.rotation);
         let v2 = cc.v2(0, 1).rotate(-r);
         this.getComponent(cc.RigidBody).linearVelocity = cc.v2(v2.x * this.speed, v2.y * this.speed);

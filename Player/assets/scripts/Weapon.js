@@ -33,7 +33,7 @@ cc.Class({
     },
     strat(){
         
-        this.node.zIndex=0.5;//设置显示顺序
+        //this.node.zIndex=0.5;//设置显示顺序
     },
     weaponInit()
     {

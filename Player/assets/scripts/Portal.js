@@ -28,13 +28,21 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        //cc.log(this.node.zIndex); //zIndex为叠放次序
-    },
+    // onLoad () {},
 
     start () {
 
     },
 
+    onBeginContact(info, self, other){
+        cc.log("collision");
+        if(other.node.group=="player")
+        {
+            cc.director.loadScene("Win",function(){
+                cc.find("Canvas/baseView/Score/Score_Label").getComponent(cc.Label).string="Score："
+                +(cc.find("Score").getComponent("Score").score+0).toString();
+            });
+        }
+    }
     // update (dt) {},
 });

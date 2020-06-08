@@ -24,7 +24,7 @@ cc.Class({
     {
         
         this.player.getChildByName("weapon").getComponent("Weapon").damage+=this.damageAdd;
-        cc.log(this.player.getChildByName("weapon").getComponent("Weapon").damage);
+        //cc.log(this.player.getChildByName("weapon").getComponent("Weapon").damage);
         this.node.destroy();
     },
 
@@ -36,7 +36,7 @@ cc.Class({
         //cc.log(this.node.getPosition().sub(this.player.getPosition()).mag());
         if(this.node.getPosition().sub(this.player.getPosition()).mag()<50)
         {
-            cc.log("yes");
+            //cc.log("yes");
             this.player.getComponent("Player").itemAround=this.node;
             this.player.getComponent("Player").bUseItem=true;
             this.playerAround=true;
