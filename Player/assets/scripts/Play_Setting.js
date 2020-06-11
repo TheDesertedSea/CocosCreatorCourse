@@ -9,8 +9,6 @@ cc.Class({
         onLoad () {
             this.node.zIndex=2; //zIndex为叠放次序
             cc.log(this.node.zIndex);
-            //this.node.zIndex=2; //zIndex为叠放次序
-            //cc.log(this.node.zIndex);
         },
 
         start () {
