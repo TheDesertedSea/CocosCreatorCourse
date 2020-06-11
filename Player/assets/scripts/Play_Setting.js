@@ -7,11 +7,18 @@ cc.Class({
 
 
         onLoad () {
+<<<<<<< HEAD
             this.node.zIndex=2; //zIndex为叠放次序
             cc.log(this.node.zIndex);
+=======
+            //this.node.zIndex=2; //zIndex为叠放次序
+            //cc.log(this.node.zIndex);
+            
+>>>>>>> 27467d845042c2336995cb237c95fa892bb67516
         },
 
         start () {
+            this.node.zIndex=1;//设置显示顺序
         },
         
          onClickSetting:function (target, data) {

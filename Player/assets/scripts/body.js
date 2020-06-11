@@ -29,7 +29,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        cc.log(this.node.zIndex); //zIndex为叠放次序
+        //cc.log(this.node.zIndex); //zIndex为叠放次序
     },
 
     start () {

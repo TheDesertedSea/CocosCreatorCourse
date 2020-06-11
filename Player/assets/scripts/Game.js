@@ -49,6 +49,9 @@ cc.Class({
                 }
             }
         }
+
+        // 循环播放传送门动画
+        this.mapNode.getChildByName("m2_1").getChildByName("portal").getComponent(cc.Animation).play('portal');
     },
 
     // update (dt) {},

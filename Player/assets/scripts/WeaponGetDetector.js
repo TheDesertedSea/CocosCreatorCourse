@@ -30,7 +30,7 @@ cc.Class({
         //cc.log(this.node.getPosition().sub(this.player.getPosition()).mag());
         if(this.node.getPosition().sub(this.player.getPosition()).mag()<50)
         {
-            cc.log("yes");
+            //cc.log("yes");
             this.player.getComponent("Player").weaponAround=this.node;
             this.player.getComponent("Player").bGetWeapon=true;
             //cc.log(this.player.getComponent("Player").bUseItem);
@@ -38,7 +38,7 @@ cc.Class({
         }
         if(this.node.getPosition().sub(this.player.getPosition()).mag()>=50&&this.playerAround)
         {
-            cc.log("No");
+            //cc.log("No");
             this.player.getComponent("Player").weaponAround=null;
             this.player.getComponent("Player").bGetWeapon=false;
             this.playerAround=false;

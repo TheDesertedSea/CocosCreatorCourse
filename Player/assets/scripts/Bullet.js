@@ -17,7 +17,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS
     onLoad(){
+        //cc.log(this.node.parent.name);
         this.dir=cc.v2(0,0);
+        
     },
     setDir(dirX,dirY)//设置子弹的方向
     {
@@ -25,6 +27,7 @@ cc.Class({
         this.dirY=dirY;
     },
     start () {
+        this.node.zIndex=0.5;//设置显示顺序
         this.time=0; 
         this.lv=this.node.getComponent(cc.RigidBody).linearVelocity;  
         this.lv.x=this.speed*this.dirX;   //根据方向设置子弹速度
