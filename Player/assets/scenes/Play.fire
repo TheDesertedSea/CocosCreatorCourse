@@ -210,7 +210,7 @@
       "array": [
         0,
         0,
-        323.93681814296804,
+        255.47749411640942,
         0,
         0,
         0,
@@ -2035,7 +2035,7 @@
       "__id__": 44
     },
     "_enabled": true,
-    "enemy_num": 2,
+    "enemy_num": 1,
     "_id": "aeMFCOLTxGhrX3SesfRe6+"
   },
   {
@@ -2078,7 +2078,7 @@
       "y": 0
     },
     "_angularVelocity": 0,
-    "_fixedRotation": false,
+    "_fixedRotation": true,
     "enabledContactListener": false,
     "bullet": false,
     "awakeOnLoad": true,
@@ -3168,8 +3168,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        88.38,
-        -647.017,
+        88,
+        -630,
         0,
         0,
         0,
@@ -3513,7 +3513,7 @@
       "array": [
         0,
         0,
-        323.93681814296804,
+        255.47749411640942,
         0,
         0,
         0,
@@ -7100,7 +7100,7 @@
     },
     "score": 10,
     "door": {
-      "__id__": 45
+      "__id__": 44
     },
     "_id": "5bY2nw6p9Mn7kiDTmWxjdH"
   },
