@@ -48,7 +48,7 @@ cc.Class({
     },
 
     start() {
-        // this.schedule(this.ultimateSkill_1, 5);
+        this.schedule(this.ultimateSkill_1, 5);
     },
 
     update(dt) {
@@ -139,8 +139,6 @@ cc.Class({
             let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
             //console.log(distance);
             if (distance <= this.range) {
-                console.log(distance);
-                this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
                     this.Attack();
@@ -266,7 +264,7 @@ cc.Class({
 
     ultimateSkill_1() {
         // let pos = this.node.convertToWorldSpaceAR(cc.v2(0, 50));
-        // console.log(this.node.x, this.node.y);
+        console.log(this.node.x, this.node.y);
         let offset = 25;
 
         let bullet1 = cc.instantiate(this.Bullet);

@@ -11,13 +11,12 @@ cc.Class({
     properties: {
         speed: 20,
         range: 300,
-        Bullet: cc.Prefab,
         player: {
             default: null,
             type: cc.Node
         },
-        damage: 10,
-        health: 100,
+        damage: 1,
+        health: 4,
         scoreLabel:cc.Node,
         score:10,
         door:cc.Node,
@@ -26,7 +25,7 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
+    onLoad () {
         this.state = '';
         this.enemyAni = this.node.getComponent(cc.Animation);
 
@@ -47,17 +46,14 @@ cc.Class({
         this.enemyAni.play(state);
     },
 
-    start() {
-        // this.schedule(this.ultimateSkill_1, 5);
+    start () {
     },
 
-    update(dt) {
-
-        // cc.log(this.health);
+    update (dt) {
         //如果对话框存在，敌人不移动
-        if (window.dialog && window.dialog.active) return;
+        if(window.dialog && window.dialog.active) return;
 
-        // this.LookAtObj(this.player);
+        this.LookAtObj(this.player);
         this.EnemyMove();
         
         //受到毒性伤害
@@ -66,7 +62,7 @@ cc.Class({
             if(this.lastGetExtraDamgeDuration<0)
             {
                 this.health-=this.extraDamage;
-                this.lastGetExtraDamgeDuration=1.0;
+                this.lastGetExtraDamgeDuration=1;
                 this.extraDamageTimes-=1;
             }
             else
@@ -89,19 +85,18 @@ cc.Class({
                 this.node.destroy();
             }
         }
-
-         //检测玩家距离，若自己最近，且与玩家在同一个房间，则将自己的节点绑定到player上
-         var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
-         {
-             cc.log("player is near");
-             this.playerScript.enemyAround=this.node;
-             this.playerScript.enemyDistance=playerDistance;
-         }
+        
+        //检测玩家距离，若自己最近，则将自己的节点绑定到player上
+        var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
+        if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
+        {
+            this.playerScript.enemyAround=this.node;
+            this.playerScript.enemyDistance=playerDistance;
+        }
     },
 
     onBeginContact(info, self, other) {
-        if (other.node.group == "bullet") {
+        if(other.node.group == "bullet") {
             //受到一次性伤害
             this.health -=other.node.getComponent("Bullet").damage;
             if (this.health <= 0) {
@@ -120,27 +115,23 @@ cc.Class({
 
             //附加毒性伤害
             this.extraDamage=other.node.getComponent("Bullet").extraDamage;
-            //cc.log(other.node.getComponent("Bullet").extraDamage);
-            //cc.log("extradamge"+this.extraDamage);
-            this.extraDamageTimes = other.node.getComponent("Bullet").extraDamageTimes;
-            this.lastGetExtraDamgeDuration = 1.0;
-            
+            this.extraDamageTimes=other.node.getComponent("Bullet").extraDamageTimes;
+            this.lastGetExtraDamgeDuration=1.0;
         }
-        //碰到玩家
-        if (other.node.group == "player" && other.node.getComponent("Player").onHit == false) {
-            //cc.log("ENEMY ATTACK!");
-            other.getComponent("Player").getDamage(this.damage);
-        }
+        
+        
     },
 
+    getDamage(damage) {
+        this.health -= damage;
 
-    EnemyMove() {
+    },
+
+    EnemyMove (){
         if (this.player) {
-            let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
-            //console.log(distance);
+            let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
+            // console.log(distance);
             if (distance <= this.range) {
-                console.log(distance);
-                this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
                     this.Attack();
@@ -223,20 +214,20 @@ cc.Class({
     },
 
     Attack() {
-        let dx = this.player.x - this.node.x;
-        let dy = this.player.y - this.node.y;
-        this.sp = cc.v2(dx, dy);
-        this.sp.normalizeSelf();
+        // let dx = this.player.x - this.node.x;
+        // let dy = this.player.y - this.node.y;
+        // this.sp = cc.v2(dx, dy);
+        // this.sp.normalizeSelf();
 
-        // this.node.x += this.sp.x * this.speed;
-        // this.node.y += this.sp.y * this.speed;
+        // // this.node.x += this.sp.x * this.speed;
+        // // this.node.y += this.sp.y * this.speed;
 
-        this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
+        // this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
 
-        this.lv.x = 0 - this.sp.x * this.speed;
-        this.lv.y = 0 - this.sp.y * this.speed;
+        // this.lv.x = 0 - this.sp.x * this.speed;
+        // this.lv.y = 0 - this.sp.y * this.speed;
 
-        this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+        // this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
     },
 
     Run() {
@@ -263,56 +254,4 @@ cc.Class({
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
     },
-
-    ultimateSkill_1() {
-        // let pos = this.node.convertToWorldSpaceAR(cc.v2(0, 50));
-        // console.log(this.node.x, this.node.y);
-        let offset = 25;
-
-        let bullet1 = cc.instantiate(this.Bullet);
-        let bullet2 = cc.instantiate(this.Bullet);
-        let bullet3 = cc.instantiate(this.Bullet);
-        let bullet4 = cc.instantiate(this.Bullet);
-        let bullet5 = cc.instantiate(this.Bullet);
-        let bullet6 = cc.instantiate(this.Bullet);
-        let bullet7 = cc.instantiate(this.Bullet);
-        let bullet8 = cc.instantiate(this.Bullet);
-
-        bullet1.setParent(cc.find("Canvas"));
-        bullet2.setParent(cc.find("Canvas"));
-        bullet3.setParent(cc.find("Canvas"));
-        bullet4.setParent(cc.find("Canvas"));
-        bullet5.setParent(cc.find("Canvas"));
-        bullet6.setParent(cc.find("Canvas"));
-        bullet7.setParent(cc.find("Canvas"));
-        bullet8.setParent(cc.find("Canvas"));
-
-        bullet1.angle = this.node.angle;//节点上方
-        bullet2.angle = this.node.angle + 180;//节点下方
-        bullet3.angle = this.node.angle + 270;//节点右方
-        bullet4.angle = this.node.angle + 90;//节点左方
-        bullet5.angle = this.node.angle + 45;//左上
-        bullet6.angle = this.node.angle + 135;//左下
-        bullet7.angle = this.node.angle + 225;//右下
-        bullet8.angle = this.node.angle + 315;//右上
-
-        bullet1.x = this.node.x;
-        bullet1.y = this.node.y + offset;
-        bullet2.x = this.node.x;
-        bullet2.y = this.node.y - offset;
-        bullet3.x = this.node.x + offset;
-        bullet3.y = this.node.y;
-        bullet4.x = this.node.x - offset;
-        bullet4.y = this.node.y;
-        bullet5.x = this.node.x - offset / Math.sqrt(2);
-        bullet5.y = this.node.y + offset / Math.sqrt(2);
-        bullet6.x = this.node.x - offset / Math.sqrt(2);
-        bullet6.y = this.node.y - offset / Math.sqrt(2);
-        bullet7.x = this.node.x + offset / Math.sqrt(2);
-        bullet7.y = this.node.y - offset / Math.sqrt(2);
-        bullet8.x = this.node.x + offset / Math.sqrt(2);
-        bullet8.y = this.node.y + offset / Math.sqrt(2);
-    },
-
-
 });

@@ -266,7 +266,7 @@ cc.Class({
 
     ultimateSkill_1() {
         // let pos = this.node.convertToWorldSpaceAR(cc.v2(0, 50));
-        // console.log(this.node.x, this.node.y);
+        console.log(this.node.x, this.node.y);
         let offset = 25;
 
         let bullet1 = cc.instantiate(this.Bullet);

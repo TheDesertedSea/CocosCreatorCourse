@@ -17,7 +17,7 @@ cc.Class({
             type: cc.Node
         },
         damage: 10,
-        health: 100,
+        health: 20,
         scoreLabel:cc.Node,
         score:10,
         door:cc.Node,
@@ -48,7 +48,6 @@ cc.Class({
     },
 
     start() {
-        // this.schedule(this.ultimateSkill_1, 5);
     },
 
     update(dt) {
@@ -139,8 +138,6 @@ cc.Class({
             let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
             //console.log(distance);
             if (distance <= this.range) {
-                console.log(distance);
-                this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
                     this.Attack();
@@ -262,56 +259,6 @@ cc.Class({
         // }
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
-    },
-
-    ultimateSkill_1() {
-        // let pos = this.node.convertToWorldSpaceAR(cc.v2(0, 50));
-        // console.log(this.node.x, this.node.y);
-        let offset = 25;
-
-        let bullet1 = cc.instantiate(this.Bullet);
-        let bullet2 = cc.instantiate(this.Bullet);
-        let bullet3 = cc.instantiate(this.Bullet);
-        let bullet4 = cc.instantiate(this.Bullet);
-        let bullet5 = cc.instantiate(this.Bullet);
-        let bullet6 = cc.instantiate(this.Bullet);
-        let bullet7 = cc.instantiate(this.Bullet);
-        let bullet8 = cc.instantiate(this.Bullet);
-
-        bullet1.setParent(cc.find("Canvas"));
-        bullet2.setParent(cc.find("Canvas"));
-        bullet3.setParent(cc.find("Canvas"));
-        bullet4.setParent(cc.find("Canvas"));
-        bullet5.setParent(cc.find("Canvas"));
-        bullet6.setParent(cc.find("Canvas"));
-        bullet7.setParent(cc.find("Canvas"));
-        bullet8.setParent(cc.find("Canvas"));
-
-        bullet1.angle = this.node.angle;//节点上方
-        bullet2.angle = this.node.angle + 180;//节点下方
-        bullet3.angle = this.node.angle + 270;//节点右方
-        bullet4.angle = this.node.angle + 90;//节点左方
-        bullet5.angle = this.node.angle + 45;//左上
-        bullet6.angle = this.node.angle + 135;//左下
-        bullet7.angle = this.node.angle + 225;//右下
-        bullet8.angle = this.node.angle + 315;//右上
-
-        bullet1.x = this.node.x;
-        bullet1.y = this.node.y + offset;
-        bullet2.x = this.node.x;
-        bullet2.y = this.node.y - offset;
-        bullet3.x = this.node.x + offset;
-        bullet3.y = this.node.y;
-        bullet4.x = this.node.x - offset;
-        bullet4.y = this.node.y;
-        bullet5.x = this.node.x - offset / Math.sqrt(2);
-        bullet5.y = this.node.y + offset / Math.sqrt(2);
-        bullet6.x = this.node.x - offset / Math.sqrt(2);
-        bullet6.y = this.node.y - offset / Math.sqrt(2);
-        bullet7.x = this.node.x + offset / Math.sqrt(2);
-        bullet7.y = this.node.y - offset / Math.sqrt(2);
-        bullet8.x = this.node.x + offset / Math.sqrt(2);
-        bullet8.y = this.node.y + offset / Math.sqrt(2);
     },
 
 
