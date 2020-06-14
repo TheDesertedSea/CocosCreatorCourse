@@ -210,7 +210,7 @@
       "array": [
         0,
         0,
-        328.26694516189025,
+        367.19477120460203,
         0,
         0,
         0,
@@ -3512,7 +3512,7 @@
       "array": [
         0,
         0,
-        328.26694516189025,
+        367.19477120460203,
         0,
         0,
         0,
@@ -3729,7 +3729,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "HealthBarBackground",
+    "_name": "HealthBarBody",
     "_objFlags": 0,
     "_parent": {
       "__id__": 92
@@ -3742,101 +3742,7 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 77,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 240,
-      "height": 40
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -86.197,
-        7.836,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": "8914UJJ+NDGYISgUYJwOpQ"
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 93
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_atlas": null,
-    "_id": "66LxyGnK5JWZ6Fe/MQ5Yqh"
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "HealthBarBody",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 92
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 96
-      }
-    ],
-    "_prefab": null,
-    "_opacity": 203,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
@@ -3847,7 +3753,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 240,
-      "height": 40
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3858,7 +3764,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -86.197,
+        -88.161,
         7.836,
         0,
         0,
@@ -3888,7 +3794,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 95
+      "__id__": 93
     },
     "_enabled": true,
     "_materials": [
@@ -3896,7 +3802,7 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_srcBlendFactor": 770,
+    "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
       "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
@@ -3917,6 +3823,100 @@
   },
   {
     "__type__": "cc.Node",
+    "_name": "HealthBarBackground",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 92
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 96
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 270,
+      "height": 60
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        33.395,
+        9.541,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "29sYEPpS1KSY43D0OeitS2"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 95
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 768,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "e10fc199-a652-4212-85aa-1642801374b0"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": "1b+sewVBlIEJz9K2TCe/Na"
+  },
+  {
+    "__type__": "cc.Node",
     "_name": "Label",
     "_objFlags": 0,
     "_parent": {
@@ -3933,15 +3933,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 154,
+      "g": 33,
+      "b": 33,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 111.13,
-      "height": 100.8
+      "width": 56.05180996543648,
+      "height": 40.32
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3953,14 +3953,14 @@
       "ctor": "Float64Array",
       "array": [
         -62.689,
-        64.256,
+        49.944,
         0,
         0,
         0,
         0,
         1,
-        0.4,
-        0.4,
+        1,
+        1,
         1
       ]
     },
@@ -3991,16 +3991,18 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "HP",
-    "_N$string": "HP",
-    "_fontSize": 80,
-    "_lineHeight": 80,
+    "_string": "H P",
+    "_N$string": "H P",
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 3,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -4990,17 +4992,17 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 255,
-      "b": 219,
+      "r": 12,
+      "g": 225,
+      "b": 195,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 130.43,
+      "width": 109.63,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -5012,7 +5014,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -88.396,
+        -75.277,
         0,
         0,
         0,
@@ -5053,11 +5055,13 @@
     "_useOriginalSize": false,
     "_string": "ATK:20",
     "_N$string": "ATK:20",
-    "_fontSize": 40,
+    "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -5087,18 +5091,18 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 255,
+    "_opacity": 200,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 234,
+      "g": 216,
+      "b": 57,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 137.85,
-      "height": 50.4
+      "width": 119.39,
+      "height": 40.32
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5109,8 +5113,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        54.968,
-        0,
+        50.197,
+        1.193,
         0,
         0,
         0,
@@ -5150,11 +5154,13 @@
     "_useOriginalSize": false,
     "_string": "Score:0",
     "_N$string": "Score:0",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 32,
+    "_lineHeight": 32,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -5962,7 +5968,7 @@
     },
     "health": 50,
     "healthBar": {
-      "__id__": 95
+      "__id__": 93
     },
     "stateUI": {
       "__id__": 123
