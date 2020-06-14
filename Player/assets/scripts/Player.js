@@ -12,7 +12,9 @@ cc.Class({
             type:cc.AudioClip, 
             default: null,    
         },
-        
+        //WeaponRocker:cc.Node,   //绑定虚拟摇杆结点以获取摇杆信息,
+        MoveRocker:cc.Node,
+        roomNumber:0,  //目前所在房间号
     },
 
     onLoad() {
@@ -35,6 +37,10 @@ cc.Class({
         this.lastAnimationState = "player_forward";   //上一次动画播放状态
         this.animation.play(this.animationState);   //初始播放动画（向前）
         this.audioId=0;   //上次播放的音频的id号
+        //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
+        this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
+        this.enemyAround=null;
+        this.enemyDistance=500.0;
           //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");
@@ -63,7 +69,7 @@ cc.Class({
     onKeyDown: function (event) {
         this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
         switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
-            case cc.macro.KEY.a:
+            /*case cc.macro.KEY.a:
                 this.moveLeft = true;
                 this.moveRight = false;
                 this.animationState = "player_left";
@@ -83,6 +89,7 @@ cc.Class({
                 this.moveForward = false;
                 this.animationState = "player_forward";
                 break;
+                */
             case cc.macro.KEY.space:
                 this.act();
         }
@@ -92,7 +99,7 @@ cc.Class({
 
     onKeyUp: function (event) {
         switch (event.keyCode) {
-            case cc.macro.KEY.a:
+            /*case cc.macro.KEY.a:
                 this.moveLeft = false;
                 break;
             case cc.macro.KEY.d:
@@ -103,6 +110,7 @@ cc.Class({
                 break;
             case cc.macro.KEY.s:
                 this.moveBackward = false;
+                */
         }
     },
 
@@ -276,7 +284,7 @@ cc.Class({
         //cc.log(this.bGetWeapon);
 
         this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
-        if (this.moveRight) {
+        /*if (this.moveRight) {
             this.lv.x = this.speed;
         }
         else if (this.moveLeft) {
@@ -298,7 +306,9 @@ cc.Class({
         else {
             this.lv.y = 0;
         }
-
+        */
+       this.lv.x=this.MoveRockerScript.dir.x*this.speed;
+       this.lv.y=this.MoveRockerScript.dir.y*this.speed;
 
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
@@ -328,6 +338,39 @@ cc.Class({
 
             this.damageAdd = 0;
         }
+
+        //调整武器方向
+        if(this.enemyAround)
+        {
+            let EPVectorX=this.enemyAround.position.x-this.node.position.x;
+            let EPVectorY=this.enemyAround.position.y-this.node.position.y;
+            //let r=Math.atan2(EPVectorX,EPVectorY);
+            let r=cc.v2(EPVectorX,EPVectorY).signAngle(cc.v2(1,0));
+            let degree=r*180/(Math.PI);
+            this.weapon.angle=-90-degree;
+            this.weaponScript.dirX=EPVectorX;
+            this.weaponScript.dirY=EPVectorY;
+        }
+        
+        
+        
+        
+
+        /*if(this.WeaponRockerScript.dir.mag()<0.5){
+            return;
+        }
+        var r = Math.atan2(this.WeaponRockerScript.dir.y,this.WeaponRockerScript.dir.x);//从RockerScript中获取摇杆角度信息
+        var degree = r * 180/(Math.PI);  //计算角度
+        degree = degree-90;  //设置角度
+
+
+
+        this.weapon.angle = degree;
+        this.weaponScript.dirX=this.WeaponRockerScript.dir.x;   //存储获得到的摇杆角度信息
+        this.weaponScript.dirY=this.WeaponRockerScript.dir.y;
+        */
+
+        
     },
 
     // 角色与墙壁的碰撞回调
