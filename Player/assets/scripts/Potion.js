@@ -20,6 +20,7 @@ cc.Class({
 
     onLoad () {
         this.playerAround=false;
+        this.enabled = false;
     },
     use:function()
     {

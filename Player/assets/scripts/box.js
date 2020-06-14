@@ -11,6 +11,7 @@ cc.Class({
     properties: {
         roomNumber: 0,
         player: cc.Node,
+        potion: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -18,6 +19,7 @@ cc.Class({
     onLoad () {
         //获取保存player脚本组件
         this.playerScript=this.player.getComponent("Player");
+        this.potionScript=this.potion.getComponent("Potion");
     },
 
     start () {
@@ -46,6 +48,7 @@ cc.Class({
                     this.playerScript.enemyAround=null;
                     this.playerScript.enemyDistance=500.0;
                 }
+                this.potionScript.enabled = true;
                 this.node.destroy();
             }.bind(this), 400);
         }    
