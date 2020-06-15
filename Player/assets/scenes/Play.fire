@@ -907,7 +907,10 @@
       "__id__": 13
     },
     "_enabled": true,
-    "enemy_num": 3,
+    "roomEnemyNum1": 3,
+    "roomEnemyNum2": 0,
+    "roomNumber1": 1,
+    "roomNumber2": 2,
     "_id": "d8rm3XIPVC67FMkMfuTszF"
   },
   {
@@ -2041,7 +2044,10 @@
       "__id__": 44
     },
     "_enabled": true,
-    "enemy_num": 1,
+    "roomEnemyNum1": 1,
+    "roomEnemyNum2": 0,
+    "roomNumber1": 6,
+    "roomNumber2": 7,
     "_id": "aeMFCOLTxGhrX3SesfRe6+"
   },
   {
