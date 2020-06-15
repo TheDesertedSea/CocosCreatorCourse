@@ -139,7 +139,7 @@ cc.Class({
             let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
             //console.log(distance);
             if (distance <= this.range) {
-                console.log(distance);
+                //console.log(distance);
                 this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
