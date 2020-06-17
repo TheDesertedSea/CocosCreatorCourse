@@ -33,9 +33,10 @@ cc.Class({
         this.weaponAround = null;  //在附近的武器
         this.bGetWeapon = false;   //是否有能够拣取的武器
         this.animation = this.node.getChildByName("body").getComponent(cc.Animation);  //人物身体动画
-        this.animationState = "player_forward";   //目前播放状态（播放的是朝哪个方向的动画）
-        this.lastAnimationState = "player_forward";   //上一次动画播放状态
-        this.animation.play(this.animationState);   //初始播放动画（向前）
+        //this.animationState = "player_right_static";   //目前播放状态（播放的是朝哪个方向的动画）
+        this.lastAnimationState = "player_right_static";   //上一次动画播放状态
+        this.animation.play(this.lastAnimationState);   //初始播放动画（右静）
+        
         this.audioId=0;   //上次播放的音频的id号
         //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
         this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
@@ -67,7 +68,7 @@ cc.Class({
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
     onKeyDown: function (event) {
-        this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
+        //this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
         switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
             /*case cc.macro.KEY.a:
                 this.moveLeft = true;
@@ -93,8 +94,9 @@ cc.Class({
             case cc.macro.KEY.space:
                 this.act();
         }
-        if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
+        /*if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
             this.animation.play(this.animationState);
+            */
     },
 
     onKeyUp: function (event) {
@@ -317,6 +319,46 @@ cc.Class({
         */
        this.lv.x=this.MoveRockerScript.dir.x*this.speed;
        this.lv.y=this.MoveRockerScript.dir.y*this.speed;
+        if(this.lv.x==0&&this.lv.y==0)
+        {
+            if(this.lastAnimationState=="player_right")
+            {
+                this.lastAnimationState="player_right_static";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lastAnimationState=="player_left")
+            {
+                this.lastAnimationState="player_left_static";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+        else if(this.lv.x!=0)
+        {
+            if(this.lv.x>0&&this.lastAnimationState!="player_right")
+            {
+                this.lastAnimationState="player_right";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lv.x<0&&this.lastAnimationState!="player_left")
+            {
+                this.lastAnimationState="player_left";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+        else 
+        {
+            if(this.lastAnimationState=="player_left_static")
+            {
+                this.lastAnimationState="player_left";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lastAnimationState="player_right_static")
+            {
+                this.lastAnimationState="player_right";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+
 
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
