@@ -24,20 +24,19 @@ cc.Class({
 
     onLoad () {
         
-        this.weaponInit();
-        this.dirX=1.0;
-        this.dirY=0.0;
+        this.weaponInit(1.0,0.0);
         this.maxDir=1.0;
     },
     strat(){
         
         //this.node.zIndex=0.5;//设置显示顺序
     },
-    weaponInit()
+    weaponInit(dirX,dirY)
     {
         this.fireTime=0;
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
-
+        this.dirX=dirX;
+        this.dirY=dirY;
     },
     fire:function(){  //开火
 //cc.log("fire!");

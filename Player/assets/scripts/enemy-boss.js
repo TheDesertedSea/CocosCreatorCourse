@@ -77,7 +77,14 @@ cc.Class({
             //检测是否死亡
             if (this.health <= 0) {
                 //开门检测减1
-                this.door.getComponent("door_open").enemy_num -= 1;
+                let doorScript=this.door.getComponent("door_open");
+                if(this.roomNumber==doorScript.roomNumber1)
+                {
+                    doorScript.roomEnemyNum1-=1;
+                }
+                else{
+                    doorScript.roomEnemyNum2-=1;
+                }
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
                 //如果玩家目前指向自己，则取消该指向
@@ -106,7 +113,14 @@ cc.Class({
             this.health -=other.node.getComponent("Bullet").damage;
             if (this.health <= 0) {
                 //开门检测减1
-                this.door.getComponent("door_open").enemy_num -= 1;
+                let doorScript=this.door.getComponent("door_open");
+                if(this.roomNumber==doorScript.roomNumber1)
+                {
+                    doorScript.roomEnemyNum1-=1;
+                }
+                else{
+                    doorScript.roomEnemyNum2-=1;
+                }
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
                 //如果玩家目前指向自己，则取消该指向
@@ -139,7 +153,7 @@ cc.Class({
             let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
             //console.log(distance);
             if (distance <= this.range) {
-                console.log(distance);
+                //console.log(distance);
                 this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
