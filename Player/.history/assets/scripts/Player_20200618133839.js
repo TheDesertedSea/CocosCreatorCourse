@@ -289,11 +289,7 @@ cc.Class({
             });
         }
     },
-    update(dt) {   
-        //如果对话框存在，敌人不移动
-        if (window.dialog && window.dialog.active) return;
-        
-        //每秒给刚体组件设置线性速度
+    update(dt) {   //每秒给刚体组件设置线性速度
         //cc.log(this.bGetWeapon);
         cc.log(this.roomNumber);
         
