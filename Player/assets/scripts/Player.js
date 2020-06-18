@@ -41,7 +41,7 @@ cc.Class({
         //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
         this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
         this.enemyAround=null;
-        this.enemyDistance=500.0;
+        this.enemyDistance=10000;
           //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");

@@ -33,6 +33,7 @@ cc.Class({
     },
     weaponInit(dirX,dirY)
     {
+        this.node.getChildByName("nameLabel").active=false;
         this.fireTime=0;
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
         this.dirX=dirX;

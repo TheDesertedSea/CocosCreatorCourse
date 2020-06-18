@@ -88,10 +88,10 @@ cc.Class({
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
                 //如果玩家目前指向自己，则取消该指向
-                if(this.playerScript.enemyAround==this.node)
+                if(this.playerScript.enemyAround==self.node)
                 {
                     this.playerScript.enemyAround=null;
-                    this.playerScript.enemyDistance=500.0;
+                    this.playerScript.enemyDistance=10000;
                 }
                 this.node.destroy();
             }
@@ -99,12 +99,16 @@ cc.Class({
 
          //检测玩家距离，若自己最近，且与玩家在同一个房间，则将自己的节点绑定到player上
          var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
-         {
-             cc.log("player is near");
-             this.playerScript.enemyAround=this.node;
-             this.playerScript.enemyDistance=playerDistance;
-         }
+        if(playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
+        {
+            this.playerScript.enemyAround=this.node;
+            this.playerScript.enemyDistance=playerDistance;
+        }   
+        if(playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
+        {
+            this.playerScript.enemyAround=null;
+            this.playerScript.enemyDistance=10000;
+        }
     },
 
     onBeginContact(info, self, other) {
@@ -124,10 +128,10 @@ cc.Class({
                 this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
                 //如果玩家目前指向自己，则取消该指向
-                if(this.playerScript.enemyAround==this.node)
+                if(this.playerScript.enemyAround==self.node)
                 {
                     this.playerScript.enemyAround=null;
-                    this.playerScript.enemyDistance=500.0;
+                    this.playerScript.enemyDistance=10000;
                 }
                 this.node.destroy();
             }

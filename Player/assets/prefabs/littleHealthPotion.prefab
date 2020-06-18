@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_normal",
+    "_name": "littleHealthPotion",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -49,8 +49,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 12.5,
-      "height": 60
+      "width": 20,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -61,13 +61,13 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1.729,
-        -13.278,
+        -224,
+        -64,
         0,
         0,
         0,
-        -0.7071067811865475,
-        0.7071067811865476,
+        0,
+        1,
         1,
         1,
         1
@@ -77,13 +77,13 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": -90
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -106,9 +106,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 25,
-      "g": 0,
-      "b": 255,
+      "r": 5,
+      "g": 255,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -125,13 +125,13 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -30,
+        0,
+        30,
         0,
         0,
         0,
         0,
-        0.7071067811865475,
-        0.7071067811865476,
+        1,
         1,
         1,
         1
@@ -141,7 +141,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 90
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -164,8 +164,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "基础步枪",
-    "_N$string": "基础步枪",
+    "_string": "生命药水-小",
+    "_N$string": "生命药水-小",
     "_fontSize": 15,
     "_lineHeight": 15,
     "_enableWrapText": true,
@@ -188,9 +188,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b568b7a7-60f7-4439-ab3b-1a5b0fe64eb9"
+      "__uuid__": "226663ea-2eac-4b0b-b5a1-17cddba4169b"
     },
-    "fileId": "83Vnj4mENKkIzcnQoIvQYq",
+    "fileId": "5bDMlAz19Mk73D1MLTY+1F",
     "sync": false
   },
   {
@@ -209,7 +209,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7fb9b09b-2cab-4ed5-87b6-8188777fe12e"
+      "__uuid__": "064d39db-a18f-4b12-b345-e476e7eb17c6"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -226,40 +226,68 @@
     "_id": ""
   },
   {
-    "__type__": "ac6c561KtpGZIXo2O0XRIQY",
+    "__type__": "cc.RigidBody",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "bullet": {
-      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
+    "_type": 0,
+    "_allowSleep": true,
+    "_gravityScale": 1,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
     },
-    "damage": 20,
-    "attackDuration": 0.5,
-    "player": null,
+    "_angularVelocity": 0,
+    "_fixedRotation": false,
+    "enabledContactListener": false,
+    "bullet": false,
+    "awakeOnLoad": true,
     "_id": ""
   },
   {
-    "__type__": "fdcdcmIS+lHBZYqdYCb1OrS",
+    "__type__": "cc.PhysicsBoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
+    "tag": 0,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0.2,
+    "_restitution": 0,
+    "body": null,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 20,
+      "height": 20
+    },
     "_id": ""
   },
   {
-    "__type__": "8e512D3ZJ1NpabhVE9LWdEV",
+    "__type__": "ac0aeVeB6xOPLjI+Ypf4qVe",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
-    "_enabled": false,
+    "_enabled": true,
     "player": null,
+    "potionAdd": 25,
+    "time": 5,
+    "type": "LHP",
     "_id": ""
   },
   {
@@ -268,9 +296,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b568b7a7-60f7-4439-ab3b-1a5b0fe64eb9"
+      "__uuid__": "226663ea-2eac-4b0b-b5a1-17cddba4169b"
     },
-    "fileId": "46suROxyZH24NT7XxqduEA",
+    "fileId": "15tto4FPhK56W3RNwYKFk6",
     "sync": false
   }
 ]

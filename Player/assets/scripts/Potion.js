@@ -19,25 +19,27 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.playerAround=false;
         this.enabled = false;
+        this.playerScript=this.player.getComponent("Player");
     },
     use:function()
     {
         if(this.type=="LHP")
         {
-            if((this.player.getComponent("Player").health+=this.potionAdd)>100)
+            if((this.playerScript.health+=this.potionAdd)>100)
             {
-                this.player.getComponent("Player").health=100;
+                this.playerScript.health=100;
             }
         }
         if(this.type=="DP")
         {
-            var PlayerScript=this.player.getComponent("Player")
-            PlayerScript.damageAdd+=this.potionAdd;
-            PlayerScript.damageAddTime=this.time;
+            this.playerScript.damageAdd+=this.potionAdd;
+            this.playerScript.damageAddTime=this.time;
             //cc.log(this.player.getChildByName("weapon").getComponent("Weapon").damage);
         }
+        this.playerScript.itemAround=null;
+        this.playerScript.bUseItem=false;
+        this.node.getChildByName("nameLabel").destroy();
         this.node.destroy();
     },
 
@@ -50,17 +52,19 @@ cc.Class({
         if(this.node.getPosition().sub(this.player.getPosition()).mag()<50)
         {
             //cc.log("yes");
-            this.player.getComponent("Player").itemAround=this.node;
-            this.player.getComponent("Player").bUseItem=true;
+            this.playerScript.itemAround=this.node;
+            this.playerScript.bUseItem=true;
             //cc.log(this.player.getComponent("Player").bUseItem);
-            this.playerAround=true;
+            //显示物品名称
+            this.node.getChildByName("nameLabel").active=true;
         }
         if(this.node.getPosition().sub(this.player.getPosition()).mag()>=50&&this.playerAround)
         {
             //cc.log("No");
-            this.player.getComponent("Player").itemAround=null;
-            this.player.getComponent("Player").bUseItem=false;
-            this.playerAround=false;
+            this.playerScript.itemAround=null;
+            this.playerScript.bUseItem=false;
+            //关闭物品名称显示
+            this.node.getChildByName("nameLabel").active=false;
         }
     },
 });

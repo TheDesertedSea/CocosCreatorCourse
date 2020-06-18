@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_normal",
+    "_name": "damagePotion",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -49,8 +49,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 12.5,
-      "height": 60
+      "width": 20,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -61,13 +61,13 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1.729,
-        -13.278,
+        0,
+        -280,
         0,
         0,
         0,
-        -0.7071067811865475,
-        0.7071067811865476,
+        0,
+        1,
         1,
         1,
         1
@@ -77,13 +77,13 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": -90
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": ""
   },
   {
@@ -106,15 +106,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 25,
+      "r": 255,
       "g": 0,
-      "b": 255,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 97.87,
-      "height": 50.4
+      "width": 60,
+      "height": 18.9
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -125,13 +125,13 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -30,
+        0,
+        30,
         0,
         0,
         0,
         0,
-        0.7071067811865475,
-        0.7071067811865476,
+        1,
         1,
         1,
         1
@@ -141,7 +141,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 90
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -164,8 +164,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "基础步枪",
-    "_N$string": "基础步枪",
+    "_string": "伤害药水",
+    "_N$string": "伤害药水",
     "_fontSize": 15,
     "_lineHeight": 15,
     "_enableWrapText": true,
@@ -188,9 +188,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b568b7a7-60f7-4439-ab3b-1a5b0fe64eb9"
+      "__uuid__": "f8134236-410d-45cf-8af5-758f36e0d071"
     },
-    "fileId": "83Vnj4mENKkIzcnQoIvQYq",
+    "fileId": "b8bdbtJrlFlbPsWSJKv8fE",
     "sync": false
   },
   {
@@ -209,7 +209,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "7fb9b09b-2cab-4ed5-87b6-8188777fe12e"
+      "__uuid__": "2c1b4bd7-5431-489b-873a-cfdb8d015001"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -226,40 +226,68 @@
     "_id": ""
   },
   {
-    "__type__": "ac6c561KtpGZIXo2O0XRIQY",
+    "__type__": "cc.RigidBody",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "bullet": {
-      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
+    "_type": 0,
+    "_allowSleep": true,
+    "_gravityScale": 1,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
     },
-    "damage": 20,
-    "attackDuration": 0.5,
-    "player": null,
+    "_angularVelocity": 0,
+    "_fixedRotation": false,
+    "enabledContactListener": false,
+    "bullet": false,
+    "awakeOnLoad": true,
     "_id": ""
   },
   {
-    "__type__": "fdcdcmIS+lHBZYqdYCb1OrS",
+    "__type__": "cc.PhysicsBoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
+    "tag": 0,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0.2,
+    "_restitution": 0,
+    "body": null,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 20,
+      "height": 20
+    },
     "_id": ""
   },
   {
-    "__type__": "8e512D3ZJ1NpabhVE9LWdEV",
+    "__type__": "ac0aeVeB6xOPLjI+Ypf4qVe",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
-    "_enabled": false,
+    "_enabled": true,
     "player": null,
+    "potionAdd": 5,
+    "time": 5,
+    "type": "DP",
     "_id": ""
   },
   {
@@ -268,9 +296,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "b568b7a7-60f7-4439-ab3b-1a5b0fe64eb9"
+      "__uuid__": "f8134236-410d-45cf-8af5-758f36e0d071"
     },
-    "fileId": "46suROxyZH24NT7XxqduEA",
+    "fileId": "98Zq4eQ59PT5XRD4fR0wwJ",
     "sync": false
   }
 ]
