@@ -99,7 +99,7 @@ cc.Class({
 
          //检测玩家距离，若自己最近，且与玩家在同一个房间，则将自己的节点绑定到player上
          var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance/*&&this.playerScript.roomNumber==this.roomNumber*/)
+         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
          {
              cc.log("player is near");
              this.playerScript.enemyAround=this.node;

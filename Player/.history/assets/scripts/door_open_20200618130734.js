@@ -13,7 +13,6 @@ cc.Class({
         roomEnemyNum2: 0,
         roomNumber1:1,
         roomNumber2:2,
-        enemy1: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -46,8 +45,6 @@ cc.Class({
             }
             //实现墙壁渐隐的效果
             this.node.runAction(cc.fadeOut(0.5));
-            //将enemy1状态改为active
-            this.enemy1.active = true;
             //0.2秒之后销毁墙壁
             setTimeout(function () {
                 this.node.destroy();
