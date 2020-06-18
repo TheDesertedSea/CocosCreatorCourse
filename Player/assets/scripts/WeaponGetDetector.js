@@ -35,9 +35,6 @@ cc.Class({
             this.player.getComponent("Player").bGetWeapon=true;
             //cc.log(this.player.getComponent("Player").bUseItem);
             this.playerAround=true;
-
-            //显示物品名称
-            this.node.getChildByName("nameLabel").active=true;
         }
         if(this.node.getPosition().sub(this.player.getPosition()).mag()>=50&&this.playerAround)
         {
@@ -45,9 +42,6 @@ cc.Class({
             this.player.getComponent("Player").weaponAround=null;
             this.player.getComponent("Player").bGetWeapon=false;
             this.playerAround=false;
-
-            //关闭物品名称显示
-            this.node.getChildByName("nameLabel").active=false;
         }
     },
 });

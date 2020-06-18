@@ -48,7 +48,7 @@ cc.Class({
     },
 
     start() {
-        this.schedule(this.ultimateSkill_1, 5);
+        // this.schedule(this.ultimateSkill_1, 5);
     },
 
     update(dt) {
@@ -99,7 +99,7 @@ cc.Class({
 
          //检测玩家距离，若自己最近，且与玩家在同一个房间，则将自己的节点绑定到player上
          var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance/*&&this.playerScript.roomNumber==this.roomNumber*/)
+         if(playerDistance<500&&playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
          {
              cc.log("player is near");
              this.playerScript.enemyAround=this.node;
@@ -154,7 +154,7 @@ cc.Class({
             //console.log(distance);
             if (distance <= this.range) {
                 //console.log(distance);
-                // this.schedule(this.ultimateSkill_1, 5);
+                this.schedule(this.ultimateSkill_1, 5);
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
                     this.Attack();

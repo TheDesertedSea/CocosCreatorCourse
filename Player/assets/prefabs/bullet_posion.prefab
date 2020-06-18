@@ -177,8 +177,8 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 10,
-      "height": 30
+      "width": 26,
+      "height": 45
     },
     "_id": ""
   },
@@ -198,8 +198,8 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 10,
-      "height": 30
+      "width": 26,
+      "height": 45
     },
     "_id": ""
   },
