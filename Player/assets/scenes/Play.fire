@@ -216,7 +216,7 @@
       "array": [
         0,
         0,
-        209.57814771583418,
+        265.22027990898437,
         0,
         0,
         0,
@@ -907,7 +907,10 @@
       "__id__": 13
     },
     "_enabled": true,
-    "enemy_num": 3,
+    "roomEnemyNum1": 3,
+    "roomEnemyNum2": 0,
+    "roomNumber1": 1,
+    "roomNumber2": 2,
     "_id": "d8rm3XIPVC67FMkMfuTszF"
   },
   {
@@ -2041,7 +2044,10 @@
       "__id__": 44
     },
     "_enabled": true,
-    "enemy_num": 1,
+    "roomEnemyNum1": 1,
+    "roomEnemyNum2": 0,
+    "roomNumber1": 6,
+    "roomNumber2": 7,
     "_id": "aeMFCOLTxGhrX3SesfRe6+"
   },
   {
@@ -3280,7 +3286,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a32d1659-dead-484d-bbde-9513ee56fb20"
+      "__uuid__": "0f5e43db-71c0-4e1a-9116-b59915d739c3"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -3307,10 +3313,10 @@
     "_defaultClip": null,
     "_clips": [
       {
-        "__uuid__": "6d3e4d25-a800-4d80-9737-ace1b9cf0041"
+        "__uuid__": "d6685916-b1eb-4ada-a239-066e591f038d"
       },
       {
-        "__uuid__": "8461d9d0-b0cc-4227-9ce2-68faed70fc9d"
+        "__uuid__": "191a9189-aff9-4104-b2fe-607e34bcc0c5"
       },
       {
         "__uuid__": "fe9102dc-d8ff-4f12-9e94-962bf074fff8"
@@ -3391,8 +3397,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 1,
-    "groupIndex": 1,
+    "_groupIndex": 0,
+    "groupIndex": 0,
     "_id": "13tuewaGNJUr8AHN99mp+x"
   },
   {
@@ -3518,7 +3524,7 @@
       "array": [
         0,
         0,
-        209.57814771583418,
+        265.22027990898437,
         0,
         0,
         0,
@@ -6590,8 +6596,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 1,
-    "groupIndex": 1,
+    "_groupIndex": 0,
+    "groupIndex": 0,
     "_id": "76hz+6qcpOBbHzwYvgTafq"
   },
   {
@@ -6734,8 +6740,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 1,
-    "groupIndex": 1,
+    "_groupIndex": 0,
+    "groupIndex": 0,
     "_id": "ddVmbfy5BEE6c0XRQNIOZc"
   },
   {
@@ -7375,8 +7381,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 4,
-    "groupIndex": 4,
+    "_groupIndex": 0,
+    "groupIndex": 0,
     "_id": "34tzq0dPtLqbzIIhKNJoiV"
   },
   {

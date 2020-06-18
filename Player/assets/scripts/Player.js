@@ -33,9 +33,10 @@ cc.Class({
         this.weaponAround = null;  //在附近的武器
         this.bGetWeapon = false;   //是否有能够拣取的武器
         this.animation = this.node.getChildByName("body").getComponent(cc.Animation);  //人物身体动画
-        this.animationState = "player_forward";   //目前播放状态（播放的是朝哪个方向的动画）
-        this.lastAnimationState = "player_forward";   //上一次动画播放状态
-        this.animation.play(this.animationState);   //初始播放动画（向前）
+        //this.animationState = "player_right_static";   //目前播放状态（播放的是朝哪个方向的动画）
+        this.lastAnimationState = "player_right_static";   //上一次动画播放状态
+        this.animation.play(this.lastAnimationState);   //初始播放动画（右静）
+        
         this.audioId=0;   //上次播放的音频的id号
         //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
         this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
@@ -67,7 +68,7 @@ cc.Class({
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
     onKeyDown: function (event) {
-        this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
+        //this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
         switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
             /*case cc.macro.KEY.a:
                 this.moveLeft = true;
@@ -93,8 +94,9 @@ cc.Class({
             case cc.macro.KEY.space:
                 this.act();
         }
-        if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
+        /*if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
             this.animation.play(this.animationState);
+            */
     },
 
     onKeyUp: function (event) {
@@ -147,6 +149,8 @@ cc.Class({
 
                 //修改目前所使用武器节点关系，并使使用武器脚本(this.weaponScript)失效
                 this.weapon.parent = null;   
+                let dirX=this.weaponScript.dirX;
+                let dirY=this.weaponScript.dirY;
                 this.weaponScript.enabled = false;
                 this.weapon.parent = this.weaponPack;
 
@@ -154,7 +158,7 @@ cc.Class({
                 this.weaponAround.parent = this.node;  
                 //this.weaponAround.group="player";
                 this.weaponAround.getComponent("Weapon").enabled = true;  //开启使用武器脚本组件
-                this.weaponAround.getComponent("Weapon").weaponInit();   //武器初始化
+                this.weaponAround.getComponent("Weapon").weaponInit(dirX,dirY);   //武器初始化
                 //cc.log(this.weaponAround.parent.name);   
 
                 //复制使用中武器的位置信息
@@ -182,6 +186,8 @@ cc.Class({
                 
                 //卸下使用中武器，放到Canvas下，并使使用武器脚本(this.weaponScript)失效
                 this.weapon.parent = this.node.parent;
+                let dirX=this.weaponScript.dirX;
+                let dirY=this.weaponScript.dirY;
                 this.weaponScript.enabled = false;
 
                 //保存目前武器节点坐标
@@ -191,15 +197,16 @@ cc.Class({
                 //使用中武器位置换为周边武器位置
                 this.weapon.x = this.weaponAround.x;
                 this.weapon.y = this.weaponAround.y;
+                //先把使用中武器角度复制给周边武器
+                this.weaponAround.angle = this.weapon.angle;
                 this.weapon.angle = -90;
 
                 //修改周边武器节点关系即坐标以及脚本组件的开与关
                 this.weaponAround.parent = this.node;
                 //this.weaponAround.group="player";
-                this.weaponAround.getComponent("Weapon").weaponInit();
+                this.weaponAround.getComponent("Weapon").weaponInit(dirX,dirY);
                 this.weaponAround.x = px;
                 this.weaponAround.y = py;
-                this.weaponAround.angle = this.weapon.angle;
                 this.weaponAround.getComponent("Weapon").enabled = true;
                 //this.weaponAround.zIndex = 1;  //zIndex为叠放次序
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;
@@ -234,6 +241,8 @@ cc.Class({
         
         //修改目前所使用武器节点关系，并使使用武器脚本(this.weaponScript)失效
         this.weapon.parent = null;
+        let dirX=this.weaponScript.dirX;
+        let dirY=this.weaponScript.dirY;
         this.weaponScript.enabled = false;
 
         //获得武器栏中武器节点
@@ -242,7 +251,7 @@ cc.Class({
         //修改武器栏中武器位置信息为目前所使用武器位置信息
         weapon2.parent = this.node;
         weapon2.getComponent("Weapon").enabled = true;
-        weapon2.getComponent("Weapon").weaponInit();
+        weapon2.getComponent("Weapon").weaponInit(dirX,dirY);
         weapon2.position.x = this.weapon.x;
         weapon2.position.y = this.weapon.y;
         weapon2.angle = this.weapon.angle;
@@ -282,7 +291,8 @@ cc.Class({
     },
     update(dt) {   //每秒给刚体组件设置线性速度
         //cc.log(this.bGetWeapon);
-
+        cc.log(this.roomNumber);
+        
         this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
         /*if (this.moveRight) {
             this.lv.x = this.speed;
@@ -309,6 +319,46 @@ cc.Class({
         */
        this.lv.x=this.MoveRockerScript.dir.x*this.speed;
        this.lv.y=this.MoveRockerScript.dir.y*this.speed;
+        if(this.lv.x==0&&this.lv.y==0)
+        {
+            if(this.lastAnimationState=="player_right")
+            {
+                this.lastAnimationState="player_right_static";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lastAnimationState=="player_left")
+            {
+                this.lastAnimationState="player_left_static";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+        else if(this.lv.x!=0)
+        {
+            if(this.lv.x>0&&this.lastAnimationState!="player_right")
+            {
+                this.lastAnimationState="player_right";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lv.x<0&&this.lastAnimationState!="player_left")
+            {
+                this.lastAnimationState="player_left";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+        else 
+        {
+            if(this.lastAnimationState=="player_left_static")
+            {
+                this.lastAnimationState="player_left";
+                this.animation.play(this.lastAnimationState);
+            }
+            else if(this.lastAnimationState="player_right_static")
+            {
+                this.lastAnimationState="player_right";
+                this.animation.play(this.lastAnimationState);
+            }
+        }
+
 
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
@@ -373,16 +423,5 @@ cc.Class({
         
     },
 
-    // 角色与墙壁的碰撞回调
-    onCollisionEnter(other, self) {
-        //console.log(other.node.getComponent("door_open").enemy_num)
-        if (other.node.group == 'door_out' && other.node.getComponent("door_open").enemy_num <= 0) {
-            //实现墙壁渐隐的效果
-            other.node.runAction(cc.fadeOut(0.5));
-            //0.2秒之后销毁墙壁
-            setTimeout(function () {
-                other.node.destroy();
-            }.bind(other), 200);
-        }
-    }
+    
 });
