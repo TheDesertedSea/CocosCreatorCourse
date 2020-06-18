@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "d2a7172a-f409-493a-90a5-7973acf4bc5c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 104,
+  "height": 45,
+  "platformSettings": {},
+  "subMetas": {
+    "小型手枪3": {
+      "ver": "1.0.4",
+      "uuid": "69508b3c-cabf-4c5a-b5bb-49e24b97faf0",
+      "rawTextureUuid": "d2a7172a-f409-493a-90a5-7973acf4bc5c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 104,
+      "height": 44,
+      "rawWidth": 104,
+      "rawHeight": 45,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
