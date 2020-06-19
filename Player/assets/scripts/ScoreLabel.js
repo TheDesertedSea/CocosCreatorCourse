@@ -1,9 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
     extends: cc.Component,
@@ -35,13 +29,14 @@ cc.Class({
     },
 
     start () {
-        this.scoreNodeScript=cc.find("Score").getComponent("Score"); 
+        //this.scoreNodeScript=cc.find("Score").getComponent("Score"); 
     },
     addScore(score)
     {
         this.score+=score;
-        this.scoreNodeScript.score=this.score;
+        //this.scoreNodeScript.score=this.score;
         this.label.string="Score:"+this.score.toString();
     },
     // update (dt) {},
 });
+

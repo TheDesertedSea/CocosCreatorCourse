@@ -1594,7 +1594,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Over_Lable",
+    "_name": "Over_Label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

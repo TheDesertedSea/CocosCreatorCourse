@@ -3,8 +3,8 @@
   "_name": "player_left",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 0.26666666666666666,
-  "sample": 15,
+  "_duration": 1,
+  "sample": 4,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -18,19 +18,19 @@
             }
           },
           {
-            "frame": 0.06666666666666667,
+            "frame": 0.25,
             "value": {
               "__uuid__": "c95ccda7-2cc8-4a0b-b82f-6bb00dc6456d"
             }
           },
           {
-            "frame": 0.13333333333333333,
+            "frame": 0.5,
             "value": {
               "__uuid__": "d624b67e-b2f1-48d0-90c0-392a63ffdf9a"
             }
           },
           {
-            "frame": 0.2,
+            "frame": 0.75,
             "value": {
               "__uuid__": "5b934eea-aef0-4f4f-98e1-bf418084636d"
             }

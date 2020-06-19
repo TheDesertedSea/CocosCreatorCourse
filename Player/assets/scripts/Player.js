@@ -15,6 +15,8 @@ cc.Class({
         //WeaponRocker:cc.Node,   //绑定虚拟摇杆结点以获取摇杆信息,
         MoveRocker:cc.Node,
         roomNumber:0,  //目前所在房间号
+        gameOverPanel:cc.Prefab,
+        scoreLabel:cc.Node,
     },
 
     onLoad() {
@@ -40,8 +42,9 @@ cc.Class({
         this.audioId=0;   //上次播放的音频的id号
         //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
         this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
-        this.enemyAround=null;
-        this.enemyDistance=10000;
+        this.enemyAround=null;  //周围的敌人节点
+        this.enemyDistance=10000;  //当前绑定的敌人距离
+        this.score=0;  //分数
           //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");
@@ -283,11 +286,24 @@ cc.Class({
         this.health -= damage;
         this.onHit = true;
         if (this.health <= 0) {
-            cc.director.loadScene("GameOver",function(){
+            this.health=0;
+            /*cc.director.loadScene("GameOver",function(){
                 cc.find("Canvas/baseView/Score/Score_Label").getComponent(cc.Label).string="Score："
                 +(cc.find("Score").getComponent("Score").score+0).toString();
             });
+            */
+           var gameOverPanelNode=cc.instantiate(this.gameOverPanel);
+           gameOverPanelNode.getChildByName("BG_Box").getChildByName("Score_Label").getComponent(cc.Label).string="Score："
+           +(this.score+0).toString();
+           gameOverPanelNode.parent=this.node;
+           //显示血量
+            this.healthBar.scaleX = this.health / 100;
+           cc.director.pause();
         }
+    },
+    addScore(score){
+        this.score+=score;
+        this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
     },
     update(dt) {   //每秒给刚体组件设置线性速度
         //cc.log(this.bGetWeapon);
@@ -358,11 +374,12 @@ cc.Class({
                 this.animation.play(this.lastAnimationState);
             }
         }
-
-
-
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+
+        //显示血量
         this.healthBar.scaleX = this.health / 100;
+
+
         //cc.log(this.stateUI.getChildByName("ATK").string);
         //var stateUI=cc.find("Canvas/Player/UI/State/ATK");
         var ATK = this.stateUI.getChildByName("ATK");

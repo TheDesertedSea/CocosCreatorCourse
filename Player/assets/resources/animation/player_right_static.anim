@@ -3,8 +3,8 @@
   "_name": "player_right_static",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 0.2,
-  "sample": 10,
+  "_duration": 1,
+  "sample": 2,
   "speed": 1,
   "wrapMode": 2,
   "curveData": {
@@ -18,7 +18,7 @@
             }
           },
           {
-            "frame": 0.1,
+            "frame": 0.5,
             "value": {
               "__uuid__": "f5886e8d-2352-4a55-8cfc-75c453d8777a"
             }

@@ -1,10 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -17,7 +10,7 @@ cc.Class({
         },
         damage: 1,
         health: 50,
-        scoreLabel:cc.Node,
+        //scoreLabel:cc.Node,
         score:10,
         door:cc.Node,
         roomNumber:0,  //目前所在房间号
@@ -61,36 +54,13 @@ cc.Class({
         {
             if(this.lastGetExtraDamgeDuration<0)
             {
-                this.health-=this.extraDamage;
+                this.getDamage(this.extraDamage);
                 this.lastGetExtraDamgeDuration=1;
                 this.extraDamageTimes-=1;
             }
             else
             {
                 this.lastGetExtraDamgeDuration-=dt;
-            }
-            
-            //检测是否死亡
-            if (this.health <= 0) {
-                //开门检测减1
-                let doorScript=this.door.getComponent("door_open");
-                if(this.roomNumber==doorScript.roomNumber1)
-                {
-                    doorScript.roomEnemyNum1-=1;
-                }
-                else{
-                    doorScript.roomEnemyNum2-=1;
-                }
-                
-                this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
-
-                //如果玩家目前指向自己，则取消该指向
-                if(this.playerScript.enemyAround==self.node)
-                {
-                    this.playerScript.enemyAround=null;
-                    this.playerScript.enemyDistance=10000;
-                }
-                this.node.destroy();
             }
         }
         
@@ -109,44 +79,22 @@ cc.Class({
     },
 
     onBeginContact(info, self, other) {
-        if(other.node.group == "bullet") {
-            //受到一次性伤害
-            this.health -=other.node.getComponent("Bullet").damage;
-            if (this.health <= 0) {
-                //开门检测减1
-                let doorScript=this.door.getComponent("door_open");
-                if(this.roomNumber==doorScript.roomNumber1)
-                {
-                    doorScript.roomEnemyNum1-=1;
-                }
-                else{
-                    doorScript.roomEnemyNum2-=1;
-                }
-                this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
-
-                //如果玩家目前指向自己，则取消该指向
-                if(this.playerScript.enemyAround==self.node)
-                {
-                    this.playerScript.enemyAround=null;
-                    this.playerScript.enemyDistance=10000;
-                }
-                this.node.destroy();
-            }
+        if (other.node.group == "bullet") {
+        //受到一次性伤害
+        this.getDamage(other.node.getComponent("Bullet").damage);
 
             //附加毒性伤害
             this.extraDamage=other.node.getComponent("Bullet").extraDamage;
             this.extraDamageTimes=other.node.getComponent("Bullet").extraDamageTimes;
             this.lastGetExtraDamgeDuration=1.0;
         }
-        
-        
+        //碰到玩家
+        if (other.node.group == "player" && other.node.getComponent("Player").onHit == false) {
+            //cc.log("ENEMY ATTACK!");
+            other.getComponent("Player").getDamage(this.damage);
+        }
+    
     },
-
-    getDamage(damage) {
-        this.health -= damage;
-
-    },
-
     EnemyMove (){
         if (this.player) {
             let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
@@ -273,5 +221,32 @@ cc.Class({
         // }
 
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+    },
+    getDamage(damage){  //受到伤害
+        this.health-=damage;
+
+        if (this.health <= 0) {  //如果死亡
+            //开门检测减1
+            let doorScript=this.door.getComponent("door_open");
+            if(this.roomNumber==doorScript.roomNumber1)
+            {
+                doorScript.roomEnemyNum1-=1;
+            }
+            else{
+                doorScript.roomEnemyNum2-=1;
+            }
+            //this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
+
+            this.playerScript.addScore(this.score);//增加分数
+
+            //如果玩家目前指向自己，则取消该指向
+            if(this.playerScript.enemyAround==this.node)
+            {
+                this.playerScript.enemyAround=null;
+                this.playerScript.enemyDistance=10000;
+            }
+            this.node.destroy();
+        }
+
     },
 });
