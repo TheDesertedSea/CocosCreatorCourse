@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "786a51f4-3bcf-4936-8e45-8b00458a7ece",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 216,
+  "height": 44,
+  "platformSettings": {},
+  "subMetas": {
+    "科幻装饰": {
+      "ver": "1.0.4",
+      "uuid": "97a3a51c-8a13-40ae-98e2-9f2729a59b8f",
+      "rawTextureUuid": "786a51f4-3bcf-4936-8e45-8b00458a7ece",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 1.5,
+      "trimX": 1,
+      "trimY": 0,
+      "width": 213,
+      "height": 41,
+      "rawWidth": 216,
+      "rawHeight": 44,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

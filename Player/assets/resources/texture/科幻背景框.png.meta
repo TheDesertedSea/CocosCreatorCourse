@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "3327c56a-c007-4871-9e56-eb90966cbc81",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 136,
+  "height": 100,
+  "platformSettings": {},
+  "subMetas": {
+    "科幻背景框": {
+      "ver": "1.0.4",
+      "uuid": "4318e12b-8674-4cf8-9739-2f12354de22d",
+      "rawTextureUuid": "3327c56a-c007-4871-9e56-eb90966cbc81",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 6,
+      "offsetY": 0,
+      "trimX": 12,
+      "trimY": 4,
+      "width": 124,
+      "height": 92,
+      "rawWidth": 136,
+      "rawHeight": 100,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
