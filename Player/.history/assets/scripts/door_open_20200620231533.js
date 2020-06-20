@@ -46,10 +46,8 @@ cc.Class({
             }
             //实现墙壁渐隐的效果
             this.node.runAction(cc.fadeOut(0.5));
-
             //在玩家进入房间后将房间内Obj刷新出来
             this.Obj.active = true;
-            
             //0.2秒之后销毁墙壁
             setTimeout(function () {
                 this.node.destroy();

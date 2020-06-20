@@ -27,7 +27,7 @@ cc.Class({
 
         // let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
         // if (distance <= this.range) {
-        this.schedule(this.fire, 2);
+            this.schedule(this.fire, 2);
         // }
     },
 
