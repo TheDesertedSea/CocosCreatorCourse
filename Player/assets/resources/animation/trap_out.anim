@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "trap_out",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.3333333333333333,
+  "sample": 15,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "fb5b7143-2525-4991-93ff-9809acf4748e"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "54c8b6f2-81ec-498d-90ad-80d874b857e9"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "176a144f-1162-45ee-ae81-4ac399233bc5"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "76abf270-9247-41bd-9e85-8182dfb680b5"
+            }
+          },
+          {
+            "frame": 0.26666666666666666,
+            "value": {
+              "__uuid__": "73aab936-51e5-485a-9388-b2c10afe77c1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

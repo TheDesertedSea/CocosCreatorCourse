@@ -6,7 +6,8 @@
     "bullet",
     "enemy",
     "enemy-bullet",
-    "door_out"
+    "door_out",
+    "trap"
   ],
   "collision-matrix": [
     [
@@ -19,6 +20,7 @@
       false,
       true,
       true,
+      true,
       true
     ],
     [
@@ -55,6 +57,16 @@
     [
       false,
       true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
       false,
       false,
       false,
