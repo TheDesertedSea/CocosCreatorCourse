@@ -71,11 +71,7 @@ cc.Class({
             this.playerScript.enemyAround=this.node;
             this.playerScript.enemyDistance=playerDistance;
         }   
-        if(playerDistance<this.playerScript.enemyDistance/*&&this.playerScript.roomNumber==this.roomNumber*/)
-        {
-            this.playerScript.enemyAround=null;
-            this.playerScript.enemyDistance=10000;
-        }
+        
     },
 
     onBeginContact(info, self, other) {

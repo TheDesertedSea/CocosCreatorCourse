@@ -36,9 +36,11 @@ cc.Class({
     },
     onBackToMenu:function(){
         cc.director.loadScene("Start_UI");
+        cc.director.resume();
     },
     onRestart:function(){
         cc.director.loadScene("Play");
+        cc.director.resume();
     },
     onOK:function () {
         if(this.okCallFunc != null){

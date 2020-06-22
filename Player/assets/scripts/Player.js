@@ -1,4 +1,3 @@
-
 cc.Class({
     extends: cc.Component,
 
@@ -298,6 +297,8 @@ cc.Class({
            gameOverPanelNode.parent=this.node;
            //显示血量
             this.healthBar.scaleX = this.health / 100;
+            var UI=this.node.getChildByName("UI");
+            UI.active=false;
            cc.director.pause();
         }
     },
