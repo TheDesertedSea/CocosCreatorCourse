@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "a1f33449-68bd-4be7-b70a-7aa1d59d09a8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 205,
+  "height": 40,
+  "platformSettings": {},
+  "subMetas": {
+    "血量背景1": {
+      "ver": "1.0.4",
+      "uuid": "34e30e7a-c56f-4c0e-a056-9be44bc6bb92",
+      "rawTextureUuid": "a1f33449-68bd-4be7-b70a-7aa1d59d09a8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 1,
+      "width": 204,
+      "height": 38,
+      "rawWidth": 205,
+      "rawHeight": 40,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
