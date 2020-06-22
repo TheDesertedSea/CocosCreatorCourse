@@ -9,7 +9,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        roomNumber: 0,
+        //roomNumber: 0,
         player: cc.Node,
         potion: cc.Node,
     },
@@ -29,12 +29,12 @@ cc.Class({
     update (dt) {
         //检测玩家距离，若自己最近，则将自己的节点绑定到player上
         var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-        if(playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
+        if(playerDistance<this.playerScript.enemyDistance)//&&this.playerScript.roomNumber==this.roomNumber)
         {
             this.playerScript.enemyAround=this.node;
             this.playerScript.enemyDistance=playerDistance;
         }   
-        if(playerDistance<this.playerScript.enemyDistance&&this.playerScript.roomNumber==this.roomNumber)
+        if(playerDistance<this.playerScript.enemyDistance)//&&this.playerScript.roomNumber==this.roomNumber)
         {
             this.playerScript.enemyAround=null;
             this.playerScript.enemyDistance=10000;

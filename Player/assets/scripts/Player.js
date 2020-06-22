@@ -14,7 +14,7 @@ cc.Class({
         },
         //WeaponRocker:cc.Node,   //绑定虚拟摇杆结点以获取摇杆信息,
         MoveRocker:cc.Node,
-        roomNumber:0,  //目前所在房间号
+        //roomNumber:0,  //目前所在房间号
         gameOverPanel:cc.Prefab,
         scoreLabel:cc.Node,
     },
@@ -307,7 +307,7 @@ cc.Class({
     },
     update(dt) {   //每秒给刚体组件设置线性速度
         //cc.log(this.bGetWeapon);
-        cc.log(this.roomNumber);
+        //cc.log(this.roomNumber);
         
         this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
         /*if (this.moveRight) {

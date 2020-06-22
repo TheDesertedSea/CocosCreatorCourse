@@ -12,8 +12,8 @@ cc.Class({
         health: 50,
         //scoreLabel:cc.Node,
         score:10,
-        door:cc.Node,
-        roomNumber:0,  //目前所在房间号
+        BlockDoor:cc.Node,
+        //roomNumber:0,  //目前所在房间号
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -227,14 +227,8 @@ cc.Class({
 
         if (this.health <= 0) {  //如果死亡
             //开门检测减1
-            let doorScript=this.door.getComponent("door_open");
-            if(this.roomNumber==doorScript.roomNumber1)
-            {
-                doorScript.roomEnemyNum1-=1;
-            }
-            else{
-                doorScript.roomEnemyNum2-=1;
-            }
+            let doorScript=this.BlockDoor.getComponent("door_close");
+            doorScript.roomEnemyNum-=1;
             //this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
             this.playerScript.addScore(this.score);//增加分数
