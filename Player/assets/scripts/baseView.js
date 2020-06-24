@@ -2,7 +2,6 @@ cc.Class({
     extends: cc.Component,  //继承cc.Component
 
     properties: {
-      mySprite:cc.SpriteFrame,
       myStart_Button:cc.Sprite,
       myStart_Label:cc.Label,
       Setting_Menu:cc.Prefab,
@@ -17,8 +16,16 @@ cc.Class({
     
     onClickButton: function(target, data){
       if (data == 'START'){
-      this.myStart_Label.enabled = false
-      this.myStart_Button.spriteFrame = this.mySprite
+      cc.director.loadScene("Play");
+      }
+    },
+    onClickSelect: function(target, data){
+      if (data == 'SELECT'){
+      cc.director.loadScene("Select_Level");
+      }
+    },
+    onClickLevel1: function(target, data){
+      if (data == 'level1'){
       cc.director.loadScene("Play");
       }
     },
