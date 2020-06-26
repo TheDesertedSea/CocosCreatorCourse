@@ -8,7 +8,7 @@ cc.Class({
 
         onLoad () {
             this.node.zIndex=2; //zIndex为叠放次序
-            cc.log(this.node.zIndex);
+            //cc.log(this.node.zIndex);
         },
 
         start () {

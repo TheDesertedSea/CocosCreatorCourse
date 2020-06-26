@@ -1,10 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -13,6 +6,8 @@ cc.Class({
         lifeTime:3,
         extraDamage:0,
         extraDamageTimes:0,
+        isExplosion:false,
+        explosionDamage:0,
     },
 
     // LIFE-CYCLE CALLBACKS
@@ -26,6 +21,10 @@ cc.Class({
         this.dirX=dirX;  //（0，0）指向（dirX，dirY）的向量表示方向
         this.dirY=dirY;
     },
+    explode(otherNode)
+    {
+        cc.log("explosion");
+    },
     start () {
         this.node.zIndex=0.5;//设置显示顺序
         this.time=0; 
@@ -36,7 +35,11 @@ cc.Class({
     },
 
     onBeginContact:function(other,self){  //碰撞到物体消失
-
+        //爆炸
+        if(this.isExplosion)
+        {
+            bulletScript.explode(other.node);
+        }
         this.node.destroy();
     },
     update (dt) {

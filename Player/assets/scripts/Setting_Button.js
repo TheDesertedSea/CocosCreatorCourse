@@ -9,8 +9,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        cc.log(this.node.parent.name);
-//        this.node.parent=cc.find("Canvas");
+        //cc.log(this.node.parent.name);
+        //this.node.parent=cc.find("Canvas");
     },
 
     start () {

@@ -51,15 +51,15 @@ cc.Class({
 
     setTouch() {
         this.screen.on('touchstart', function(event) {
-            console.log('Touch start');
+            //console.log('Touch start');
         }, this);
 
         this.screen.on('touchmove', function(event) {
-            console.log('Touch move');
+            //console.log('Touch move');
         }, this);
 
         this.screen.on('touchend', function(event) {
-            console.log('Touch end');
+            //console.log('Touch end');
             this.nextTextData();
         }, this);
     },
