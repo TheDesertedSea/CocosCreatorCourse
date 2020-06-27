@@ -44,6 +44,8 @@ cc.Class({
         this.enemyAround=null;  //周围的敌人节点
         this.enemyDistance=10000;  //当前绑定的敌人距离
         this.score=0;  //分数
+        this.bTalkWithNPC=false;  //是否能够和NPC对话
+        this.NPCAround=null; //周围的NPC节点
           //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");
@@ -131,7 +133,12 @@ cc.Class({
         //cc.log(this.bUseItem);
         // cc.log("attack");   //调用武器的开火函数
         //cc.log(this.bGetWeapon);
-        if (this.bUseItem) {   //如果可以使用物品
+        if(this.bTalkWithNPC)  //如果可以和NPC对话
+        {
+            this.NPCAround.getComponent("NPC").talk();
+            this.bTalkWithNPC=false;
+        }
+        else if (this.bUseItem) {   //如果可以使用物品
             //cc.log(this.itemAround.name);
             //cc.log("has item!");
             //if (this.itemAround) {
@@ -143,6 +150,7 @@ cc.Class({
             this.ATK=(this.weaponScript.damage + this.damageAdd).toString();   //更新ATK显示
             
         }
+
         else if (this.bGetWeapon) {   //如果可以捡取武器
 
             if (this.weaponNums == 1) {   //若持有武器数为1，则将新武器加入所持武器，并处于使用状态

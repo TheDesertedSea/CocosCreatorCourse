@@ -1,10 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 let roleMap = {
     1: {
         name: 'Hero',
@@ -16,6 +9,15 @@ let roleMap = {
     }
 };
 
+
+var DialogData=cc.Class({  //对话数据类
+    name: "DialogData",
+    properties: {
+        role:0,  //角色编号
+        content:cc.String,  //内容
+    },
+});
+
 cc.Class({
     extends: cc.Component,
 
@@ -26,29 +28,34 @@ cc.Class({
         screen: {
             default: null,
             type: cc.Node
-        }
+        },
+       textDataArr:[DialogData],  //对话数据数组
+        
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.init([
-            // {role: 2, content: 'Hello, my boyfriend!'},
-            {role: 1, content: '你有女朋友吗？'},
-            {role: 2, content: '不！我没有！'},
-            {role: 1, content: '那。。我可以做你的优乐美吗😘'},
-            {role: 2, content: '那我是不是要把你捧到手心里？'},
-            {role: 1, content: '如果你想的话!'},
-            {role: 2, content: '不！我不想！'},
-            {role: 1, content: '。。。所以。。这就是拒绝了咩。？😢'},
-            {role: 2, content: '人家才是你的小宝贝，我要亲亲抱抱举高高！'},
-        ]);
+        this.init();
+        
+    },
+    beginDialog()  //开始对话（可重复调用，多次进行对话）
+    {
+        
+        this.nowText = null;
+        this.textEnd = true;
+        this.tt = 0;
+
+        this.textIndex = -1;
+
+        this.node.active = true;
+        this.screen.resumeSystemEvents();//恢复屏幕触摸监听
+        this.nextTextData();
         //用来设置为全局变量，使得对话框存在时，其他节点不执行动作
         window.dialog = this.node;
 
-        this.setTouch();
-    },
 
+    },
     setTouch() {
         this.screen.on('touchstart', function(event) {
             //console.log('Touch start');
@@ -78,15 +85,10 @@ cc.Class({
     //     }
     // },
 
-    init(textDataArray){
-        this.nowText = null;
-        this.textEnd = true;
-        this.tt = 0;
+    init()//初始化
+    {  
+        this.setTouch();
 
-        this.textIndex = -1;
-        this.textDataArr = textDataArray;
-        this.node.active = true;
-        this.nextTextData();
     },
 
     nextTextData() {
@@ -112,9 +114,10 @@ cc.Class({
     },
 
     closeDialog() {
+        this.screen.pauseSystemEvents();
         this.node.active = false;
 
-        this.screen.pauseSystemEvents();
+
     },
 
     // start () {
