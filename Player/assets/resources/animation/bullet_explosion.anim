@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bullet_explosion",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.06666666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0435ee9e-b3d9-4821-a444-7ea84ae48cb9"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "bd46b10a-dd15-48da-a8a7-9d18078b5e27"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "9ebd5ba4-714e-4235-9331-b94b2b943beb"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "6d5adba3-9f72-4195-adb3-b46c6594b2b2"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

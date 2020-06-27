@@ -21,9 +21,19 @@ cc.Class({
         this.dirX=dirX;  //（0，0）指向（dirX，dirY）的向量表示方向
         this.dirY=dirY;
     },
-    explode(otherNode)
+    explode()
     {
-        cc.log("explosion");
+        //切换碰撞体
+        this.node.getComponent(cc.BoxCollider).enabled=false;
+        this.node.getComponent(cc.CircleCollider).enabled=true;
+        //停止移动
+        this.lv.x=0;
+        this.lv.y=0;
+        //播放动画
+        this.node.getComponent(cc.Animation).play();
+        //短暂时间后消失
+        cc.tween(this.node).delay(0.15).call(()=>{this.node.getComponent(cc.Animation).pause();this.node.destroy();}).start();
+            
     },
     start () {
         this.node.zIndex=0.5;//设置显示顺序
@@ -34,14 +44,17 @@ cc.Class({
         this.node.getComponent(cc.RigidBody).linearVelocity=this.lv;
     },
 
-    onBeginContact:function(other,self){  //碰撞到物体消失
+    onBeginContact:function(info,self,other){  //碰撞到物体消失
         //爆炸
         if(this.isExplosion)
         {
-            bulletScript.explode(other.node);
+            this.explode();
         }
-        this.node.destroy();
+        else{
+           this.node.destroy();
+        }
     },
+    
     update (dt) {
 
 

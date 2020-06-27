@@ -91,6 +91,14 @@ cc.Class({
         }
     
     },
+    //与爆炸的碰撞体碰撞
+    onCollisionEnter(other, self)
+    {
+        if(other.node.group=="bullet")
+        {
+            this.getDamage(other.node.getComponent("Bullet").explosionDamage);
+        }
+    },
     EnemyMove (){
         if (this.player) {
             let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));

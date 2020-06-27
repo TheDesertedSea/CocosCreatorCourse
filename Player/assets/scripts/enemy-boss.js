@@ -76,7 +76,7 @@ cc.Class({
             this.playerScript.enemyDistance=playerDistance;
         }   
     },
-
+//与爆炸的碰撞体碰撞
     onBeginContact(info, self, other) {
         if (other.node.group == "bullet") {
             //受到一次性伤害
@@ -96,7 +96,13 @@ cc.Class({
             other.getComponent("Player").getDamage(this.damage);
         }
     },
-
+    onCollisionEnter(other, self)
+    {
+        if(other.node.group=="bullet")
+        {
+            this.getDamage(other.node.getComponent("Bullet").explosionDamage);
+        }
+    },
 
     EnemyMove() {
         if (this.player) {
@@ -293,6 +299,7 @@ cc.Class({
             if(this.playerScript.enemyAround==this.node)
             {
                 this.playerScript.enemyAround=null;
+
                 this.playerScript.enemyDistance=10000;
             }
             this.node.destroy();

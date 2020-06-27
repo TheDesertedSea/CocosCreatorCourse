@@ -99,7 +99,14 @@ cc.Class({
         }
         
     },
-
+    //与爆炸的碰撞体碰撞
+    onCollisionEnter(other, self)
+    {
+        if(other.node.group=="bullet")
+        {
+            this.getDamage(other.node.getComponent("Bullet").explosionDamage);
+        }
+    },
 
     EnemyMove() {
         if (this.player) {
