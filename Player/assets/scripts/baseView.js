@@ -5,6 +5,7 @@ cc.Class({
       myStart_Button:cc.Sprite,
       myStart_Label:cc.Label,
       Setting_Menu:cc.Prefab,
+      Introduction:cc.Prefab,
     },
 
 
@@ -34,6 +35,13 @@ cc.Class({
         var node = cc.instantiate(this.Setting_Menu);
         this.node.addChild(node);
         this.Setting_Menu.active = true;
+      }
+    },
+    onClickIntro:function (target, data) {
+      if (data == 'introduction'){
+        var node = cc.instantiate(this.Introduction);
+        this.node.addChild(node);
+        this.Introduction.active = true;
       }
     },
       onOverBack:function (target, data) {

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "36b6cb71-67b1-46f4-96cb-ced03488fef8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 179,
+  "height": 90,
+  "platformSettings": {},
+  "subMetas": {
+    "科幻按钮3": {
+      "ver": "1.0.4",
+      "uuid": "ada30f5d-a7ed-48f3-b696-6c6215494fcc",
+      "rawTextureUuid": "36b6cb71-67b1-46f4-96cb-ced03488fef8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 2,
+      "width": 178,
+      "height": 86,
+      "rawWidth": 179,
+      "rawHeight": 90,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
