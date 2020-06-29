@@ -239,6 +239,8 @@
     "damage": 20,
     "attackDuration": 0.5,
     "player": null,
+    "ammo": 10,
+    "bInfiniteAmmo": false,
     "_id": ""
   },
   {

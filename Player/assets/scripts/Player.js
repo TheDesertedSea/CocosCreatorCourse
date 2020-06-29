@@ -14,8 +14,9 @@ cc.Class({
         //WeaponRocker:cc.Node,   //绑定虚拟摇杆结点以获取摇杆信息,
         MoveRocker:cc.Node,
         //roomNumber:0,  //目前所在房间号
-        gameOverPanel:cc.Prefab,
-        scoreLabel:cc.Node,
+        gameOverPanel:cc.Prefab,   //游戏结束预制体
+        scoreLabel:cc.Node,  //分数显示节点
+        ammoNode:cc.Node,  //子弹数显示节点
     },
 
     onLoad() {
@@ -233,6 +234,10 @@ cc.Class({
             
         }
         else {
+            if(!this.weaponScript.bInfiniteAmmo&&this.weaponScript.ammo<=0)
+            {
+                return;
+            }
             if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
             {
                 this.audioId=cc.audioEngine.play(this.fireSound,false,1);  //否则新播放音效
@@ -395,6 +400,7 @@ cc.Class({
 
         //cc.log(this.stateUI.getChildByName("ATK").string);
         //var stateUI=cc.find("Canvas/Player/UI/State/ATK");
+        //显示ATK
         var ATK = this.stateUI.getChildByName("ATK");
         var label = ATK.getComponent(cc.Label);
 
@@ -418,6 +424,17 @@ cc.Class({
 
             this.damageAdd = 0;
         }
+
+        //显示子弹数
+        if(this.weaponScript.bInfiniteAmmo)
+        {
+            this.ammoNode.getComponent(cc.Label).string="∞";
+        }
+        else
+        {
+            this.ammoNode.getComponent(cc.Label).string=(this.weaponScript.ammo+0).toString();
+        }
+
 
         //调整武器方向
         if(this.enemyAround)

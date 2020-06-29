@@ -1,10 +1,3 @@
-// Learn cc.Class:
-//  - https://docs.cocos.com/creator/manual/en/scripting/class.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -18,6 +11,8 @@ cc.Class({
         damage:20,
         attackDuration:0.5,
         player:cc.Node,    
+        ammo:0,  //子弹数
+        bInfiniteAmmo:true,  //是否无限子弹
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -47,7 +42,7 @@ cc.Class({
             var bullet=cc.instantiate(this.bullet);  //实例化预制体
             bullet.getComponent("Bullet").damage=this.damage+this.node.parent.getComponent("Player").damageAdd;
             bullet.parent=this.node;
-            var position=this.node.convertToWorldSpaceAR(cc.v2(0,50));
+            var position=this.node.convertToWorldSpaceAR(cc.v2(0,30));
             //cc.log(position.x,position.y);
             bullet.parent=cc.find("Canvas");
             bullet.setPosition(position.x-480,position.y-320);  //设置子弹的生成位置
@@ -57,6 +52,10 @@ cc.Class({
             let vl=cc.v2(this.dirX,this.dirY).mag();
             bullet.getComponent("Bullet").setDir(this.dirX/vl,this.dirY/vl);
             this.fireTime=this.attackDuration;
+            if(!this.bInfiniteAmmo)
+            {
+                --this.ammo;
+            }
         }
         
         
@@ -74,4 +73,3 @@ cc.Class({
         
     },
 });
-

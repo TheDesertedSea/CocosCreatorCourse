@@ -127,8 +127,10 @@
     "_enabled": true,
     "speed": 250,
     "lifeTime": 3,
-    "extraDamage": 5,
-    "extraDamageTimes": 3,
+    "extraDamage": 6,
+    "extraDamageTimes": 4,
+    "isExplosion": false,
+    "explosionDamage": 0,
     "_id": ""
   },
   {
