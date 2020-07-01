@@ -14,7 +14,7 @@ cc.Class({
     },
 
     onBeginContact(info, self, other){
-        cc.log("collision");
+        //cc.log("collision");
         if(other.node.group=="player")
         {
             cc.director.pause();

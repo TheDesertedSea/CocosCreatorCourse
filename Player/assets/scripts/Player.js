@@ -4,6 +4,7 @@ cc.Class({
     properties: {
         speed: 100,  //速度
         weaponPack: cc.Node,//武器栏
+        currentWeaponImage:cc.Node,//武器切换键当前武器显示图
         health: 100,  //生命值
         healthBar: cc.Node,  //血条显示条，但绑定的是血条体即healthBarBody.node
         stateUI: cc.Node,  //状态显示栏
@@ -64,8 +65,9 @@ cc.Class({
         this.node.zIndex=1;
         this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
         this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
-
+        this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;  //在切换武器键显示目前武器
         
+        this.weaponPack.active=false;  //由于一开始没有第二把武器，所以设置为false
     },
     onDestroy() {
         //取消绑定按键事件触发函数
@@ -163,8 +165,12 @@ cc.Class({
                 this.weapon.parent = null;   
                 let dirX=this.weaponScript.dirX;
                 let dirY=this.weaponScript.dirY;
-                this.weaponScript.enabled = false;
+                //this.weaponScript.enabled = false;
                 this.weapon.parent = this.weaponPack;
+                this.weaponPack.active=true;
+                this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//武器栏图像更新
+                
+                this.weapon.active=false;
 
                 //修改附近武器的节点关系及脚本开启
                 this.weaponAround.parent = this.node;  
@@ -181,9 +187,10 @@ cc.Class({
                 //cc.log(this.weaponAround.position.y);
 
                 //将使用中物器的位置信息修改为武器栏中位置
-                this.weapon.position.x = 4.024;  //这是武器在武器栏中时，武器相对于其父节点武器栏的坐标信息
+                /*this.weapon.position.x = 4.024;  //这是武器在武器栏中时，武器相对于其父节点武器栏的坐标信息
                 this.weapon.position.y = -2.013;
                 this.weapon.angle = -90;
+                */
                 //this.weapon.zIndex=0;
 
                 //this.weaponAround.zIndex = 1;  //zIndex为叠放次序
@@ -191,6 +198,7 @@ cc.Class({
                 this.weaponAround.getComponent("WeaponGetDetector").enabled = false;//关闭捡取到的武器的武器探测脚本组件("WeaponGetDetector.js")
                 this.bGetWeapon = false;  //可捡取武器标志重置
                 this.weapon=this.weaponAround;//保存新的使用中武器节点
+                this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
                 this.weaponScript=this.weapon.getComponent("Weapon");  //保存新的使用中武器节点脚本组件
             }
             else {
@@ -229,6 +237,7 @@ cc.Class({
                 
                 //保存新武器节点信息
                 this.weapon=this.weaponAround;
+                this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
                 this.weaponScript=this.weapon.getComponent("Weapon");
             }
             this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
@@ -259,14 +268,15 @@ cc.Class({
         this.weapon.parent = null;
         let dirX=this.weaponScript.dirX;
         let dirY=this.weaponScript.dirY;
-        this.weaponScript.enabled = false;
+        //this.weaponScript.enabled = false;
 
         //获得武器栏中武器节点
         var weapon2 = this.weaponPack.getChildByName("weapon");
+        weapon2.active=true;
 
         //修改武器栏中武器位置信息为目前所使用武器位置信息
         weapon2.parent = this.node;
-        weapon2.getComponent("Weapon").enabled = true;
+        //weapon2.getComponent("Weapon").enabled = true;
         weapon2.getComponent("Weapon").weaponInit(dirX,dirY);
         weapon2.position.x = this.weapon.x;
         weapon2.position.y = this.weapon.y;
@@ -278,14 +288,17 @@ cc.Class({
 
         //修改目前所使用武器位置信息为武器栏中武器位置信息
         this.weapon.parent = this.weaponPack;
-        this.weapon.position.x = 4.024;
+        this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame; //武器栏图像更新
+        this.weapon.active=false;
+        /*this.weapon.position.x = 4.024;
         this.weapon.position.y = -2.013;
-        this.weapon.angle = -90;
+        this.weapon.angle = -90;*/
 
         
 
         //保存新的使用中武器节点
         this.weapon=weapon2;
+        this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
         this.weaponScript=this.weapon.getComponent("Weapon");
         this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
         

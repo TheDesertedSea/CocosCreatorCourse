@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_posion",
+    "_name": "gun_shot",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -31,16 +31,19 @@
       },
       {
         "__id__": 7
+      },
+      {
+        "__id__": 8
       }
     ],
     "_prefab": {
-      "__id__": 8
+      "__id__": 9
     },
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 26,
-      "g": 255,
+      "r": 255,
+      "g": 179,
       "b": 0,
       "a": 255
     },
@@ -58,8 +61,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        224,
-        0,
+        2.729,
+        -109.278,
         0,
         0,
         0,
@@ -103,9 +106,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 15,
-      "g": 0,
-      "b": 255,
+      "r": 255,
+      "g": 179,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -161,8 +164,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "毒性步枪",
-    "_N$string": "毒性步枪",
+    "_string": "散弹枪",
+    "_N$string": "散弹枪",
     "_fontSize": 15,
     "_lineHeight": 15,
     "_enableWrapText": true,
@@ -185,9 +188,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "4ab8ed6a-a77a-491d-9b5a-5669f4635392"
+      "__uuid__": "58079fc1-bc08-4d11-8efa-274220c4c2dc"
     },
-    "fileId": "adPZJAs7hNDLgO3kNnXwJO",
+    "fileId": "8f1d8rjqlLOKCFthpORBhY",
     "sync": false
   },
   {
@@ -231,13 +234,24 @@
     },
     "_enabled": false,
     "bullet": {
-      "__uuid__": "0022d7e1-b65a-4cf1-b8ae-e51623b70b11"
+      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
-    "damage": 10,
+    "damage": 20,
     "attackDuration": 0.5,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 30,
+    "maxAmmo": 50,
+    "fireNum": 5,
+    "_id": ""
+  },
+  {
+    "__type__": "fdcdcmIS+lHBZYqdYCb1OrS",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
     "_id": ""
   },
   {
@@ -257,9 +271,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "4ab8ed6a-a77a-491d-9b5a-5669f4635392"
+      "__uuid__": "58079fc1-bc08-4d11-8efa-274220c4c2dc"
     },
-    "fileId": "e0IHAvQMtL07VgtBzX93YB",
+    "fileId": "3b1UpVy7dMyoMshsxgHmz/",
     "sync": false
   }
 ]

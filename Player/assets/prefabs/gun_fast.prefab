@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_posion",
+    "_name": "gun_fast",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -39,9 +39,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 26,
-      "g": 255,
-      "b": 0,
+      "r": 25,
+      "g": 0,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -58,8 +58,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
+        64,
         224,
-        0,
         0,
         0,
         0,
@@ -103,15 +103,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 15,
+      "r": 36,
       "g": 0,
       "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 97.87,
-      "height": 50.4
+      "width": 75,
+      "height": 18.9
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -161,8 +161,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "毒性步枪",
-    "_N$string": "毒性步枪",
+    "_string": "高射速步枪",
+    "_N$string": "高射速步枪",
     "_fontSize": 15,
     "_lineHeight": 15,
     "_enableWrapText": true,
@@ -185,9 +185,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "4ab8ed6a-a77a-491d-9b5a-5669f4635392"
+      "__id__": 0
     },
-    "fileId": "adPZJAs7hNDLgO3kNnXwJO",
+    "fileId": "61tlC67QNIy5EUiBqY9ei0",
     "sync": false
   },
   {
@@ -231,13 +231,13 @@
     },
     "_enabled": false,
     "bullet": {
-      "__uuid__": "0022d7e1-b65a-4cf1-b8ae-e51623b70b11"
+      "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
-    "damage": 10,
-    "attackDuration": 0.5,
+    "damage": 5,
+    "attackDuration": 0.1,
     "player": null,
-    "bInfiniteAmmo": false,
-    "maxAmmo": 30,
+    "bInfiniteAmmo": true,
+    "maxAmmo": 0,
     "_id": ""
   },
   {
@@ -257,9 +257,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "4ab8ed6a-a77a-491d-9b5a-5669f4635392"
+      "__id__": 0
     },
-    "fileId": "e0IHAvQMtL07VgtBzX93YB",
+    "fileId": "ddVmbfy5BEE6c0XRQNIOZc",
     "sync": false
   }
 ]

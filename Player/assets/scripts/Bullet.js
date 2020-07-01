@@ -8,6 +8,8 @@ cc.Class({
         extraDamageTimes:0,
         isExplosion:false,
         explosionDamage:0,
+        bIsBound:false,
+        boundTimes:3,
     },
 
     // LIFE-CYCLE CALLBACKS
@@ -31,6 +33,13 @@ cc.Class({
         this.lv.y=0;
         //播放动画
         this.node.getComponent(cc.Animation).play();
+
+        //摄像机抖动
+        var camera=cc.find("Canvas/Player/PlayerCamera");
+        cc.tween(camera).to(0.05,{x:camera.x+2.5}).to(0.05,{y:camera.y+2.5}).to(0.05,{x:camera.x-2.5})
+        .to(0.05,{y:camera.y-2.5}).to(0.05,{x:camera.x-2.5}).to(0.05,{y:camera.y+2.5}).to(0.05,{x:camera.x+2.5})
+        .to(0.05,{y:camera.y-2.5}).start();
+        
         //短暂时间后消失
         cc.tween(this.node).delay(0.15).call(()=>{this.node.getComponent(cc.Animation).pause();this.node.destroy();}).start();
             
@@ -50,7 +59,12 @@ cc.Class({
         {
             this.explode();
         }
-        else{
+        else if(this.bIsBound&&this.boundTimes>0)
+        {
+            --this.boundTimes;
+        }
+        else
+        {
            this.node.destroy();
         }
     },
