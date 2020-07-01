@@ -32,6 +32,7 @@ cc.Class({
                 this.playerScript.enemyAround=this.node;
                 this.playerScript.enemyDistance=playerDistance;
             }  
+            
         }
  
 

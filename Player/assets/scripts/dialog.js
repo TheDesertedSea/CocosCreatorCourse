@@ -10,14 +10,6 @@ let roleMap = {
 };
 
 
-var DialogData=cc.Class({  //对话数据类
-    name: "DialogData",
-    properties: {
-        role:0,  //角色编号
-        content:cc.String,  //内容
-    },
-});
-
 cc.Class({
     extends: cc.Component,
 
@@ -29,7 +21,7 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-       textDataArr:[DialogData],  //对话数据数组
+
         
     },
 
@@ -39,9 +31,9 @@ cc.Class({
         this.init();
         
     },
-    beginDialog()  //开始对话（可重复调用，多次进行对话）
+    beginDialog(textDataArr)  //开始对话（可重复调用，多次进行对话）
     {
-        
+        this.textDataArr=textDataArr;
         this.nowText = null;
         this.textEnd = true;
         this.tt = 0;
@@ -51,8 +43,17 @@ cc.Class({
         this.node.active = true;
         this.screen.resumeSystemEvents();//恢复屏幕触摸监听
         this.nextTextData();
-        //用来设置为全局变量，使得对话框存在时，其他节点不执行动作
-        window.dialog = this.node;
+
+        //只保留对话框和设置键显示
+        var UIChildren=this.node.parent.children;
+        for(let i=0;i<UIChildren.length;++i)
+        {
+            if(UIChildren[i].name!="dialogue-bubble"&&UIChildren[i].name!="Setting_Button")
+            {
+                UIChildren[i].active=false;
+            }
+        }
+
 
 
     },
@@ -88,6 +89,8 @@ cc.Class({
     init()//初始化
     {  
         this.setTouch();
+        //用来设置为全局变量，使得对话框acitve==true(其他脚本中会判断)时，其他节点不执行动作
+        window.dialog = this.node;
 
     },
 
@@ -115,8 +118,15 @@ cc.Class({
 
     closeDialog() {
         this.screen.pauseSystemEvents();
-        this.node.active = false;
 
+        //让所有UI恢复显示
+        var UIChildren=this.node.parent.children;
+        for(let i=0;i<UIChildren.length;++i)
+        {
+            UIChildren[i].active=true;
+
+        }
+        this.node.active = false;
 
     },
 

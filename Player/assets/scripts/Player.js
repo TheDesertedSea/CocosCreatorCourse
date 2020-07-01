@@ -138,6 +138,7 @@ cc.Class({
         {
             this.NPCAround.getComponent("NPC").talk();
             this.bTalkWithNPC=false;
+            
         }
         else if (this.bUseItem) {   //如果可以使用物品
             //cc.log(this.itemAround.name);
@@ -320,6 +321,15 @@ cc.Class({
         this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
     },
     update(dt) {   
+
+        /*if(this.enemyAround)
+        {
+            cc.log(this.enemyAround.name);
+        }
+
+        cc.log(this.enemyDistance);
+        */
+       
         //如果对话框存在，敌人不移动
         if (window.dialog && window.dialog.active) return;
         
