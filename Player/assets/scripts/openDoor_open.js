@@ -9,6 +9,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        smog: cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -23,8 +24,15 @@ cc.Class({
     // 角色与初始门的碰撞回调
     onCollisionEnter(other, self) {
         if (other.node.group == 'player' ) {
+            //实现墙壁渐隐的效果
+            this.node.runAction(cc.fadeOut(1));
+            //0.2秒之后销毁墙壁
+            setTimeout(function () {
+                this.node.destroy();
+            }.bind(self), 200);
             //执行开门动画
-            this.node.active = false;
+            //this.node.active = false;
+            this.smog.runAction(cc.fadeOut(1.5));
         }
     }
     // update (dt) {},
