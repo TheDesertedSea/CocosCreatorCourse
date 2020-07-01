@@ -11,14 +11,14 @@ cc.Class({
         damage:20,
         attackDuration:0.5,
         player:cc.Node,    
-        ammo:0,  //子弹数
         bInfiniteAmmo:true,  //是否无限子弹
+        maxAmmo:0,//最大子弹数
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        
+        this.ammo=this.maxAmmo;  //当前子弹数
         this.weaponInit(1.0,0.0);
         this.maxDir=1.0;
     },

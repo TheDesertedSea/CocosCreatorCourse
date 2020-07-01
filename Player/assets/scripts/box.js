@@ -14,7 +14,7 @@ cc.Class({
         //获取保存Player、Potion脚本组件
         this.playerScript=this.player.getComponent("Player");
         this.potionScript=this.potion.getComponent("Potion");
-
+        this.potionScript.enabled=false;
         this.bDestoryed=false;  //被摧毁标记
     },
 
@@ -50,12 +50,9 @@ cc.Class({
                 this.playerScript.enemyAround=null;
                 this.playerScript.enemyDistance=10000;
             }
+
             //0.4秒之后销毁箱子 
-            setTimeout(function () {
-                
-                this.potionScript.enabled = true;
-                this.node.destroy();
-            }.bind(this), 400);
+            cc.tween(this.node).delay(0.4).call(()=>{this.potionScript.enabled=true;this.node.destroy();}).start();
         }    
         
     },

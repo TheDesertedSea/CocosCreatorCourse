@@ -17,18 +17,22 @@ cc.Class({
     },
     use:function()
     {
-        if(this.type=="LHP")
+        if(this.type=="LHP")   //小型生命药水
         {
             if((this.playerScript.health+=this.potionAdd)>100)
             {
                 this.playerScript.health=100;
             }
         }
-        if(this.type=="DP")
+        if(this.type=="DP")   //伤害药水
         {
             this.playerScript.damageAdd+=this.potionAdd;
             this.playerScript.damageAddTime=this.time;
             //cc.log(this.player.getChildByName("weapon").getComponent("Weapon").damage);
+        }
+        if(this.type=="AM")  //弹药箱，补充满子弹
+        {
+            this.playerScript.weaponScript.ammo=this.playerScript.weaponScript.maxAmmo;
         }
         this.playerScript.itemAround=null;
         this.playerScript.bUseItem=false;
