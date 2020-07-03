@@ -66,7 +66,8 @@ cc.Class({
         this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
         this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
         this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;  //在切换武器键显示目前武器
-        
+        this.currentWeaponImage.color=this.weapon.color;
+
         this.weaponPack.active=false;  //由于一开始没有第二把武器，所以设置为false
     },
     onDestroy() {
@@ -169,6 +170,7 @@ cc.Class({
                 this.weapon.parent = this.weaponPack;
                 this.weaponPack.active=true;
                 this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//武器栏图像更新
+                this.weaponPack.color=this.weapon.color;
                 
                 this.weapon.active=false;
 
@@ -199,6 +201,7 @@ cc.Class({
                 this.bGetWeapon = false;  //可捡取武器标志重置
                 this.weapon=this.weaponAround;//保存新的使用中武器节点
                 this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+                this.currentWeaponImage.color=this.weapon.color;
                 this.weaponScript=this.weapon.getComponent("Weapon");  //保存新的使用中武器节点脚本组件
             }
             else {
@@ -238,6 +241,7 @@ cc.Class({
                 //保存新武器节点信息
                 this.weapon=this.weaponAround;
                 this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+                this.currentWeaponImage.color=this.weapon.color;
                 this.weaponScript=this.weapon.getComponent("Weapon");
             }
             this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
@@ -289,6 +293,7 @@ cc.Class({
         //修改目前所使用武器位置信息为武器栏中武器位置信息
         this.weapon.parent = this.weaponPack;
         this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame; //武器栏图像更新
+        this.weaponPack.color=this.weapon.color;
         this.weapon.active=false;
         /*this.weapon.position.x = 4.024;
         this.weapon.position.y = -2.013;
@@ -299,6 +304,7 @@ cc.Class({
         //保存新的使用中武器节点
         this.weapon=weapon2;
         this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+        this.currentWeaponImage.color=this.weapon.color;
         this.weaponScript=this.weapon.getComponent("Weapon");
         this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
         
