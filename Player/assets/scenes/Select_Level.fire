@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        369.17039165698526,
+        457.2614131981836,
         0,
         0,
         0,
@@ -1495,7 +1495,7 @@
     "node": {
       "__id__": 23
     },
-    "_enabled": false,
+    "_enabled": true,
     "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
@@ -1569,8 +1569,8 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
-    "customEventData": "START"
+    "handler": "onClickLevel1",
+    "customEventData": "level1"
   },
   {
     "__type__": "cc.Widget",
@@ -1984,7 +1984,7 @@
     "node": {
       "__id__": 33
     },
-    "_enabled": false,
+    "_enabled": true,
     "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
@@ -2058,8 +2058,8 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
-    "customEventData": "START"
+    "handler": "onClickLevel1",
+    "customEventData": "level1"
   },
   {
     "__type__": "cc.Widget",
@@ -2473,7 +2473,7 @@
     "node": {
       "__id__": 43
     },
-    "_enabled": false,
+    "_enabled": true,
     "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
@@ -2547,8 +2547,8 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
-    "customEventData": "START"
+    "handler": "onClickLevel1",
+    "customEventData": "level1"
   },
   {
     "__type__": "cc.Widget",
@@ -2962,7 +2962,7 @@
     "node": {
       "__id__": 53
     },
-    "_enabled": false,
+    "_enabled": true,
     "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
@@ -3036,8 +3036,8 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
-    "customEventData": "START"
+    "handler": "onClickLevel1",
+    "customEventData": "level1"
   },
   {
     "__type__": "cc.Widget",
@@ -3451,7 +3451,7 @@
     "node": {
       "__id__": 63
     },
-    "_enabled": false,
+    "_enabled": true,
     "_normalMaterial": null,
     "_grayMaterial": null,
     "duration": 0.1,
@@ -3525,8 +3525,8 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
-    "customEventData": "START"
+    "handler": "onClickLevel1",
+    "customEventData": "level1"
   },
   {
     "__type__": "cc.Widget",
@@ -3565,14 +3565,12 @@
       "__id__": 5
     },
     "_enabled": true,
-    "mySprite": {
-      "__uuid__": "7c009615-4e8f-4a2a-80e6-b4893b9ca331"
-    },
     "myStart_Button": null,
     "myStart_Label": null,
     "Setting_Menu": {
       "__uuid__": "1c6d4f52-8185-4d6e-9075-a5f09b164bc6"
     },
+    "Introduction": null,
     "_id": "9b5ZSjottCp52d9j6oN58p"
   },
   {
