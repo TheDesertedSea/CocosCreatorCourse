@@ -7,6 +7,14 @@ var DialogData=cc.Class({  //对话数据类
     
 });
 
+var RoleMapData=cc.Class({  //角色资源信息类
+    name: "RoleMapData",
+    properties:{
+        name:cc.String,
+        url:cc.String,
+    }
+})
+
 cc.Class({
     extends: cc.Component,
 
@@ -15,6 +23,7 @@ cc.Class({
         dialogBubble:cc.Node,
         NPCName:"DEFALUT NPC",
         textDataArr:[DialogData],  //对话数据数组
+        roleMap:[RoleMapData],  //角色资源信息数组
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -52,7 +61,7 @@ cc.Class({
     talk:function()  //谈话
     {
         this.dialogBubble.active=true;
-        this.dialogBubble.getComponent("dialog").beginDialog(this.textDataArr);
+        this.dialogBubble.getComponent("dialog").beginDialog(this.textDataArr,this.roleMap);// 传入对话数据数组和角色资源信息数组
 
         //玩家线性移动速度清零
         var lv=this.player.getComponent(cc.RigidBody).linearVelocity;

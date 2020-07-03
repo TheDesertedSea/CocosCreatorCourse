@@ -1,4 +1,4 @@
-let roleMap = {
+/*let roleMap = {
     1: {
         name: 'Hero',
         url: 'role/hero'
@@ -7,8 +7,7 @@ let roleMap = {
         name: 'Enemy',
         url: 'role/npc'
     }
-};
-
+};*/
 
 cc.Class({
     extends: cc.Component,
@@ -31,9 +30,10 @@ cc.Class({
         this.init();
         
     },
-    beginDialog(textDataArr)  //开始对话（可重复调用，多次进行对话）
+    beginDialog(textDataArr,roleMap)  //开始对话（可重复调用，多次进行对话），参数传入对话数据数组和角色资源信息数组
     {
         this.textDataArr=textDataArr;
+        this.roleMap=roleMap;
         this.nowText = null;
         this.textEnd = true;
         this.tt = 0;
@@ -107,11 +107,11 @@ cc.Class({
         if(!this.textEnd) return;
         this.textEnd = false;
         
-        this.nameLabel.string = roleMap[textData.role].name;
+        this.nameLabel.string = this.roleMap[textData.role-1].name;
         this.textLabel.string = '';
         this.nowText = textData.content;
 
-        cc.loader.loadRes(roleMap[textData.role].url, cc.SpriteFrame, (err, texture) => {
+        cc.loader.loadRes(this.roleMap[textData.role-1].url, cc.SpriteFrame, (err, texture) => {
             this.picSprite.spriteFrame = texture;
         });
     },
