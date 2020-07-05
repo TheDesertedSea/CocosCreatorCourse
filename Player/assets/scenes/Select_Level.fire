@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        369.7854868895338,
+        424.34400134864535,
         0,
         0,
         0,
@@ -501,15 +501,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
+      "r": 0,
+      "g": 209,
       "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 217.91,
-      "height": 50.4
+      "width": 254.82,
+      "height": 100.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -559,13 +559,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Select Level",
-    "_N$string": "Select Level",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_string": "选择关卡",
+    "_N$string": "选择关卡",
+    "_fontSize": 60,
+    "_lineHeight": 80,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "aab1bacd-dff5-4d4e-8d5c-d7b0fa4d6ac0"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,

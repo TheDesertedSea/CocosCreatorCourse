@@ -199,7 +199,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 421.87,
+      "width": 382.42,
       "height": 88.2
     },
     "_anchorPoint": {
@@ -250,13 +250,13 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Your Score ：         ",
-    "_N$string": "Your Score ：         ",
-    "_fontSize": 45,
+    "_string": "最终得分：     ",
+    "_N$string": "最终得分：     ",
+    "_fontSize": 55,
     "_lineHeight": 70,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -841,13 +841,13 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Back to Menu",
-    "_N$string": "Back to Menu",
+    "_string": "返回菜单",
+    "_N$string": "返回菜单",
     "_fontSize": 15,
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": {
-      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -1369,13 +1369,13 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Exit",
-    "_N$string": "Exit",
+    "_string": "退出游戏",
+    "_N$string": "退出游戏",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -1619,7 +1619,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 782.4,
+      "width": 600,
       "height": 189
     },
     "_anchorPoint": {
@@ -1670,13 +1670,13 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Game Over",
-    "_N$string": "Game Over",
+    "_string": "游戏结束",
+    "_N$string": "游戏结束",
     "_fontSize": 150,
     "_lineHeight": 150,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "d80c29f9-e167-4e17-8dfc-fa9665c842dc"
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,

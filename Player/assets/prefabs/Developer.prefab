@@ -493,7 +493,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 402.12,
+      "width": 360,
       "height": 88.2
     },
     "_anchorPoint": {
@@ -544,13 +544,13 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "List Of Developers:",
-    "_N$string": "List Of Developers:",
-    "_fontSize": 45,
+    "_string": "开发人员名单",
+    "_N$string": "开发人员名单",
+    "_fontSize": 60,
     "_lineHeight": 70,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "e746a01e-b9c6-4c72-a348-5e11e0e721da"
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -602,7 +602,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 362.5,
+      "width": 360,
       "height": 158.2
     },
     "_anchorPoint": {
@@ -655,11 +655,11 @@
     "_useOriginalSize": false,
     "_string": " 余存道  周直臻 \n 张宁康  靳春昊 ",
     "_N$string": " 余存道  周直臻 \n 张宁康  靳春昊 ",
-    "_fontSize": 50,
+    "_fontSize": 45,
     "_lineHeight": 70,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "019f0867-bded-487d-a269-678025c1fe7b"
+      "__uuid__": "3779832c-e159-4043-a112-a011e8dbf9ab"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,

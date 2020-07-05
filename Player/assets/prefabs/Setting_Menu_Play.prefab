@@ -131,7 +131,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 235.7,
+      "width": 240,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -144,7 +144,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        60,
+        68.243,
         0,
         0,
         0,
@@ -182,13 +182,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Setting Menu",
-    "_N$string": "Setting Menu",
-    "_fontSize": 40,
+    "_string": "设置界面",
+    "_N$string": "设置界面",
+    "_fontSize": 60,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "d44cca42-8a36-440f-abda-356651060509"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -728,13 +730,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Back",
-    "_N$string": "Back",
-    "_fontSize": 20,
+    "_string": "回到游戏",
+    "_N$string": "回到游戏",
+    "_fontSize": 15,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "aab1bacd-dff5-4d4e-8d5c-d7b0fa4d6ac0"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -1254,13 +1258,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Exit",
-    "_N$string": "Exit",
-    "_fontSize": 20,
+    "_string": "退出游戏",
+    "_N$string": "退出游戏",
+    "_fontSize": 15,
     "_lineHeight": 40,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "aab1bacd-dff5-4d4e-8d5c-d7b0fa4d6ac0"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -1692,13 +1698,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Back to Menu",
-    "_N$string": "Back to Menu",
+    "_string": "返回菜单",
+    "_N$string": "返回菜单",
     "_fontSize": 15,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "aab1bacd-dff5-4d4e-8d5c-d7b0fa4d6ac0"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -2130,13 +2138,15 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Restart Game",
-    "_N$string": "Restart Game",
+    "_string": "重新开始",
+    "_N$string": "重新开始",
     "_fontSize": 15,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "aab1bacd-dff5-4d4e-8d5c-d7b0fa4d6ac0"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
