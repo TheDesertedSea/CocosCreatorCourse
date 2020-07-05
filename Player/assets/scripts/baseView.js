@@ -2,9 +2,6 @@ cc.Class({
     extends: cc.Component,  //继承cc.Component
 
     properties: {
-//      myStart_Button:cc.Sprite,
-//      myStart_Label:cc.Label,
-      Setting_Menu:cc.Prefab,
       Introduction:cc.Prefab,
       ButtonStart:cc.Node,
       ButtonSelect:cc.Node,
@@ -37,24 +34,10 @@ cc.Class({
     onClickSelect: function(target, data){
       if (data == 'SELECT'){
         cc.director.loadScene("Select_Level");
-//        this.ButtonStart.active = false;
-//        this.ButtonSelect.active = false;
-//        this.m_Loading = cc.instantiate(this.m_LoadingPrefab)
-//        this.m_BackGround.addChild(this.m_Loading)
-//        this.m_Loading.y = -220
-//        this.m_Loading = this.m_Loading.getComponent('loading')
-//        this.m_Loading.setProgress(1)
-//        this.m_Loading.finishCallBack = function(){
-//          this.m_Loading.node.active = false
-//          cc.director.loadScene("Select_Level");
-//        }.bind(this)
       }
     },
     onClickLevel1: function(target, data){
       if (data == 'level1'){
-//      cc.director.loadScene("Play");
-//        this.ButtonStart.active = false;
-//        this.ButtonSelect.active = false;
         this.m_Loading = cc.instantiate(this.m_LoadingPrefab)
         this.m_BackGround.addChild(this.m_Loading)
         this.m_Loading.y = -220

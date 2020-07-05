@@ -20,9 +20,6 @@ cc.Class({
         },
         onClickLevel1: function(target, data){
             if (data == 'level1'){
-//      cc.director.loadScene("Play");
-//        this.ButtonStart.active = false;
-//        this.ButtonSelect.active = false;
             this.level1.active = false;
             this.level2.active = false;
             this.level3.active = false;

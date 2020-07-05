@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        424.34400134864535,
+        370.10407529544034,
         0,
         0,
         0,
@@ -2221,12 +2221,12 @@
       }
     ],
     "_prefab": null,
-    "_opacity": 245.565,
+    "_opacity": 245,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
+      "r": 255,
       "g": 255,
-      "b": 250,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -2289,7 +2289,7 @@
       "r": 0,
       "g": 255,
       "b": 250,
-      "a": 255
+      "a": 245
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -2329,7 +2329,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "65aSC44phCm4RURCRiUyyI"
+    "_id": "aeTwyXWTpKZ4RXtgwgLDp8"
   },
   {
     "__type__": "cc.Label",
@@ -2363,7 +2363,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "51UcLzW4pNdKREexR5aDsS"
+    "_id": "63lAcIXz9IB4tX+iRyw5y5"
   },
   {
     "__type__": "cc.RichText",
@@ -2375,7 +2375,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "<color=#520000>欢迎来到未来城堡</color>",
+    "_N$string": "<color=#00FFFAF5>欢迎来到未来城堡</color>",
     "_N$horizontalAlign": 1,
     "_N$fontSize": 100,
     "_N$font": {
@@ -2396,9 +2396,6 @@
       "__id__": 5
     },
     "_enabled": true,
-    "Setting_Menu": {
-      "__uuid__": "1c6d4f52-8185-4d6e-9075-a5f09b164bc6"
-    },
     "Introduction": {
       "__uuid__": "7f0516c5-5113-4802-981e-3c40835cdef4"
     },
