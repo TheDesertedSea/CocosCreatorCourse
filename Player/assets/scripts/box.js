@@ -13,8 +13,7 @@ cc.Class({
     onLoad () {
         //获取保存Player、Potion脚本组件
         this.playerScript=this.player.getComponent("Player");
-        this.potionScript=this.potion.getComponent("Potion");
-        this.potionScript.enabled=false;
+        this.potion.active=false;
         this.bDestoryed=false;  //被摧毁标记
     },
 
@@ -24,7 +23,7 @@ cc.Class({
 
     update (dt) {
         //检测玩家距离，若自己最近，则将自己的节点绑定到player上
-        if(!this.bDestoryed)
+        /*if(!this.bDestoryed)
         {
             var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
             if(playerDistance<this.playerScript.enemyDistance)//&&this.playerScript.roomNumber==this.roomNumber)
@@ -33,7 +32,7 @@ cc.Class({
                 this.playerScript.enemyDistance=playerDistance;
             }  
             
-        }
+        }*/
  
 
     },
@@ -44,15 +43,30 @@ cc.Class({
             this.bDestoryed=true;
             //实现箱子渐隐的效果
             this.node.runAction(cc.fadeOut(0.5));
+
             //如果玩家目前指向自己，则取消该指向
-            if(this.playerScript.enemyAround==self.node)
+            let boxes=this.playerScript.boxes;
+            for(let i=0;i<boxes.length;++i)
+            {
+                if(boxes[i]==this.node)
+                {
+                    
+                    boxes.splice(i,1);
+                    break;
+                }
+            }
+
+            //如果玩家目前指向自己，则取消该指向
+            /*if(this.playerScript.enemyAround==self.node)
             {
                 this.playerScript.enemyAround=null;
                 this.playerScript.enemyDistance=10000;
             }
-
-            //0.4秒之后销毁箱子 
-            cc.tween(this.node).delay(0.4).call(()=>{this.potionScript.enabled=true;this.node.destroy();}).start();
+            */
+           this.potion.active=true;
+           //0.4秒之后销毁箱子 
+           cc.tween(this.node).delay(0.4).call(()=>{this.node.destroy();}).start();
+            
         }    
         
     },

@@ -70,12 +70,12 @@ cc.Class({
         }
 
          //检测玩家距离，若自己最近，且与玩家在同一个房间，则将自己的节点绑定到player上
-         var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
+         /*var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
         if(playerDistance<this.playerScript.enemyDistance)
         {
             this.playerScript.enemyAround=this.node;
             this.playerScript.enemyDistance=playerDistance;
-        }   
+        }   */
     },
 //与爆炸的碰撞体碰撞
     onBeginContact(info, self, other) {
@@ -295,15 +295,28 @@ cc.Class({
             //this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
             
             this.playerScript.addScore(this.score);//增加分数
+
+            //如果玩家目前指向自己，则取消该指向
+            let enemies=this.playerScript.enemies;
+            for(let i=0;i<enemies.length;++i)
+            {
+                if(enemies[i]==this.node)
+                {
+
+                    enemies.splice(i,1);
+                    break;
+                }
+            }
             
             //如果玩家目前指向自己，则取消该指向
-            if(this.playerScript.enemyAround==this.node)
+            /*if(this.playerScript.enemyAround==this.node)
             {
                 this.playerScript.enemyAround=null;
 
                 this.playerScript.enemyDistance=10000;
             }
-            this.node.destroy();
+            */
+           this.node.destroy();
         }
 
     },
