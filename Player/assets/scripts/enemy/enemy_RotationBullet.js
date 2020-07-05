@@ -10,7 +10,8 @@ cc.Class({
 
     properties: {
         speed: 100,
-        RotationSpeed: 4
+        RotationSpeed: 4,
+        damage: 10
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -33,6 +34,8 @@ cc.Class({
         this.lv.x = this.sp.x * this.speed;
         this.lv.y = this.sp.y * this.speed;
         this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+        // this.node.x += this.sp.x * this.speed * 0.001;
+        // this.node.y += this.sp.y * this.speed * 0.001;
 
         this.Rotate();
 
@@ -44,6 +47,10 @@ cc.Class({
     },
 
     onBeginContact(info,self,other) {
+        if (other.node.group == "player" && other.node.getComponent("Player").onHit == false) {
+            //cc.log("ENEMY ATTACK!");
+            other.getComponent("Player").getDamage(this.damage);
+        }
         this.node.destroy();
     },
 });
