@@ -10,6 +10,7 @@ cc.Class({
 
     properties: {
         roomEnemyNum: 3,
+        //boxes:cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -22,6 +23,7 @@ cc.Class({
 
     update (dt) {
         if (this.roomEnemyNum == 0) {
+            
             //实现墙壁渐隐的效果
             this.node.opacity -= 10;
             if (this.node.opacity <= 0)

@@ -43,11 +43,13 @@ cc.Class({
         this.audioId=0;   //上次播放的音频的id号
         //this.WeaponRockerScript=this.WeaponRocker.getComponent("Joystick");  //获取“Joystick”脚本
         this.MoveRockerScript=this.MoveRocker.getComponent("Joystick");  
-        this.enemyAround=null;  //周围的敌人节点
-        this.enemyDistance=10000;  //当前绑定的敌人距离
+        //this.enemyAround=null;  //周围的敌人节点
+        //this.enemyDistance=10000;  //当前绑定的敌人距离
         this.score=0;  //分数
         this.bTalkWithNPC=false;  //是否能够和NPC对话
         this.NPCAround=null; //周围的NPC节点
+        this.enemies=new Array();  //周围敌人节点数组
+        this.boxes=new Array();   //箱子节点数组
           //分数常驻节点的脚本组件
         /*if (this.animation) {  
             cc.log("has animation");
@@ -207,8 +209,8 @@ cc.Class({
             else {
                 //cc.log("yes");
                 
-                //卸下使用中武器，放到Canvas下，并使使用武器脚本(this.weaponScript)失效
-                this.weapon.parent = this.node.parent;
+                //卸下使用中武器，放到weaponAround的父节点下，并使使用武器脚本(this.weaponScript)失效
+                this.weapon.parent = this.weaponAround.parent;
                 let dirX=this.weaponScript.dirX;
                 let dirY=this.weaponScript.dirY;
                 this.weaponScript.enabled = false;
@@ -466,10 +468,49 @@ cc.Class({
 
 
         //调整武器方向
-        if(this.enemyAround)
+        //cc.log(this.enemies.length);
+        //cc.log(this.boxes.length);
+        if(this.enemies.length>0)
         {
-            let EPVectorX=this.enemyAround.position.x-this.node.position.x;
-            let EPVectorY=this.enemyAround.position.y-this.node.position.y;
+            let minDistance=10000;
+            let distance=0;
+            let index=0;
+            for(var i=0;i<this.enemies.length;++i)
+            {
+                if((distance=this.enemies[i].getPosition().sub(this.node.getPosition()).mag())<minDistance)
+                {
+                    minDistance=distance;
+                    index=i;
+                }
+            }
+            let enemyAround=this.enemies[index];
+
+            let EPVectorX=enemyAround.position.x-this.node.position.x;
+            let EPVectorY=enemyAround.position.y-this.node.position.y;
+            //let r=Math.atan2(EPVectorX,EPVectorY);
+            let r=cc.v2(EPVectorX,EPVectorY).signAngle(cc.v2(1,0));
+            let degree=r*180/(Math.PI);
+            this.weapon.angle=-90-degree;
+            this.weaponScript.dirX=EPVectorX;
+            this.weaponScript.dirY=EPVectorY;
+        }
+        else if(this.boxes.length>0)
+        {
+            let minDistance=10000;
+            let distance=0;
+            let index=0;
+            for(var i=0;i<this.boxes.length;++i)
+            {
+                if((distance=this.boxes[i].getPosition().sub(this.node.getPosition()).mag())<minDistance)
+                {
+                    minDistance=distance;
+                    index=i;
+                }
+            }
+            let boxAround=this.boxes[index];
+
+            let EPVectorX=boxAround.position.x-this.node.position.x;
+            let EPVectorY=boxAround.position.y-this.node.position.y;
             //let r=Math.atan2(EPVectorX,EPVectorY);
             let r=cc.v2(EPVectorX,EPVectorY).signAngle(cc.v2(1,0));
             let degree=r*180/(Math.PI);

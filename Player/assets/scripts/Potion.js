@@ -12,7 +12,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.enabled = false;
+        //this.enabled = false;
         this.playerScript=this.player.getComponent("Player");
     },
     use:function()
@@ -45,6 +45,7 @@ cc.Class({
     },
 
     update (dt) {
+        //cc.log("alive");
         //cc.log(this.node.getPosition().sub(this.player.getPosition()).mag());
         if(this.node.getPosition().sub(this.player.getPosition()).mag()<50)
         {

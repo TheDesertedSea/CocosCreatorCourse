@@ -66,17 +66,18 @@ cc.Class({
         }
 
         //检测玩家距离，若自己最近，则将自己的节点绑定到player上
-        var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
+       /* var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
         if(playerDistance<this.playerScript.enemyDistance)
         {
             this.playerScript.enemyAround=this.node;
             this.playerScript.enemyDistance=playerDistance;
         }   
-        /*if(playerDistance>this.playerScript.enemyDistance&&this.playerScript.enemyAround==this.node)
+        if(playerDistance>this.playerScript.enemyDistance&&this.playerScript.enemyAround==this.node)
         {
             this.playerScript.enemyAround=null;
             this.playerScript.enemyDistance=10000;
         }*/
+        
     },
 
     onBeginContact(info, self, other) {
@@ -111,7 +112,7 @@ cc.Class({
     EnemyMove() {
         if (this.player) {
             let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
-            console.log(distance);
+            //console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
@@ -247,12 +248,26 @@ cc.Class({
             this.playerScript.addScore(this.score);//增加分数
             
             //如果玩家目前指向自己，则取消该指向
-            if(this.playerScript.enemyAround==this.node)
+            let enemies=this.playerScript.enemies;
+            for(let i=0;i<enemies.length;++i)
+            {
+                if(enemies[i]==this.node)
+                {
+
+                    enemies.splice(i,1);
+                    break;
+                }
+            }
+            
+            //如果玩家目前指向自己，则取消该指向
+           /* if(this.playerScript.enemyAround==this.node)
             {
                 this.playerScript.enemyAround=null;
                 this.playerScript.enemyDistance=10000;
             }
             this.node.destroy();
+            */
+           this.node.destroy();
         }
 
     },

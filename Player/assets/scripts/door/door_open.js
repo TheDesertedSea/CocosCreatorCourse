@@ -30,6 +30,18 @@ cc.Class({
             this.Obj.opacity = 0;
             this.Obj.active = true;
             this.Obj.runAction(cc.fadeIn(0.5));
+
+
+            //添加怪物绑定和箱子绑定
+            var playerScript=other.node.getComponent("Player");
+            var enemies=this.Obj.getChildByName("enemies").children;
+            var boxes=this.Obj.getChildByName("boxes").children;
+
+
+            playerScript.enemies=playerScript.enemies.concat(enemies);
+
+
+            playerScript.boxes=playerScript.boxes.concat(boxes);
             
             //实现墙壁渐显的效果
             this.BlockDoor.opacity = 0;
