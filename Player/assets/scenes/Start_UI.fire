@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        456.3953877943992,
+        369.7854868895338,
         0,
         0,
         0,
@@ -871,7 +871,7 @@
     },
     "component": "",
     "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
-    "handler": "onClickButton",
+    "handler": "onClickStart",
     "customEventData": "START"
   },
   {
@@ -2335,7 +2335,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "66V7Y/AFRO+LUs1s1F3AuN"
+    "_id": "b83VWUbplFaa7ld1+jabQd"
   },
   {
     "__type__": "cc.Label",
@@ -2369,7 +2369,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "b6Qd/5gZ1IPJOrZGJHoZJ6"
+    "_id": "eaQbfMRPpMWbAIHIKc7flI"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -2432,7 +2432,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "c32UHi3/VFjoVVcg15P0vD"
+    "_id": "a2X3ztzN1DNZu0fbugCIuD"
   },
   {
     "__type__": "cc.Label",
@@ -2466,7 +2466,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "e6odWQBJtFdIeN27IRa66Y"
+    "_id": "a1c8Bzif1OWJ6Rmiuw/cWb"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -2529,7 +2529,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "showInEditor": false,
-    "_id": "5f5ss4YF5OuZOJzPNiyfGg"
+    "_id": "26EWhbNX9NO6sNFftdONUk"
   },
   {
     "__type__": "cc.Label",
@@ -2563,7 +2563,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
-    "_id": "f0KBgmG2hEzL8vTS4EPwWE"
+    "_id": "15/boCUs9DM7OATbe4ka/n"
   },
   {
     "__type__": "cc.RichText",
@@ -2596,17 +2596,23 @@
       "__id__": 5
     },
     "_enabled": true,
-    "myStart_Button": {
-      "__id__": 10
-    },
-    "myStart_Label": {
-      "__id__": 13
-    },
     "Setting_Menu": {
       "__uuid__": "1c6d4f52-8185-4d6e-9075-a5f09b164bc6"
     },
     "Introduction": {
       "__uuid__": "7f0516c5-5113-4802-981e-3c40835cdef4"
+    },
+    "ButtonStart": {
+      "__id__": 8
+    },
+    "ButtonSelect": {
+      "__id__": 18
+    },
+    "m_LoadingPrefab": {
+      "__uuid__": "d0248ffe-f028-405f-9244-5af8f4e09aa6"
+    },
+    "m_BackGround": {
+      "__id__": 5
     },
     "_id": "9b5ZSjottCp52d9j6oN58p"
   },

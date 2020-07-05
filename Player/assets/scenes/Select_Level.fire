@@ -177,7 +177,7 @@
       "array": [
         0,
         0,
-        457.2614131981836,
+        369.7854868895338,
         0,
         0,
         0,
@@ -238,7 +238,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "baseView",
+    "_name": "selectlevel",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -995,7 +995,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -1568,7 +1568,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -2057,7 +2057,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -2546,7 +2546,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -3035,7 +3035,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -3524,7 +3524,7 @@
       "__id__": 5
     },
     "component": "",
-    "_componentId": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "_componentId": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "handler": "onClickLevel1",
     "customEventData": "level1"
   },
@@ -3558,20 +3558,38 @@
     "_id": "0bRvun0IZM946IXGfEIS9b"
   },
   {
-    "__type__": "f5a6bs6FMRAeLkL5hcAjKQk",
+    "__type__": "5eaf6vTJnVLrJE3mZ8Lqctz",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 5
     },
     "_enabled": true,
-    "myStart_Button": null,
-    "myStart_Label": null,
-    "Setting_Menu": {
-      "__uuid__": "1c6d4f52-8185-4d6e-9075-a5f09b164bc6"
+    "m_LoadingPrefab": {
+      "__uuid__": "d0248ffe-f028-405f-9244-5af8f4e09aa6"
     },
-    "Introduction": null,
-    "_id": "9b5ZSjottCp52d9j6oN58p"
+    "m_BackGround": {
+      "__id__": 5
+    },
+    "level1": {
+      "__id__": 12
+    },
+    "level2": {
+      "__id__": 23
+    },
+    "level3": {
+      "__id__": 33
+    },
+    "level4": {
+      "__id__": 43
+    },
+    "level5": {
+      "__id__": 53
+    },
+    "level6": {
+      "__id__": 63
+    },
+    "_id": "46RGoxH5JD1baT0erMHYO9"
   },
   {
     "__type__": "cc.Node",
