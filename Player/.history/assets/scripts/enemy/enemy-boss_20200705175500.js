@@ -5,8 +5,7 @@ cc.Class({
         speed: 20,
         range: 300,
         Bullet: cc.Prefab,
-        BlackHole: cc.Prefab,
-        // BlackHole: cc.Prefab,
+        enemyServant: cc.Prefab,
         // RotationBullet: cc.Prefab,
         player: {
             default: null,
@@ -44,7 +43,7 @@ cc.Class({
 
     start() {
         this.schedule(this.ultimateSkill_1, 5);
-        this.schedule(this.ultimateSkill_3, 10);
+        this.schedule(this.ultimateSkill_1, 10);
     },
 
     update(dt) {
@@ -289,10 +288,17 @@ cc.Class({
     },
 
     ultimateSkill_3() {
-        let blackhole = cc.instantiate(this.BlackHole);
-        blackhole.setParent(cc.find("Canvas"));
-        blackhole.x = this.player.x;
-        blackhole.y = this.player.y;
+        let Servant = cc.instantiate(this.enemyServant);
+
+        //由于父节点改为Canvas
+        Servant.setParent(cc.find("Canvas"));
+        Servant.x = this.node.x;
+        Servant.y = this.node.y;
+        Servant.getComponent("enemy-close").player = this.player;
+        Servant.getComponent("enemy-close").BlockDoor = this.BlockDoor;
+
+        let doorScript=this.BlockDoor.getComponent("door_close");
+        doorScript.roomEnemyNum+=1;
     },
 
     getDamage(damage){ //受到伤害

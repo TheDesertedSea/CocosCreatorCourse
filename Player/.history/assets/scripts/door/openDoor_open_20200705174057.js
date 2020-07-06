@@ -34,6 +34,6 @@ cc.Class({
             //this.node.active = false;
             this.smog.runAction(cc.fadeOut(1.5));
         }
-    },
+    }
     // update (dt) {},
 });

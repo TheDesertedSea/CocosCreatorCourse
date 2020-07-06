@@ -6,7 +6,6 @@ cc.Class({
         range: 300,
         Bullet: cc.Prefab,
         BlackHole: cc.Prefab,
-        // BlackHole: cc.Prefab,
         // RotationBullet: cc.Prefab,
         player: {
             default: null,
@@ -289,10 +288,7 @@ cc.Class({
     },
 
     ultimateSkill_3() {
-        let blackhole = cc.instantiate(this.BlackHole);
-        blackhole.setParent(cc.find("Canvas"));
-        blackhole.x = this.player.x;
-        blackhole.y = this.player.y;
+
     },
 
     getDamage(damage){ //受到伤害

@@ -6,7 +6,6 @@ cc.Class({
         range: 300,
         Bullet: cc.Prefab,
         BlackHole: cc.Prefab,
-        // BlackHole: cc.Prefab,
         // RotationBullet: cc.Prefab,
         player: {
             default: null,
@@ -290,9 +289,18 @@ cc.Class({
 
     ultimateSkill_3() {
         let blackhole = cc.instantiate(this.BlackHole);
+
+        //由于父节点改为Canvas
         blackhole.setParent(cc.find("Canvas"));
         blackhole.x = this.player.x;
         blackhole.y = this.player.y;
+
+        let initSpeed = this.player.getComponent("Player").speed;
+
+        this.scheduleOnce(this.player.getComponent("Player").speed = 0, 3);
+        // this.player.getComponent("Player").speed = 0;
+
+        // blackhole.getComponent("enemy-boss_skill3_Blackhole").player = this.player;
     },
 
     getDamage(damage){ //受到伤害

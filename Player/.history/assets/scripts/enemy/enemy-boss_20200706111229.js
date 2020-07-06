@@ -5,7 +5,6 @@ cc.Class({
         speed: 20,
         range: 300,
         Bullet: cc.Prefab,
-        BlackHole: cc.Prefab,
         // BlackHole: cc.Prefab,
         // RotationBullet: cc.Prefab,
         player: {
@@ -289,8 +288,8 @@ cc.Class({
     },
 
     ultimateSkill_3() {
-        let blackhole = cc.instantiate(this.BlackHole);
-        blackhole.setParent(cc.find("Canvas"));
+        let blackhole = this.node.getChildByName("skill3_BlackHole");
+        blackhole.active = true;
         blackhole.x = this.player.x;
         blackhole.y = this.player.y;
     },
