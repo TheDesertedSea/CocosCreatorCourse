@@ -22,7 +22,7 @@ cc.Class({
     start () {
 
     },
-    // 角色与隐形门的碰撞回调
+   
     onCollisionEnter(other, self) {
         //console.log(other.node.getComponent("door_open").enemy_num)
         if (other.node.group == 'player' ) {
