@@ -3,6 +3,7 @@ cc.Class({
 
     properties: {
       Introduction:cc.Prefab,
+      Setting_Menu:cc.Prefab,
       ButtonStart:cc.Node,
       ButtonSelect:cc.Node,
       m_LoadingPrefab:cc.Prefab,
