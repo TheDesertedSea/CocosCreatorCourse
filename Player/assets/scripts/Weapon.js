@@ -22,13 +22,17 @@ cc.Class({
         this.ammo=this.maxAmmo;  //当前子弹数
         this.weaponInit(1.0,0.0);
         this.maxDir=1.0;
+        
     },
     strat(){
-        
         //this.node.zIndex=0.5;//设置显示顺序
     },
     weaponInit(dirX,dirY)
     {
+        if(this.ammo==undefined)
+        {
+            this.ammo=this.maxAmmo;
+        }
         this.node.getChildByName("nameLabel").active=false;
         this.fireTime=0;
         this.node.name="weapon";   //将结点名称设置为“weapon”(Player脚本需要)
@@ -63,7 +67,7 @@ cc.Class({
                 this.ammo=this.ammo-this.fireNum;
             }
         }
-        
+        //cc.log("ammo: "+this.ammo);
         
     },
 
