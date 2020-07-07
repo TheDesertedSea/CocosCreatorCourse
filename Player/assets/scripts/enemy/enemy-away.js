@@ -232,7 +232,7 @@ cc.Class({
         if (this.health <= 0) {  //如果死亡
             //开门检测减1
             let doorScript=this.BlockDoor.getComponent("door_close");
-            doorScript.roomEnemyNum-=1;
+            //doorScript.roomEnemyNum-=1;
             //this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
             this.playerScript.addScore(this.score);//增加分数

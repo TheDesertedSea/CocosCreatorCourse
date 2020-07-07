@@ -207,7 +207,7 @@
       "array": [
         0,
         0,
-        252.8794179050561,
+        267.6776217064231,
         0,
         0,
         0,
@@ -2391,7 +2391,7 @@
       "array": [
         0,
         0,
-        252.8794179050561,
+        267.6776217064231,
         0,
         0,
         0,
@@ -6030,7 +6030,9 @@
       "__id__": 133
     },
     "_enabled": true,
-    "roomEnemyNum": 3,
+    "player": {
+      "__id__": 43
+    },
     "_id": "99j+o+fedL2Lfnxm7lILr0"
   },
   {
@@ -11380,7 +11382,9 @@
       "__id__": 285
     },
     "_enabled": true,
-    "roomEnemyNum": 1,
+    "player": {
+      "__id__": 43
+    },
     "_id": "ab+J1SRspC6r0aNomlp4K3"
   },
   {
@@ -13309,7 +13313,9 @@
       "__id__": 333
     },
     "_enabled": true,
-    "roomEnemyNum": 1,
+    "player": {
+      "__id__": 43
+    },
     "_id": "baqi9r2/VCfLmJrUitai1D"
   },
   {
@@ -15241,7 +15247,9 @@
       "__id__": 381
     },
     "_enabled": true,
-    "roomEnemyNum": 2,
+    "player": {
+      "__id__": 43
+    },
     "_id": "79cRJ6HYRB/5xv/C967mDh"
   },
   {
@@ -17464,7 +17472,9 @@
       "__id__": 437
     },
     "_enabled": true,
-    "roomEnemyNum": 1,
+    "player": {
+      "__id__": 43
+    },
     "_id": "86xYOEa7VCt4G3akqSJF/d"
   },
   {
@@ -19393,7 +19403,9 @@
       "__id__": 485
     },
     "_enabled": true,
-    "roomEnemyNum": 1,
+    "player": {
+      "__id__": 43
+    },
     "_id": "25Zbrf6cxCk68FzuhqvOUx"
   },
   {

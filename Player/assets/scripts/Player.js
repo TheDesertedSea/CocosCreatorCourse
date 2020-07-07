@@ -463,6 +463,7 @@ cc.Class({
         }
         else
         {
+            //cc.log(this.weaponScript.ammo);
             this.ammoNode.getComponent(cc.Label).string=(this.weaponScript.ammo+0).toString();
         }
 

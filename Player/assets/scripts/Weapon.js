@@ -67,10 +67,6 @@ cc.Class({
         
     },
 
-    start () {
-
-    },
-
     update (dt) {
         
         if(this.fireTime>0)
