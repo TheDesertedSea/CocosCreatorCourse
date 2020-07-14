@@ -8,17 +8,16 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-        damage: 1,
-        health: 50,
+        damage: 5,
+        health: 5,
         //scoreLabel:cc.Node,
         score:10,
         BlockDoor:cc.Node,
-        //roomNumber:0,  //目前所在房间号
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
+    onLoad() {
         this.state = '';
         this.enemyAni = this.node.getComponent(cc.Animation);
 
@@ -39,14 +38,16 @@ cc.Class({
         this.enemyAni.play(state);
     },
 
-    start () {
+    start() {
     },
 
-    update (dt) {
-        //如果对话框存在，敌人不移动
-        if(window.dialog && window.dialog.active) return;
+    update(dt) {
 
-        this.LookAtObj(this.player);
+        // cc.log(this.health);
+        //如果对话框存在，敌人不移动
+        if (window.dialog && window.dialog.active) return;
+
+        // this.LookAtObj(this.player);
         this.EnemyMove();
         
         //受到毒性伤害
@@ -55,7 +56,7 @@ cc.Class({
             if(this.lastGetExtraDamgeDuration<0)
             {
                 this.getDamage(this.extraDamage);
-                this.lastGetExtraDamgeDuration=1;
+                this.lastGetExtraDamgeDuration=1.0;
                 this.extraDamageTimes-=1;
             }
             else
@@ -63,33 +64,41 @@ cc.Class({
                 this.lastGetExtraDamgeDuration-=dt;
             }
         }
-        
+
         //检测玩家距离，若自己最近，则将自己的节点绑定到player上
-        /*var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
-        if(playerDistance<this.playerScript.enemyDistance/*&&this.playerScript.roomNumber==this.roomNumber)
+       /* var playerDistance=this.node.getPosition().sub(this.player.getPosition()).mag();
+        if(playerDistance<this.playerScript.enemyDistance)
         {
             this.playerScript.enemyAround=this.node;
             this.playerScript.enemyDistance=playerDistance;
-        }   */
+        }   
+        if(playerDistance>this.playerScript.enemyDistance&&this.playerScript.enemyAround==this.node)
+        {
+            this.playerScript.enemyAround=null;
+            this.playerScript.enemyDistance=10000;
+        }*/
         
     },
 
     onBeginContact(info, self, other) {
         if (other.node.group == "bullet") {
-        //受到一次性伤害
-        this.getDamage(other.node.getComponent("Bullet").damage);
-
+            //受到一次性伤害
+            this.getDamage(other.node.getComponent("Bullet").damage);
+            
             //附加毒性伤害
             this.extraDamage=other.node.getComponent("Bullet").extraDamage;
-            this.extraDamageTimes=other.node.getComponent("Bullet").extraDamageTimes;
-            this.lastGetExtraDamgeDuration=1.0;
+            //cc.log(other.node.getComponent("Bullet").extraDamage);
+            //cc.log("extradamge"+this.extraDamage);
+            this.extraDamageTimes = other.node.getComponent("Bullet").extraDamageTimes;
+            this.lastGetExtraDamgeDuration = 1.0;
+            
         }
         //碰到玩家
         if (other.node.group == "player" && other.node.getComponent("Player").onHit == false) {
             //cc.log("ENEMY ATTACK!");
             other.getComponent("Player").getDamage(this.damage);
         }
-    
+        
     },
     //与爆炸的碰撞体碰撞
     onCollisionEnter(other, self)
@@ -99,10 +108,11 @@ cc.Class({
             this.getDamage(other.node.getComponent("Bullet").explosionDamage);
         }
     },
-    EnemyMove (){
+
+    EnemyMove() {
         if (this.player) {
-            let distance = Math.sqrt((this.node.x-this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
-            // console.log(distance);
+            let distance = Math.sqrt((this.node.x - this.player.x) * (this.node.x - this.player.x) + (this.node.y - this.player.y) * (this.node.y - this.player.y));
+            //console.log(distance);
             if (distance <= this.range) {
                 // this.LookAtObj(this.player);
                 if (distance <= 45) {
@@ -125,54 +135,47 @@ cc.Class({
         let state = this.state;
         //计算朝向
         let dx = this.node.x - target.x;
-        // let dy = this.node.y - target.y;
+        let dy = this.node.y - target.y;
 
-        // if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
-        //     if (dx < 0 && dy < 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_up
-        //             state = 'enemy_up';
-        //         } else {
-        //             //enemy_right
-        //             state = 'enemy_right';
-        //         }
-        //     } else if (dx > 0 && dy > 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_down
-        //             state = 'enemy_down';
-        //         } else {
-        //             //enemy_left
-        //             state = 'enemy_left';
-        //         }
-        //     } else if (dx > 0 && dy < 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_up
-        //             state = 'enemy_up';
-        //         } else {
-        //             //enemu_left
-        //             state = 'enemy_left';
-        //         }
-        //     } else if (dx < 0 && dy > 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_down
-        //             state = 'enemy_down';
-        //         } else {
-        //             //enemy_right
-        //             state = 'enemy_right';
-        //         }
-        //     } else {
-        //         //still
-        //         state = '';
-        //     }
-        // } else {
-        //     //attack 
-        //     state = '';
-        // }
-        if (dx < 0) {
-            state = 'enemy_right';
-        } else if (dx > 0) {
-            state = 'enemy_left';
+        if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
+            if (dx < 0 && dy < 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_up
+                    state = 'enemy_up';
+                } else {
+                    //enemy_right
+                    state = 'enemy_right';
+                }
+            } else if (dx > 0 && dy > 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_down
+                    state = 'enemy_down';
+                } else {
+                    //enemy_left
+                    state = 'enemy_left';
+                }
+            } else if (dx > 0 && dy < 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_up
+                    state = 'enemy_up';
+                } else {
+                    //enemu_left
+                    state = 'enemy_left';
+                }
+            } else if (dx < 0 && dy > 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_down
+                    state = 'enemy_down';
+                } else {
+                    //enemy_right
+                    state = 'enemy_right';
+                }
+            } else {
+                //still
+                state = '';
+            }
         } else {
+            //attack 
             state = '';
         }
 
@@ -193,20 +196,20 @@ cc.Class({
     },
 
     Attack() {
-        // let dx = this.player.x - this.node.x;
-        // let dy = this.player.y - this.node.y;
-        // this.sp = cc.v2(dx, dy);
-        // this.sp.normalizeSelf();
+        let dx = this.player.x - this.node.x;
+        let dy = this.player.y - this.node.y;
+        this.sp = cc.v2(dx, dy);
+        this.sp.normalizeSelf();
 
-        // // this.node.x += this.sp.x * this.speed;
-        // // this.node.y += this.sp.y * this.speed;
+        // this.node.x += this.sp.x * this.speed;
+        // this.node.y += this.sp.y * this.speed;
 
-        // this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
+        this.lv = this.node.getComponent(cc.RigidBody).linearVelocity;
 
-        // this.lv.x = 0 - this.sp.x * this.speed;
-        // this.lv.y = 0 - this.sp.y * this.speed;
+        this.lv.x = 0 - this.sp.x * this.speed;
+        this.lv.y = 0 - this.sp.y * this.speed;
 
-        // this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
+        this.node.getComponent(cc.RigidBody).linearVelocity = this.lv;
     },
 
     Run() {
@@ -243,28 +246,30 @@ cc.Class({
             //this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
 
             this.playerScript.addScore(this.score);//增加分数
-
+            
             //如果玩家目前指向自己，则取消该指向
             let enemies=this.playerScript.enemies;
             for(let i=0;i<enemies.length;++i)
             {
                 if(enemies[i]==this.node)
                 {
-                    
+
                     enemies.splice(i,1);
                     break;
                 }
             }
             
             //如果玩家目前指向自己，则取消该指向
-            /*if(this.playerScript.enemyAround==this.node)
+           /* if(this.playerScript.enemyAround==this.node)
             {
                 this.playerScript.enemyAround=null;
                 this.playerScript.enemyDistance=10000;
             }
+            this.node.destroy();
             */
            this.node.destroy();
         }
 
     },
+
 });

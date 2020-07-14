@@ -3,7 +3,7 @@ cc.Class({
 
     properties: {
         speed: 20,
-        range: 1000,
+        range: 300,
         player: {
             default: null,
             type: cc.Node

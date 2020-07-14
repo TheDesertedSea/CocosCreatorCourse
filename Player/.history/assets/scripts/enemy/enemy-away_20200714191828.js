@@ -3,7 +3,7 @@ cc.Class({
 
     properties: {
         speed: 20,
-        range: 1000,
+        range: 300,
         player: {
             default: null,
             type: cc.Node
@@ -170,7 +170,7 @@ cc.Class({
         // }
         if (dx < 0) {
             state = 'enemy_right';
-        } else if (dx > 0) {
+        } else if (dy > 0) {
             state = 'enemy_left';
         } else {
             state = '';

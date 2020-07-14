@@ -3,7 +3,7 @@ cc.Class({
 
     properties: {
         speed: 20,
-        range: 1000,
+        range: 300,
         player: {
             default: null,
             type: cc.Node
@@ -125,54 +125,47 @@ cc.Class({
         let state = this.state;
         //计算朝向
         let dx = this.node.x - target.x;
-        // let dy = this.node.y - target.y;
+        let dy = this.node.y - target.y;
 
-        // if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
-        //     if (dx < 0 && dy < 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_up
-        //             state = 'enemy_up';
-        //         } else {
-        //             //enemy_right
-        //             state = 'enemy_right';
-        //         }
-        //     } else if (dx > 0 && dy > 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_down
-        //             state = 'enemy_down';
-        //         } else {
-        //             //enemy_left
-        //             state = 'enemy_left';
-        //         }
-        //     } else if (dx > 0 && dy < 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_up
-        //             state = 'enemy_up';
-        //         } else {
-        //             //enemu_left
-        //             state = 'enemy_left';
-        //         }
-        //     } else if (dx < 0 && dy > 0) {
-        //         if (Math.abs(dx) < Math.abs(dy)) {
-        //             //enemy_down
-        //             state = 'enemy_down';
-        //         } else {
-        //             //enemy_right
-        //             state = 'enemy_right';
-        //         }
-        //     } else {
-        //         //still
-        //         state = '';
-        //     }
-        // } else {
-        //     //attack 
-        //     state = '';
-        // }
-        if (dx < 0) {
-            state = 'enemy_right';
-        } else if (dx > 0) {
-            state = 'enemy_left';
+        if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
+            if (dx < 0 && dy < 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_up
+                    state = 'enemy_up';
+                } else {
+                    //enemy_right
+                    state = 'enemy_right';
+                }
+            } else if (dx > 0 && dy > 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_down
+                    state = 'enemy_down';
+                } else {
+                    //enemy_left
+                    state = 'enemy_left';
+                }
+            } else if (dx > 0 && dy < 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_up
+                    state = 'enemy_up';
+                } else {
+                    //enemu_left
+                    state = 'enemy_left';
+                }
+            } else if (dx < 0 && dy > 0) {
+                if (Math.abs(dx) < Math.abs(dy)) {
+                    //enemy_down
+                    state = 'enemy_down';
+                } else {
+                    //enemy_right
+                    state = 'enemy_right';
+                }
+            } else {
+                //still
+                state = '';
+            }
         } else {
+            //attack 
             state = '';
         }
 
