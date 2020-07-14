@@ -19,6 +19,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        //this.player=cc.find("Canvas/Player");
         this.ammo=this.maxAmmo;  //当前子弹数
         this.weaponInit(1.0,0.0);
         this.maxDir=1.0;

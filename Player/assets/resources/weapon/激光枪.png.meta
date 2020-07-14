@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1927eb64-b11a-4186-bc99-b8009b967041",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 32,
+  "height": 12,
+  "platformSettings": {},
+  "subMetas": {
+    "激光枪": {
+      "ver": "1.0.4",
+      "uuid": "42db7050-e9d9-4970-9633-e206a3f72f6d",
+      "rawTextureUuid": "1927eb64-b11a-4186-bc99-b8009b967041",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -0.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 30,
+      "height": 11,
+      "rawWidth": 32,
+      "rawHeight": 12,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

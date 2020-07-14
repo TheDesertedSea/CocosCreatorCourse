@@ -13,16 +13,21 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ammoBox",
+    "_name": "红色粒子",
     "_objFlags": 0,
     "_parent": null,
-    "_children": [
-      {
-        "__id__": 2
-      }
-    ],
+    "_children": [],
     "_active": true,
     "_components": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 4
+      },
       {
         "__id__": 5
       },
@@ -49,8 +54,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20,
-      "height": 20
+      "width": 32,
+      "height": 32
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -61,77 +66,13 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        978.984,
-        -811.535,
+        511,
+        101,
         0,
-        0,
-        0,
-        1,
-        6.123233995736766e-17,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 180
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 2,
-    "groupIndex": 2,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "nameLabel",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": false,
-    "_components": [
-      {
-        "__id__": 3
-      }
-    ],
-    "_prefab": {
-      "__id__": 4
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 209,
-      "g": 0,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 45,
-      "height": 18.9
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        0,
-        -22.007,
         0,
         0,
         0,
         1,
-        6.123233995736766e-17,
         1,
         1,
         1
@@ -141,57 +82,14 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 180
+      "z": 0
     },
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 3,
+    "groupIndex": 3,
     "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 2
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_useOriginalSize": false,
-    "_string": "弹药箱",
-    "_N$string": "弹药箱",
-    "_fontSize": 15,
-    "_lineHeight": 15,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 0,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
-    "_N$cacheMode": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "27e54b1e-a610-45da-846f-ee5d00c58be2"
-    },
-    "fileId": "5aHWXchhdO6ZUZ/Q8T8nG3",
-    "sync": false
   },
   {
     "__type__": "cc.Sprite",
@@ -209,10 +107,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "db7af30d-f3f5-4b6f-a4ca-35d978726108"
+      "__uuid__": "b8675877-d312-495d-aee3-33cb6796ed7b"
     },
     "_type": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -226,6 +124,24 @@
     "_id": ""
   },
   {
+    "__type__": "1531fsKv2FI85gs7mYu9jxQ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "speed": 250,
+    "lifeTime": 3,
+    "extraDamage": 0,
+    "extraDamageTimes": 0,
+    "isExplosion": true,
+    "explosionDamage": 10,
+    "bIsBound": false,
+    "boundTimes": 3,
+    "_id": ""
+  },
+  {
     "__type__": "cc.RigidBody",
     "_name": "",
     "_objFlags": 0,
@@ -233,7 +149,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_type": 0,
+    "_type": 2,
     "_allowSleep": true,
     "_gravityScale": 1,
     "_linearDamping": 0,
@@ -244,8 +160,8 @@
       "y": 0
     },
     "_angularVelocity": 0,
-    "_fixedRotation": false,
-    "enabledContactListener": false,
+    "_fixedRotation": true,
+    "enabledContactListener": true,
     "bullet": false,
     "awakeOnLoad": true,
     "_id": ""
@@ -260,7 +176,7 @@
     "_enabled": true,
     "tag": 0,
     "_density": 1,
-    "_sensor": false,
+    "_sensor": true,
     "_friction": 0.2,
     "_restitution": 0,
     "body": null,
@@ -271,23 +187,66 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 20,
-      "height": 20
+      "width": 26,
+      "height": 45
     },
     "_id": ""
   },
   {
-    "__type__": "ac0aeVeB6xOPLjI+Ypf4qVe",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "player": null,
-    "potionAdd": 0,
-    "time": 0,
-    "type": "AM",
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 26,
+      "height": 45
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CircleCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": false,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_radius": 75,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "541bed4a-44cb-44fe-b87f-97f5beb8e0c0"
+    },
+    "_clips": [
+      {
+        "__uuid__": "541bed4a-44cb-44fe-b87f-97f5beb8e0c0"
+      }
+    ],
+    "playOnLoad": false,
     "_id": ""
   },
   {
@@ -296,9 +255,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "27e54b1e-a610-45da-846f-ee5d00c58be2"
+      "__id__": 0
     },
-    "fileId": "caBDjHg0JEUaYaS0TwbBgi",
+    "fileId": "1eJQEblnNPHJVaHej0zJqB",
     "sync": false
   }
 ]

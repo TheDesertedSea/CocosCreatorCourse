@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "918577cf-b371-4502-b87e-f20432ab2686",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 48,
+  "height": 32,
+  "platformSettings": {},
+  "subMetas": {
+    "毒性步枪": {
+      "ver": "1.0.4",
+      "uuid": "61518ba3-8385-435b-a133-164f5db3dcfb",
+      "rawTextureUuid": "918577cf-b371-4502-b87e-f20432ab2686",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -0.5,
+      "trimX": 0,
+      "trimY": 9,
+      "width": 48,
+      "height": 15,
+      "rawWidth": 48,
+      "rawHeight": 32,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

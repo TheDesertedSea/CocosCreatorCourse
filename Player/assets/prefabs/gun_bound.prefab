@@ -240,7 +240,7 @@
     "attackDuration": 0.5,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 10,
+    "maxAmmo": 20,
     "fireNum": 1,
     "_id": ""
   },

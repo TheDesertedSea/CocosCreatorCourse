@@ -13,6 +13,7 @@ cc.Class({
 
     onLoad () {
         //this.enabled = false;
+        //this.player=cc.find("Canvas/Player");
         this.playerScript=this.player.getComponent("Player");
     },
     use:function()

@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "gun_exposive",
+    "_name": "gun_explosive",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -61,8 +61,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1.729,
-        -13.278,
+        1369.32,
+        -1053.32,
         0,
         0,
         0,
@@ -239,8 +239,9 @@
     "damage": 20,
     "attackDuration": 0.5,
     "player": null,
-    "ammo": 10,
     "bInfiniteAmmo": false,
+    "maxAmmo": 10,
+    "fireNum": 1,
     "_id": ""
   },
   {

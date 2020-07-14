@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "7e53683f-b0f5-442d-b067-4e25d33fbf07",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 32,
+  "height": 32,
+  "platformSettings": {},
+  "subMetas": {
+    "蓝色药水": {
+      "ver": "1.0.4",
+      "uuid": "d0d1e637-093b-4733-92b8-f1e33c9a5245",
+      "rawTextureUuid": "7e53683f-b0f5-442d-b067-4e25d33fbf07",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 3,
+      "trimY": 0,
+      "width": 26,
+      "height": 32,
+      "rawWidth": 32,
+      "rawHeight": 32,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
