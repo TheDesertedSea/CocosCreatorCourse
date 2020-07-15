@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "675bd794-18d5-4b53-aec2-e8da3f001944",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 52,
+  "height": 52,
+  "platformSettings": {},
+  "subMetas": {
+    "《龙骑士》游戏资源-LINE版-敌人的子弹(bullet)_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "916b2f67-41f4-4c7c-a474-26f4a8a447b5",
+      "rawTextureUuid": "675bd794-18d5-4b53-aec2-e8da3f001944",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 52,
+      "height": 52,
+      "rawWidth": 52,
+      "rawHeight": 52,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
