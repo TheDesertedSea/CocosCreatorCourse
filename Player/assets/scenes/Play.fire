@@ -210,7 +210,7 @@
       "array": [
         0,
         0,
-        268.98749570124625,
+        328.26694516189025,
         0,
         0,
         0,
@@ -3634,7 +3634,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -4163,7 +4163,7 @@
       "array": [
         0,
         0,
-        268.98749570124625,
+        328.26694516189025,
         0,
         0,
         0,
@@ -7993,7 +7993,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -14403,7 +14403,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -21023,7 +21023,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -34685,7 +34685,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -35279,7 +35279,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "171cba6f-8111-4efd-89d8-bbeabd486ddb"
+      "__uuid__": "89839048-31e6-4a92-a530-0d769a8e4d2b"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -35292,9 +35292,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "b8eebbda-2b5e-4c21-a10f-f51683ac87ea"
-    },
+    "_atlas": null,
     "_id": "8dsjXV41NMKaJWOKPEnGK3"
   },
   {
@@ -35356,19 +35354,15 @@
       "__id__": 985
     },
     "_enabled": true,
-    "_defaultClip": null,
+    "_defaultClip": {
+      "__uuid__": "6b0a4623-3ae6-4430-bb59-f4d002104694"
+    },
     "_clips": [
       {
-        "__uuid__": "c99e0f38-4d7d-496f-a471-ad65fe27117c"
+        "__uuid__": "74dd828b-94b1-413d-b18a-93a1f943427f"
       },
       {
-        "__uuid__": "8e159bef-5baf-4ecd-a4c9-d13cd2631d48"
-      },
-      {
-        "__uuid__": "dbac56a1-6423-4925-b8be-0a30659778c8"
-      },
-      {
-        "__uuid__": "7a43dff6-b227-4c51-8284-4010172b64d5"
+        "__uuid__": "0f8a716f-e46d-42b3-a41c-91e177f2dc76"
       }
     ],
     "playOnLoad": false,
@@ -42251,7 +42245,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -48213,7 +48207,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },
@@ -57440,7 +57434,7 @@
     },
     "_enabled": true,
     "speed": 20,
-    "range": 300,
+    "range": 1000,
     "player": {
       "__id__": 93
     },

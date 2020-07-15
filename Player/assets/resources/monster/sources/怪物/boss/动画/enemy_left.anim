@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "enemy_left",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.4,
+  "sample": 10,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "c1dd58d5-5ede-4931-a72b-f72ad44d0ae8"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "d9bc1e50-ecec-4c6c-a77a-afa237a3f97b"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "cd1429c7-8606-4b33-a551-623b6c10ac0d"
+            }
+          },
+          {
+            "frame": 0.3,
+            "value": {
+              "__uuid__": "a76080a2-7f01-4680-85e4-f5c94cf2ffa9"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
