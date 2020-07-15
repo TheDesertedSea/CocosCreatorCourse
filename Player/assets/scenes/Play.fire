@@ -3705,7 +3705,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        8.851,
+        2.277,
         516.15,
         0,
         0,
@@ -35379,7 +35379,7 @@
     "speed": 20,
     "range": 1000,
     "Bullet": {
-      "__uuid__": "d1176343-f485-4c71-96e7-ec9a585ce968"
+      "__uuid__": "63e8e624-1692-4827-a5f8-a0fd67ee0174"
     },
     "BlackHole": {
       "__uuid__": "0043b566-8b2f-47fa-989f-0cf740976d09"

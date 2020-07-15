@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "9723ee64-b888-44d2-b5ec-0c8da3a36eda",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 128,
+  "height": 128,
+  "platformSettings": {},
+  "subMetas": {
+    "僵尸防御游戏素材-枪子弹水(water)_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "fe4c23f2-9347-4279-abce-e303f0c5f119",
+      "rawTextureUuid": "9723ee64-b888-44d2-b5ec-0c8da3a36eda",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 26.5,
+      "offsetY": -0.5,
+      "trimX": 53,
+      "trimY": 2,
+      "width": 75,
+      "height": 125,
+      "rawWidth": 128,
+      "rawHeight": 128,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
