@@ -68,6 +68,8 @@ cc.Class({
         this.weapon=this.node.getChildByName("weapon");  //当前使用中武器节点
         this.weaponScript=this.weapon.getComponent("Weapon");  //目前使用中的武器脚本组件
         this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;  //在切换武器键显示目前武器
+        this.currentWeaponImage.width=this.weapon.width;
+        this.currentWeaponImage.height=this.weapon.height;
         this.currentWeaponImage.color=this.weapon.color;
 
         this.weaponPack.active=false;  //由于一开始没有第二把武器，所以设置为false
@@ -172,6 +174,8 @@ cc.Class({
                 this.weapon.parent = this.weaponPack;
                 this.weaponPack.active=true;
                 this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//武器栏图像更新
+                this.weaponPack.width=this.weapon.width;
+                this.weaponPack.height=this.weapon.height;
                 this.weaponPack.color=this.weapon.color;
                 
                 this.weapon.active=false;
@@ -203,6 +207,8 @@ cc.Class({
                 this.bGetWeapon = false;  //可捡取武器标志重置
                 this.weapon=this.weaponAround;//保存新的使用中武器节点
                 this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+                this.currentWeaponImage.width=this.weapon.width;
+                this.currentWeaponImage.height=this.weapon.height;
                 this.currentWeaponImage.color=this.weapon.color;
                 this.weaponScript=this.weapon.getComponent("Weapon");  //保存新的使用中武器节点脚本组件
             }
@@ -224,7 +230,7 @@ cc.Class({
                 this.weapon.y = this.weaponAround.y;
                 //先把使用中武器角度复制给周边武器
                 this.weaponAround.angle = this.weapon.angle;
-                this.weapon.angle = -90;
+                this.weapon.angle = 0;
 
                 //修改周边武器节点关系即坐标以及脚本组件的开与关
                 this.weaponAround.parent = this.node;
@@ -243,6 +249,8 @@ cc.Class({
                 //保存新武器节点信息
                 this.weapon=this.weaponAround;
                 this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+                this.currentWeaponImage.width=this.weapon.width;
+                this.currentWeaponImage.height=this.weapon.height;
                 this.currentWeaponImage.color=this.weapon.color;
                 this.weaponScript=this.weapon.getComponent("Weapon");
             }
@@ -295,6 +303,8 @@ cc.Class({
         //修改目前所使用武器位置信息为武器栏中武器位置信息
         this.weapon.parent = this.weaponPack;
         this.weaponPack.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame; //武器栏图像更新
+        this.weaponPack.width=this.weapon.width;
+        this.weaponPack.height=this.weapon.height;
         this.weaponPack.color=this.weapon.color;
         this.weapon.active=false;
         /*this.weapon.position.x = 4.024;
@@ -306,6 +316,8 @@ cc.Class({
         //保存新的使用中武器节点
         this.weapon=weapon2;
         this.currentWeaponImage.getComponent(cc.Sprite).spriteFrame=this.weapon.getComponent(cc.Sprite).spriteFrame;//当前武器显示图更新
+        this.currentWeaponImage.width=this.weapon.width;
+        this.currentWeaponImage.height=this.weapon.height;
         this.currentWeaponImage.color=this.weapon.color;
         this.weaponScript=this.weapon.getComponent("Weapon");
         this.ATK=(this.weaponScript.damage + this.damageAdd).toString();  //更新ATK显示
@@ -491,7 +503,7 @@ cc.Class({
             //let r=Math.atan2(EPVectorX,EPVectorY);
             let r=cc.v2(EPVectorX,EPVectorY).signAngle(cc.v2(1,0));
             let degree=r*180/(Math.PI);
-            this.weapon.angle=-90-degree;
+            this.weapon.angle=-degree;
             this.weaponScript.dirX=EPVectorX;
             this.weaponScript.dirY=EPVectorY;
         }
@@ -515,7 +527,7 @@ cc.Class({
             //let r=Math.atan2(EPVectorX,EPVectorY);
             let r=cc.v2(EPVectorX,EPVectorY).signAngle(cc.v2(1,0));
             let degree=r*180/(Math.PI);
-            this.weapon.angle=-90-degree;
+            this.weapon.angle=-degree;
             this.weaponScript.dirX=EPVectorX;
             this.weaponScript.dirY=EPVectorY;
         }
