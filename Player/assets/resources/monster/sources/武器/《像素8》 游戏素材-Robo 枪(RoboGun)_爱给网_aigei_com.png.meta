@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "787aeba7-0574-4b3f-85a0-631ed50cf799",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 55,
+  "height": 35,
+  "platformSettings": {},
+  "subMetas": {
+    "《像素8》 游戏素材-Robo 枪(RoboGun)_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "e7c16149-5f1f-456d-b6d7-9544b6ac1f61",
+      "rawTextureUuid": "787aeba7-0574-4b3f-85a0-631ed50cf799",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 55,
+      "height": 35,
+      "rawWidth": 55,
+      "rawHeight": 35,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

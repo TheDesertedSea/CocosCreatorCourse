@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "1c886024-1253-41e2-aff6-3780c494b548",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 128,
+  "platformSettings": {},
+  "subMetas": {
+    "横版像素射击游戏游戏资源-百变英雄-武器攻击步枪高清图标(h_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "a6f36b97-99cd-4875-bb88-747fddf55dfc",
+      "rawTextureUuid": "1c886024-1253-41e2-aff6-3780c494b548",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 11,
+      "trimY": 13,
+      "width": 42,
+      "height": 102,
+      "rawWidth": 64,
+      "rawHeight": 128,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "5fd070b4-1ed8-4f24-b46d-86216fe0b5e6",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 115,
+  "height": 122,
+  "platformSettings": {},
+  "subMetas": {
+    "海盗探险类游戏素材-海盗日记-1_爱给网_aigei_com": {
+      "ver": "1.0.4",
+      "uuid": "e79105ea-9a8c-419c-8b31-8edde39a40fc",
+      "rawTextureUuid": "5fd070b4-1ed8-4f24-b46d-86216fe0b5e6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 115,
+      "height": 122,
+      "rawWidth": 115,
+      "rawHeight": 122,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
