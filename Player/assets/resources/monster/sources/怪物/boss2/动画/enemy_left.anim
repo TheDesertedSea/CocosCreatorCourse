@@ -1,0 +1,31 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "enemy_left",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.2857142857142857,
+  "sample": 7,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "e961d493-42c6-47fb-a155-7aa400a1f037"
+            }
+          },
+          {
+            "frame": 0.14285714285714285,
+            "value": {
+              "__uuid__": "2f4a2c69-18f9-47c4-bf60-1ee1a93ddba7"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
