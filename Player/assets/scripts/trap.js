@@ -50,12 +50,12 @@ cc.Class({
 
     /** 角色与地刺的碰撞回调 */ 
     onCollisionStay(other, self) {
-        console.log(other.getComponent("Player").health);
+        //console.log(other.getComponent("Player").health);
         if (this.changeNum % 2 == 1) {
             if (other.node.group == 'player' && this.damageOn == false) {
                 other.getComponent("Player").getDamage(this.damage);
                 this.damageOn = true;
-                console.log(other.getComponent("Player").health);
+                //console.log(other.getComponent("Player").health);
             }
         }
     },

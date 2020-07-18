@@ -102,28 +102,34 @@
         "__id__": 2074
       },
       {
-        "__id__": 2091
+        "__id__": 2093
+      },
+      {
+        "__id__": 2109
+      },
+      {
+        "__id__": 2126
       },
       {
         "__id__": 93
       },
       {
-        "__id__": 2104
+        "__id__": 2139
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 2112
+        "__id__": 2147
       },
       {
-        "__id__": 2113
+        "__id__": 2148
       },
       {
-        "__id__": 2114
+        "__id__": 2149
       },
       {
-        "__id__": 2115
+        "__id__": 2150
       }
     ],
     "_prefab": null,
@@ -213,7 +219,7 @@
       "array": [
         0,
         0,
-        297.3823089136281,
+        268.64662874504086,
         0,
         0,
         0,
@@ -3651,7 +3657,7 @@
       "__id__": 88
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -3723,8 +3729,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        8.999,
-        560.773,
+        1.925,
+        553.76,
         0,
         0,
         0,
@@ -3856,16 +3862,16 @@
     "_defaultClip": null,
     "_clips": [
       {
-        "__uuid__": "97136e30-03e0-4fae-a600-b7a108c7bc10"
+        "__uuid__": "d6685916-b1eb-4ada-a239-066e591f038d"
       },
       {
-        "__uuid__": "6d2f998f-efc3-404f-9509-f4f6aa1dde94"
+        "__uuid__": "191a9189-aff9-4104-b2fe-607e34bcc0c5"
       },
       {
-        "__uuid__": "9b97269f-4116-4de7-be1c-a5292ef68197"
+        "__uuid__": "a8043351-887e-4fcf-a6ef-07e492dd8b4d"
       },
       {
-        "__uuid__": "1aa774ef-4aee-4cd8-877f-13de41a1d1c2"
+        "__uuid__": "fe9102dc-d8ff-4f12-9e94-962bf074fff8"
       }
     ],
     "playOnLoad": false,
@@ -4099,7 +4105,7 @@
       "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": {
       "__id__": 93
     },
@@ -4181,7 +4187,7 @@
       "array": [
         0,
         0,
-        297.3823089136281,
+        268.64662874504086,
         0,
         0,
         0,
@@ -7338,7 +7344,7 @@
       "__id__": 93
     },
     "_enabled": true,
-    "speed": 100,
+    "speed": 125,
     "weaponPack": {
       "__id__": 122
     },
@@ -8010,7 +8016,7 @@
       "__id__": 194
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -8208,7 +8214,7 @@
       "__id__": 200
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -8406,7 +8412,7 @@
       "__id__": 206
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -8604,7 +8610,7 @@
       "__id__": 212
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -8802,7 +8808,7 @@
       "__id__": 218
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -10799,8 +10805,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 38,
-      "height": 24
+      "width": 56,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -10811,8 +10817,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        195.729,
-        182.722,
+        225.132,
+        203.724,
         0,
         0,
         0,
@@ -10987,12 +10993,12 @@
       "__uuid__": "d076d6ed-a0d3-47ad-a626-afd523d5dfa1"
     },
     "damage": 15,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": {
       "__id__": 93
     },
     "bInfiniteAmmo": false,
-    "maxAmmo": 20,
+    "maxAmmo": 40,
     "fireNum": 1,
     "_id": "233Baj2ZROq7h0Dkt7rEKP"
   },
@@ -15816,7 +15822,7 @@
       "__id__": 416
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -16014,7 +16020,7 @@
       "__id__": 422
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -16212,7 +16218,7 @@
       "__id__": 428
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -16410,7 +16416,7 @@
       "__id__": 434
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -16608,7 +16614,7 @@
       "__id__": 440
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -16806,7 +16812,7 @@
       "__id__": 446
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -17004,7 +17010,7 @@
       "__id__": 452
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -19373,8 +19379,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -19567,10 +19573,10 @@
       "__uuid__": "c6a7c85e-857d-49b7-94da-353e107ea62a"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 50,
+    "maxAmmo": 100,
     "fireNum": 5,
     "_id": "6772n4XMhGwYEA6y9f2OBM"
   },
@@ -24774,7 +24780,7 @@
       "__id__": 672
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -24972,7 +24978,7 @@
       "__id__": 678
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -25170,7 +25176,7 @@
       "__id__": 684
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -25368,7 +25374,7 @@
       "__id__": 690
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -25566,7 +25572,7 @@
       "__id__": 696
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -25648,7 +25654,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1622.879,
+        1701.343,
         -190.159,
         0,
         0,
@@ -25764,7 +25770,7 @@
       "__id__": 702
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -28130,14 +28136,14 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 168,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30,
-      "height": 12
+      "width": 60,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -40452,8 +40458,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 16,
-      "height": 16
+      "width": 48,
+      "height": 48
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -40645,8 +40651,8 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 16,
-      "height": 16
+      "width": 48,
+      "height": 48
     },
     "_id": "27yDVv4+9DM5Q3f9qbCzg7"
   },
@@ -40692,7 +40698,7 @@
       "__id__": 93
     },
     "damage": 10,
-    "health": 100,
+    "health": 500,
     "score": 10,
     "BlockDoor": {
       "__id__": 1143
@@ -41248,7 +41254,7 @@
       "__id__": 1153
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -41446,7 +41452,7 @@
       "__id__": 1159
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -41644,7 +41650,7 @@
       "__id__": 1165
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -42040,7 +42046,7 @@
       "__id__": 1177
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -45301,10 +45307,10 @@
       "__uuid__": "575453fa-b77e-4ca8-9ded-6c179f0be488"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 10,
+    "maxAmmo": 30,
     "fireNum": 1,
     "_id": "e7hJIHOYpAfKzMuYIEbSwO"
   },
@@ -45375,8 +45381,8 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 179,
+      "r": 250,
+      "g": 255,
       "b": 0,
       "a": 255
     },
@@ -45570,10 +45576,10 @@
       "__uuid__": "5ed2aee9-24fe-4f23-9e1b-7a8447854892"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 50,
+    "maxAmmo": 100,
     "fireNum": 5,
     "_id": "11wnV3bLlCk5WpeR9r6Ftu"
   },
@@ -45839,10 +45845,10 @@
       "__uuid__": "d076d6ed-a0d3-47ad-a626-afd523d5dfa1"
     },
     "damage": 15,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 20,
+    "maxAmmo": 40,
     "fireNum": 1,
     "_id": "8eE0wXbJZGFJ3BTWZaL5g3"
   },
@@ -50264,7 +50270,7 @@
       "__id__": 1415
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -50462,7 +50468,7 @@
       "__id__": 1421
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -50660,7 +50666,7 @@
       "__id__": 1427
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -52647,15 +52653,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 122,
       "g": 255,
-      "b": 255,
+      "b": 124,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48,
-      "height": 15
+      "width": 56,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -52842,10 +52848,10 @@
       "__uuid__": "e68cafa7-87ef-4d71-9b2e-45687d1cdce7"
     },
     "damage": 10,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 30,
+    "maxAmmo": 60,
     "fireNum": 1,
     "_id": "91SvGy9D5Fv5EhsJcVB7kd"
   },
@@ -57388,7 +57394,7 @@
       "__id__": 1616
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -57586,7 +57592,7 @@
       "__id__": 1622
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -57784,7 +57790,7 @@
       "__id__": 1628
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -57866,8 +57872,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        1374.385,
-        -774.668,
+        1448.546,
+        -744.54,
         0,
         0,
         0,
@@ -57982,7 +57988,7 @@
       "__id__": 1634
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -58180,7 +58186,7 @@
       "__id__": 1640
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -60177,8 +60183,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48,
-      "height": 19
+      "width": 54,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -60365,10 +60371,10 @@
       "__uuid__": "746dd861-bb09-4bf8-a683-82c1db081666"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 10,
+    "maxAmmo": 30,
     "fireNum": 1,
     "_id": "a44R0f0MxAw5usTPurbYxE"
   },
@@ -68182,7 +68188,7 @@
       "__id__": 1925
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -68380,7 +68386,7 @@
       "__id__": 1931
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -68578,7 +68584,7 @@
       "__id__": 1937
     },
     "_enabled": true,
-    "speed": 20,
+    "speed": 30,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -68776,7 +68782,7 @@
       "__id__": 1943
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -68974,7 +68980,7 @@
       "__id__": 1949
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -69057,7 +69063,7 @@
       "ctor": "Float64Array",
       "array": [
         1764.098,
-        -1412.72,
+        -1353.004,
         0,
         0,
         0,
@@ -69172,7 +69178,7 @@
       "__id__": 1955
     },
     "_enabled": true,
-    "speed": 30,
+    "speed": 60,
     "range": 1000,
     "player": {
       "__id__": 93
@@ -72422,8 +72428,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 52,
-      "height": 22
+      "width": 58,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -72610,7 +72616,7 @@
       "__uuid__": "5ed2aee9-24fe-4f23-9e1b-7a8447854892"
     },
     "damage": 20,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": true,
     "maxAmmo": 0,
@@ -72691,8 +72697,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 45,
-      "height": 16
+      "width": 54,
+      "height": 18
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -72879,10 +72885,10 @@
       "__uuid__": "d076d6ed-a0d3-47ad-a626-afd523d5dfa1"
     },
     "damage": 15,
-    "attackDuration": 0.5,
+    "attackDuration": 0.25,
     "player": null,
     "bInfiniteAmmo": false,
-    "maxAmmo": 20,
+    "maxAmmo": 40,
     "fireNum": 1,
     "_id": "a8rhXrhGpJHrSGPK5xbZfr"
   },
@@ -73184,10 +73190,10 @@
         "__id__": 2078
       },
       {
-        "__id__": 2089
+        "__id__": 2091
       },
       {
-        "__id__": 2090
+        "__id__": 2092
       }
     ],
     "_prefab": null,
@@ -73202,7 +73208,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 32,
-      "height": 32
+      "height": 48
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -73213,8 +73219,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -51.001,
-        468.92,
+        -52.681,
+        473.96,
         0,
         0,
         0,
@@ -73234,8 +73240,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": "b6TiqxH39MYZBsGcZCZQFj"
   },
   {
@@ -73296,8 +73302,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": "03BuXlW0tN/KLCN1VMfYfc"
   },
   {
@@ -73314,8 +73320,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "看门大爷",
-    "_N$string": "看门大爷",
+    "_string": "牧师小姐姐~",
+    "_N$string": "牧师小姐姐~",
     "_fontSize": 15,
     "_lineHeight": 15,
     "_enableWrapText": true,
@@ -73348,7 +73354,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "e8b515e1-478d-4164-bb17-efe221d25e68"
+      "__uuid__": "2b965495-9396-4445-9b9a-40c5321ffc8b"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -73361,9 +73367,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": {
-      "__uuid__": "b8eebbda-2b5e-4c21-a10f-f51683ac87ea"
-    },
+    "_atlas": null,
     "_id": "falYFJhb1JqJ22Zl0iSKJT"
   },
   {
@@ -73405,67 +73409,83 @@
       },
       {
         "__id__": 2086
+      },
+      {
+        "__id__": 2087
       }
     ],
     "roleMap": [
       {
-        "__id__": 2087
+        "__id__": 2088
       },
       {
-        "__id__": 2088
+        "__id__": 2089
+      },
+      {
+        "__id__": 2090
       }
     ],
     "_id": "4eNH9AiXdOoaHwgL2gIUVB"
   },
   {
     "__type__": "DialogData",
-    "role": 1,
-    "content": "你有女朋友吗？"
-  },
-  {
-    "__type__": "DialogData",
     "role": 2,
-    "content": "不！我没有！"
+    "content": "真没想到会有人来到这个地方，看来你就是注定能够拯救我们的英雄！"
   },
   {
     "__type__": "DialogData",
     "role": 1,
-    "content": "那。。我可以做你的优乐美吗😘"
+    "content": "我。。。"
   },
   {
     "__type__": "DialogData",
     "role": 2,
-    "content": "那我是不是要把你捧到手心里？"
+    "content": "太好了，勇士。赶紧拿起你的武器向前冲锋吧！"
   },
   {
     "__type__": "DialogData",
     "role": 1,
-    "content": "如果你想的话!"
+    "content": "不不不，我只是路过而已。"
   },
   {
     "__type__": "DialogData",
     "role": 2,
-    "content": "不！我不想！"
-  },
-  {
-    "__type__": "DialogData",
-    "role": 1,
-    "content": "。。。所以。。这就是拒绝了咩。？😢"
+    "content": "使用屏幕左下角的摇杆来控制移动；你的武器会自动瞄准敌人，所以不用担心瞄准不好哦~"
   },
   {
     "__type__": "DialogData",
     "role": 2,
-    "content": "人家才是你的小宝贝，我要亲亲抱抱举高高！"
+    "content": "使用屏幕右下角的开火键即可发射子弹；你还可以使用开火键上方切换键切换武器。"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "前方就是第一个房间，里面完全被怪物占领了。勇士，别磨蹭了，快进去将它们消灭吧！"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 3,
+    "content": "吼吼吼，我闻到人类的气味了~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "加油吧,勇士。我会用圣光为你祝福的，我就在这儿等着你的好消息咯~"
   },
   {
     "__type__": "RoleMapData",
-    "name": "Hero",
-    "url": "role/hero"
+    "name": "骑士",
+    "url": "role/骑士"
   },
   {
     "__type__": "RoleMapData",
-    "name": "Enemy",
-    "url": "role/npc"
+    "name": "牧师",
+    "url": "role/牧师"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "骷髅",
+    "url": "role/骷髅"
   },
   {
     "__type__": "cc.RigidBody",
@@ -73514,9 +73534,666 @@
     "_size": {
       "__type__": "cc.Size",
       "width": 32,
-      "height": 32
+      "height": 48
     },
     "_id": "ab1HyeWlRKP6LsXI4lUA5d"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "NPC2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [
+      {
+        "__id__": 2094
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 2096
+      },
+      {
+        "__id__": 2097
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 32,
+      "height": 48
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        368.776,
+        -476.356,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 2,
+    "groupIndex": 2,
+    "_id": "5dNvNpFylOjZTQnDrCgNNB"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "nameLabel",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2093
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 2095
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 240,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 60,
+      "height": 18.9
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        24.685,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 2,
+    "groupIndex": 2,
+    "_id": "8ev7S8yNNK6IzZp6tS+Agz"
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2094
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "神秘的小蓝书",
+    "_N$string": "神秘的小蓝书",
+    "_fontSize": 15,
+    "_lineHeight": 15,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_N$cacheMode": 0,
+    "_id": "3bZCmdj+NLVqhx1//w+eN0"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2093
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "f15612be-9269-4585-ad9b-77b8e8706920"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": "2d0J8phQJB4oict9mFP2na"
+  },
+  {
+    "__type__": "25d4bikwh9IaotzEs3+TYkn",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2093
+    },
+    "_enabled": true,
+    "player": {
+      "__id__": 93
+    },
+    "dialogBubble": {
+      "__id__": 167
+    },
+    "NPCName": "DEFALUT NPC",
+    "textDataArr": [
+      {
+        "__id__": 2098
+      },
+      {
+        "__id__": 2099
+      },
+      {
+        "__id__": 2100
+      },
+      {
+        "__id__": 2101
+      },
+      {
+        "__id__": 2102
+      },
+      {
+        "__id__": 2103
+      },
+      {
+        "__id__": 2104
+      },
+      {
+        "__id__": 2105
+      }
+    ],
+    "roleMap": [
+      {
+        "__id__": 2106
+      },
+      {
+        "__id__": 2107
+      },
+      {
+        "__id__": 2108
+      }
+    ],
+    "_id": "37P84SGHRPMb7jbDRi4RgC"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "勇士，前方小心！"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "前方发生了什么？"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "前面的房间里有魔王强大的仆人，也就是关卡boss啦~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "另外，原本守卫这座城堡的守卫者们都被魔王给控制住了。"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "他们会和强大的boss一起攻击你，请多加小心！"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "放心，我将终结它们的生命~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "太好了，我将在第二关等着你，到时我将会告诉你关于这座城堡的许多秘密。"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "所以，勇士，向前冲锋吧！"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "骑士",
+    "url": "role/骑士"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "神秘的蓝书",
+    "url": "role/蓝书"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "被控制的守卫者",
+    "url": "role/守卫者"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "NPC3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [
+      {
+        "__id__": 2110
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 2112
+      },
+      {
+        "__id__": 2113
+      },
+      {
+        "__id__": 2124
+      },
+      {
+        "__id__": 2125
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 32,
+      "height": 48
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        -246.606,
+        -1660.576,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 2,
+    "groupIndex": 2,
+    "_id": "38RnnU7TxMqb8+4ljlagqs"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "nameLabel",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2109
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 2111
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 240,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 60,
+      "height": 18.9
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        24.685,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 2,
+    "groupIndex": 2,
+    "_id": "42mCyreiBKQqAxC55ZS2Bk"
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2110
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_useOriginalSize": false,
+    "_string": "子弹人",
+    "_N$string": "子弹人",
+    "_fontSize": 15,
+    "_lineHeight": 15,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_N$cacheMode": 0,
+    "_id": "e64a7XKXJFCbKN5n5sTuBb"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2109
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": {
+      "__uuid__": "c16b8b9f-cfc2-4121-9fd4-f39fed530c80"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
+    "_id": "177tKyHkVOILCz33qM9PVT"
+  },
+  {
+    "__type__": "25d4bikwh9IaotzEs3+TYkn",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2109
+    },
+    "_enabled": true,
+    "player": {
+      "__id__": 93
+    },
+    "dialogBubble": {
+      "__id__": 167
+    },
+    "NPCName": "DEFALUT NPC",
+    "textDataArr": [
+      {
+        "__id__": 2114
+      },
+      {
+        "__id__": 2115
+      },
+      {
+        "__id__": 2116
+      },
+      {
+        "__id__": 2117
+      },
+      {
+        "__id__": 2118
+      },
+      {
+        "__id__": 2119
+      },
+      {
+        "__id__": 2120
+      },
+      {
+        "__id__": 2121
+      }
+    ],
+    "roleMap": [
+      {
+        "__id__": 2122
+      },
+      {
+        "__id__": 2123
+      }
+    ],
+    "_id": "5749yBpI5K1pghYVJvn/OH"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "大威天龙！"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "别别别！战斗已经结束了，勇士，我是好人。"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "啊啊，对不起啊，你看起来太像怪物了，浓浓的既视感啊~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "啊，这也没办法啊。不过在这个游戏里我是好人啦~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "前面这个大光球是什么？"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "这是传送门啦，走进去，你就可以进入到下一关了！"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 1,
+    "content": "太好了，我先去也~"
+  },
+  {
+    "__type__": "DialogData",
+    "role": 2,
+    "content": "喂喂，小心下一关的怪物~"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "骑士",
+    "url": "role/骑士"
+  },
+  {
+    "__type__": "RoleMapData",
+    "name": "子弹人",
+    "url": "role/子弹人"
+  },
+  {
+    "__type__": "cc.RigidBody",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2109
+    },
+    "_enabled": true,
+    "_type": 0,
+    "_allowSleep": true,
+    "_gravityScale": 1,
+    "_linearDamping": 0,
+    "_angularDamping": 0,
+    "_linearVelocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_angularVelocity": 0,
+    "_fixedRotation": false,
+    "enabledContactListener": false,
+    "bullet": false,
+    "awakeOnLoad": true,
+    "_id": "64IYEMK2dGgo/ZGA+knr6H"
+  },
+  {
+    "__type__": "cc.PhysicsBoxCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2109
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_density": 1,
+    "_sensor": false,
+    "_friction": 0.2,
+    "_restitution": 0,
+    "body": null,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 32,
+      "height": 48
+    },
+    "_id": "c3HL6SCaxJp6RxOkh6J5Sd"
   },
   {
     "__type__": "cc.Node",
@@ -73527,22 +74204,22 @@
     },
     "_children": [
       {
-        "__id__": 2092
+        "__id__": 2127
       },
       {
-        "__id__": 2094
+        "__id__": 2129
       },
       {
-        "__id__": 2096
+        "__id__": 2131
       },
       {
-        "__id__": 2098
+        "__id__": 2133
       },
       {
-        "__id__": 2100
+        "__id__": 2135
       },
       {
-        "__id__": 2102
+        "__id__": 2137
       }
     ],
     "_active": false,
@@ -73600,13 +74277,13 @@
     "_name": "smog1",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2093
+        "__id__": 2128
       }
     ],
     "_prefab": null,
@@ -73662,7 +74339,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2092
+      "__id__": 2127
     },
     "_enabled": true,
     "_materials": [
@@ -73694,13 +74371,13 @@
     "_name": "smog2",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2095
+        "__id__": 2130
       }
     ],
     "_prefab": null,
@@ -73756,7 +74433,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2094
+      "__id__": 2129
     },
     "_enabled": true,
     "_materials": [
@@ -73788,13 +74465,13 @@
     "_name": "smog3",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2097
+        "__id__": 2132
       }
     ],
     "_prefab": null,
@@ -73850,7 +74527,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2096
+      "__id__": 2131
     },
     "_enabled": true,
     "_materials": [
@@ -73882,13 +74559,13 @@
     "_name": "smog4",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2099
+        "__id__": 2134
       }
     ],
     "_prefab": null,
@@ -73944,7 +74621,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2098
+      "__id__": 2133
     },
     "_enabled": true,
     "_materials": [
@@ -73976,13 +74653,13 @@
     "_name": "smog5",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2101
+        "__id__": 2136
       }
     ],
     "_prefab": null,
@@ -74038,7 +74715,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2100
+      "__id__": 2135
     },
     "_enabled": true,
     "_materials": [
@@ -74070,13 +74747,13 @@
     "_name": "smog6",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2091
+      "__id__": 2126
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2103
+        "__id__": 2138
       }
     ],
     "_prefab": null,
@@ -74132,7 +74809,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2102
+      "__id__": 2137
     },
     "_enabled": true,
     "_materials": [
@@ -74168,25 +74845,25 @@
     },
     "_children": [
       {
-        "__id__": 2105
+        "__id__": 2140
       }
     ],
     "_active": false,
     "_components": [
       {
-        "__id__": 2107
+        "__id__": 2142
       },
       {
-        "__id__": 2108
+        "__id__": 2143
       },
       {
-        "__id__": 2109
+        "__id__": 2144
       },
       {
-        "__id__": 2110
+        "__id__": 2145
       },
       {
-        "__id__": 2111
+        "__id__": 2146
       }
     ],
     "_prefab": null,
@@ -74242,13 +74919,13 @@
     "_name": "skill2_firePoint",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 2106
+        "__id__": 2141
       }
     ],
     "_prefab": null,
@@ -74304,7 +74981,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2105
+      "__id__": 2140
     },
     "_enabled": true,
     "Bullet": {
@@ -74320,7 +74997,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_enabled": true,
     "_materials": [
@@ -74352,7 +75029,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_enabled": true,
     "_type": 2,
@@ -74377,7 +75054,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_enabled": true,
     "tag": 0,
@@ -74403,7 +75080,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_enabled": true,
     "_defaultClip": {
@@ -74425,7 +75102,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2104
+      "__id__": 2139
     },
     "_enabled": true,
     "speed": 20,
