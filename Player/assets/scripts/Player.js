@@ -352,7 +352,7 @@ cc.Class({
     },
     addScore(score){
         this.score+=score;
-        this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
+        this.scoreLabel.getComponent("ScoreLabel").addScore(score);
     },
     update(dt) {   
 
