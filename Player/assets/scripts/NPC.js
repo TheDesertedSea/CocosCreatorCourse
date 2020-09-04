@@ -30,11 +30,11 @@ cc.Class({
 
     onLoad () {
         this.playerScript=this.player.getComponent("Player");
-        //this.talked=false;
+
     },
 
     start () {
-
+        this.talked=false;
     },
     update(dt)
     {
@@ -60,6 +60,10 @@ cc.Class({
     },
     talk:function()  //谈话
     {
+        if(this.talked==true)
+        {
+            return;
+        }
         this.dialogBubble.active=true;
         this.dialogBubble.getComponent("dialog").beginDialog(this.textDataArr,this.roleMap);// 传入对话数据数组和角色资源信息数组
 
@@ -73,6 +77,6 @@ cc.Class({
         rockerScript.Rocker.setPosition(cc.v2(0,0));
         rockerScript.dir = cc.v2(0, 0);
             
-        //this.talked=false;
+        this.talked=true;
     }
 });

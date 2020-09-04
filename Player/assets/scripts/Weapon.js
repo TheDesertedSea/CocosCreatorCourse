@@ -51,7 +51,7 @@ cc.Class({
                 var bullet=cc.instantiate(this.bullet);  //实例化预制体
                 bullet.getComponent("Bullet").damage=this.damage+this.node.parent.getComponent("Player").damageAdd;
                 bullet.parent=this.node;
-                var position=this.node.convertToWorldSpaceAR(cc.v2(30,0));  //cc.v2(30,0)为子弹生成位置偏移量
+                var position=this.node.convertToWorldSpaceAR(cc.v2(20,0));  //cc.v2(30,0)为子弹生成位置偏移量
                 //cc.log(position.x,position.y);
                 bullet.parent=cc.find("Canvas");
                 bullet.setPosition(position.x-480,position.y-320);  //设置子弹的生成位置

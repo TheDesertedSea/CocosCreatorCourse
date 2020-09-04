@@ -3,11 +3,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        ButtonSound: {
+        /*ButtonSound: {
                     type:cc.AudioClip, // use 'type:' to declare Texture2D object directly
                     default: null,     // object's default value is null
                 },
-        
+        */
     },
     
     
@@ -15,7 +15,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
-        cc.audioEngine.play(this.bgm, true, 1)
+        //cc.audioEngine.play(this.bgm, true, 1)
     },
 
     start () {
@@ -24,7 +24,7 @@ cc.Class({
     
     onPlaySoundEffect:function(target, data){
         if( data == 'button' ){
-            cc.audioEngine.play(this.ButtonSound, false, 1)
+            //cc.audioEngine.play(this.ButtonSound, false, 1)
         }
         
     }

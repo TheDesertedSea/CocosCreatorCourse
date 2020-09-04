@@ -8,10 +8,10 @@ cc.Class({
         health: 100,  //生命值
         healthBar: cc.Node,  //血条显示条，但绑定的是血条体即healthBarBody.node
         stateUI: cc.Node,  //状态显示栏
-        fireSound: {   //开火音乐
+        /*fireSound: {   //开火音乐
             type:cc.AudioClip, 
             default: null,    
-        },
+        },*/
         //WeaponRocker:cc.Node,   //绑定虚拟摇杆结点以获取摇杆信息,
         MoveRocker:cc.Node,
         //roomNumber:0,  //目前所在房间号
@@ -56,8 +56,8 @@ cc.Class({
         }*/
 
         //绑定按键事件触发函数
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);  
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);   
+        //cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);  
+        //cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);   
     },
 
     start(){
@@ -76,12 +76,12 @@ cc.Class({
     },
     onDestroy() {
         //取消绑定按键事件触发函数
-        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
-        cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        //cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+        //cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
-    onKeyDown: function (event) {
+    /*onKeyDown: function (event) {
         //this.lastAnimationState = this.animationState;  //将当前动画播放状态保存为上一次播放状态
-        switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
+        /*switch (event.keyCode) {  //w向前，s向后，a向左，d向右，space攻击
             /*case cc.macro.KEY.a:
                 this.moveLeft = true;
                 this.moveRight = false;
@@ -102,18 +102,19 @@ cc.Class({
                 this.moveForward = false;
                 this.animationState = "player_forward";
                 break;
-                */
+               
             case cc.macro.KEY.space:
                 this.act();
-        }
+                 
+        }*/
         /*if (this.animationState != this.lastAnimationState)  //如果上一次和这一次按下的方向键所对应的播放状态不同，则播放新的动画
             this.animation.play(this.animationState);
-            */
+            
     },
 
     onKeyUp: function (event) {
         switch (event.keyCode) {
-            /*case cc.macro.KEY.a:
+            case cc.macro.KEY.a:
                 this.moveLeft = false;
                 break;
             case cc.macro.KEY.d:
@@ -124,9 +125,9 @@ cc.Class({
                 break;
             case cc.macro.KEY.s:
                 this.moveBackward = false;
-                */
+                
         }
-    },
+    },*/
 
     /* attack:function()
      {
@@ -262,10 +263,10 @@ cc.Class({
             {
                 return;
             }
-            if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
+            /*if(cc.audioEngine.getState(this.audioId)!=cc.audioEngine.AudioState.PLAYING)  //如果上一次播放音效未结束，则不新播放
             {
                 this.audioId=cc.audioEngine.play(this.fireSound,false,1);  //否则新播放音效
-            }
+            }*/
             
             this.weaponScript.fire();   //调用武器开火函数
         }
@@ -351,7 +352,7 @@ cc.Class({
     },
     addScore(score){
         this.score+=score;
-        this.scoreLabel.getComponent("ScoreLabel").addScore(this.score);
+        this.scoreLabel.getComponent("ScoreLabel").addScore(score);
     },
     update(dt) {   
 
